@@ -1,0 +1,88 @@
+@use 'lib' as * with(
+	$breakpoints: (
+		'xxxs': 360.98px,
+		'xxs': 480.98px,
+		'xs': 640.98px,
+		'sm': 780.98px,
+		'md': 960.98px,
+		'lg': 1100.98px,
+		'xlg': 1280.98px,
+		'xxlg': 1440.98px,
+		'xxxlg': 1680.98px,
+		'xxxxlg': 1920.98px
+	)
+);
+@use "../blocks/**/*.scss";
+
+// Browsersync mark
+#__bs_notify__ { 
+	background-color: rgba(27, 32, 50, 0.4) !important;
+	color: rgba(250, 250, 250, 0.6) !important;
+}
+
+// Include breakpoints badge
+body { @include screen-media(); }
+
+
+// @include font-face("Montserrat-ExtraLight", "MR", 200);
+// @include font-face("Montserrat-ExtraBold", "MR", 800);
+// @include font-face("Montserrat-SemiBold", "MR", 600);
+// @include font-face("Montserrat-Regular", "MR", 400);
+// @include font-face("Montserrat-Medium", "MR", 500);
+// @include font-face("Montserrat-Light", "MR", 300);
+// @include font-face("Montserrat-Black", "MR", 900);
+// @include font-face("Montserrat-Bold", "MR", 700);
+// @include font-face("Montserrat-Thin", "MR", 100);
+
+// @import "../../node_modules/swiper/swiper";
+
+body, html {
+	// scrollbar-gutter: stable;
+	// scroll-behavior: smooth;	
+	box-sizing: border-box;
+	background-color: #fafafa;
+	font-size: var(--size);
+	font-family: sans-serif;
+	line-height: 1.2;
+	font-weight: 400;
+	min-height: 100vh;
+	display: flex;
+	flex-flow: column nowrap;
+}
+// .main { flex: 1 0 auto; }
+.footer {
+	flex: 0 0 auto; 
+	margin-top: auto; 
+}
+
+.sprite {
+	display: none;
+}
+
+p { margin-bottom: 10px; }
+strong { font-weight: bold; }
+em { font-style: italic; }
+
+
+.mb1 { margin-bottom: 100px; }
+.mb2 { margin-bottom: 80px; }
+.mb3 { margin-bottom: 60px; }
+.mb4 { margin-bottom: 40px; }
+.mb5 { margin-bottom: 30px; }
+
+
+@include media('<=md') {
+	.mb1 { margin-bottom: 80px; }
+	.mb2 { margin-bottom: 60px; }
+	.mb3 { margin-bottom: 40px; }
+	.mb4 { margin-bottom: 30px; }
+	.mb5 { margin-bottom: 20px; }
+}
+
+@include media('<=xxs') {
+	.mb1 { margin-bottom: 60px; }
+	.mb2 { margin-bottom: 40px; }
+	.mb3 { margin-bottom: 30px; }
+	.mb4 { margin-bottom: 20px; }
+	.mb5 { margin-bottom: 15px; }
+}
