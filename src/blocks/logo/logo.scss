@@ -1,0 +1,29 @@
+@use 'lib' as *;
+
+.logo {
+	$self: &;
+	box-sizing: border-box;
+	text-decoration: none;
+	color: var(--text);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-flow: column nowrap;
+
+	@include media('<=lg') {
+		align-items: start;
+	}
+
+	img {
+		margin-bottom: 8px;
+	}
+
+	span {
+		font-size: 14px;
+		text-align: center;
+
+		@include media('<=lg') {
+			text-align: left;
+		}
+	}
+}

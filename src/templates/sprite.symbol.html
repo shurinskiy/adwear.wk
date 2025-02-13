@@ -107,9 +107,12 @@ They might well be outsourced to an external stylesheet of course.
 <style>
  .svg-arr-left-dims { width: 24px; height: 20px; }
  .svg-arr-right-dims { width: 24px; height: 20px; }
- .svg-logo-dims { width: 200px; height: 30px; }
+ .svg-close-dims { width: 20px; height: 20px; }
+ .svg-menu-dims { width: 34px; height: 34px; }
+ .svg-phone-dims { width: 34px; height: 34px; }
  .svg-soc-tgrm-dims { width: 35px; height: 35px; }
  .svg-soc-wapp-dims { width: 35px; height: 35px; }
+ .svg-star-dims { width: 34px; height: 32px; }
 </style>
 
 <!--
@@ -133,9 +136,12 @@ for further details on how to create this embeddable sprite variant.
 <svg width="0" height="0" style="position:absolute">
      <symbol viewBox="0 0 24 20" id="arr-left" xmlns="http://www.w3.org/2000/svg"><path d="M.265 9.349 9.515.253c.802-.788 2.17.442 1.31 1.288L3.154 9.083h19.969c1.134 0 1.206 1.82 0 1.82H3.153l7.673 7.542c.812.799-.46 2.125-1.31 1.288L.265 10.637a.915.915 0 0 1 0-1.288Z"/></symbol>
      <symbol viewBox="0 0 24 20" id="arr-right" xmlns="http://www.w3.org/2000/svg"><path d="m23.735 10.651-9.25 9.096c-.802.788-2.17-.442-1.31-1.288l7.672-7.542H.878c-1.134 0-1.207-1.82 0-1.82h19.969l-7.673-7.542c-.812-.799.46-2.125 1.31-1.288l9.251 9.096a.915.915 0 0 1 0 1.288Z"/></symbol>
-     <symbol viewBox="0 0 200 30" id="logo" xmlns="http://www.w3.org/2000/svg"><path d="M11.732 0 0 30h7.775l2.308-6.23h11.834L24.225 30H32L20.268 0h-8.54.004Zm.34 18.396L16 7.784l3.927 10.612h-7.854ZM134 0h-31v7h31V0ZM134 23h-31v7h31v-7ZM129 12h-26v6h26v-6ZM148.995 0 138 30h7.289l2.164-6.23h11.094l2.164 6.23H168L157.001 0h-8.006Zm.323 18.396L153 7.784l3.682 10.612h-7.364ZM51.356 0H35v30h16.356c3.156 0 5.555-.807 7.192-2.417C60.185 25.969 61 23.609 61 20.493V9.51c0-3.115-.819-5.48-2.452-7.09C56.915.807 54.516 0 51.356 0Zm2.523 20.883c0 2.48-1.256 3.722-3.776 3.722h-7.811V5.395h7.811c2.516 0 3.776 1.242 3.776 3.722v11.77-.004ZM194.084 19.842c1.689-.414 2.922-1.252 3.697-2.522.774-1.266 1.162-3.044 1.162-5.331V8.27c0-2.894-.671-4.995-2.008-6.307C195.594.656 193.449 0 190.491 0H173v30h7.347v-9.744h6.404L192.205 30H200l-5.923-10.154.007-.004Zm-2.489-7.853c0 1.652-.846 2.48-2.535 2.48h-8.706v-9.07h8.706c1.693 0 2.535.827 2.535 2.479v4.114-.003ZM75 0h-7v30h7V0ZM98 0h-7v30h7V0ZM87 4h-8v26h8V4Z"/></symbol>
+     <symbol viewBox="0 0 20 20" id="close" xmlns="http://www.w3.org/2000/svg"><path d="M4.407 3.243 10 8.836l5.593-5.593c.75-.751 1.915.413 1.165 1.164L11.165 10l5.593 5.593c.75.75-.414 1.915-1.165 1.165L10 11.165l-5.593 5.593c-.751.75-1.915-.414-1.164-1.165L8.836 10 3.243 4.407c-.751-.75.413-1.915 1.164-1.164Z"/></symbol>
+     <symbol viewBox="0 0 34 34" id="menu" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.342 30.658C5.688 33 9.458 33 17 33s11.314 0 13.656-2.344C33 28.316 33 24.542 33 17c0-7.542 0-11.314-2.344-13.658C28.316 1 24.542 1 17 1 9.458 1 5.686 1 3.342 3.342 1 5.688 1 9.458 1 17s0 11.315 2.342 13.658ZM26.6 24.6H7.4c-1.479 0-1.568-2.4 0-2.4h19.2c1.477 0 1.568 2.4 0 2.4Zm0-6.4c1.568 0 1.479-2.4 0-2.4H7.4c-1.568 0-1.479 2.4 0 2.4h19.2Zm0-6.4H7.4c-1.477 0-1.568-2.4 0-2.4h19.2c1.568 0 1.479 2.4 0 2.4Z"/></symbol>
+     <symbol viewBox="0 0 34 34" id="phone" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M23 2.5H11A8.5 8.5 0 0 0 2.5 11v12a8.5 8.5 0 0 0 8.5 8.5h12a8.5 8.5 0 0 0 8.5-8.5V11A8.5 8.5 0 0 0 23 2.5ZM11 1C5.477 1 1 5.477 1 11v12c0 5.523 4.477 10 10 10h12c5.523 0 10-4.477 10-10V11c0-5.523-4.477-10-10-10H11Z"/><path d="M26.99 22.108c-.365 2.767-2.798 4.897-5.59 4.892C13.46 27 7 20.54 7 12.6c-.005-2.792 2.125-5.225 4.892-5.589a1.635 1.635 0 0 1 1.662.952l2.112 4.727c.224.515.162 1.154-.184 1.586L13.4 16.744c.75 1.523 2.341 3.1 3.884 3.852l2.434-2.071c.43-.362 1.086-.413 1.592-.196l4.724 2.117c.635.273 1.038.976.955 1.662Zm-1.589-.2-4.711-2.105-2.435 2.07c-.445.38-1.135.415-1.65.17-1.873-.904-3.74-2.757-4.646-4.61-.244-.506-.224-1.21.157-1.648l2.084-2.47c-.477-1.07-1.233-2.623-2.1-4.713-1.98.258-3.505 2-3.5 3.997.008 6.97 5.832 12.793 12.8 12.8 1.996.008 3.739-1.513 4.001-3.491Z"/></symbol>
      <symbol viewBox="0 0 35 35" id="soc-tgrm" xmlns="http://www.w3.org/2000/svg"><path d="M17.5 2.917C9.45 2.917 2.917 9.45 2.917 17.5S9.45 32.083 17.5 32.083 32.083 25.55 32.083 17.5 25.55 2.917 17.5 2.917Zm6.767 9.916c-.22 2.304-1.167 7.905-1.648 10.486-.204 1.094-.613 1.458-.992 1.502-.846.073-1.487-.554-2.304-1.094-1.283-.846-2.013-1.37-3.252-2.187-1.444-.948-.51-1.473.32-2.32.22-.218 3.953-3.616 4.026-3.922a.292.292 0 0 0-.073-.263c-.088-.072-.204-.043-.306-.029-.132.03-2.173 1.386-6.155 4.069-.583.394-1.108.598-1.575.583-.525-.014-1.516-.291-2.26-.54-.919-.29-1.633-.451-1.575-.962.03-.262.394-.525 1.08-.802 4.257-1.852 7.087-3.077 8.501-3.66 4.054-1.692 4.886-1.984 5.44-1.984.116 0 .393.03.569.175a.58.58 0 0 1 .204.394c-.015.088.014.35 0 .554Z"/></symbol>
      <symbol viewBox="0 0 35 35" id="soc-wapp" xmlns="http://www.w3.org/2000/svg"><path d="M17.558 2.917c-7.962 0-14.452 6.49-14.452 14.452 0 2.552.671 5.031 1.925 7.218L2.99 32.084l7.656-2.012a14.456 14.456 0 0 0 6.912 1.764c7.963 0 14.452-6.49 14.452-14.452 0-7.856-6.568-14.492-14.452-14.466Zm0 26.468c-2.36 0-4.556-.735-6.562-1.94l-4.55 1.197 1.21-4.434c-1.33-2.06-2.127-4.365-2.129-6.84 0-6.62 5.396-12.016 12.017-12.016 6.531 0 12.027 5.557 12.002 12.031.029 6.621-5.367 12.002-11.988 12.002Zm4.127-10.164c-.335-.117-.568-.175-.816.175-.248.364-.934 1.181-1.138 1.414-.204.248-.423.277-.787.088-2.084-1-3.712-2.297-4.915-4.302-.204-.365-.029-.554.16-.744a4.76 4.76 0 0 0 .905-1.225c.116-.248.058-.452-.03-.627-.087-.175-.816-1.954-1.108-2.683-.291-.7-.598-.613-.816-.627-2.14.31-2.917 1.602-2.917 3.47 0 1.78 1.298 3.5 1.473 3.734.175.248 2.552 3.894 6.169 5.454 1.384.61 2.8 1.118 4.33.904 1.15-.168 2.805-1.752 2.64-3.442-.335-.31-2.166-1.187-3.15-1.59Z"/></symbol>
+     <symbol viewBox="0 0 34 32" id="star" xmlns="http://www.w3.org/2000/svg"><path d="M16.046.684c.3-.912 1.608-.912 1.908 0L21.28 10.78c.135.408.52.684.955.684h10.76c.973 0 1.377 1.227.59 1.79l-8.706 6.241a.982.982 0 0 0-.364 1.107L27.84 30.7c.3.912-.758 1.67-1.544 1.107l-8.706-6.241a1.014 1.014 0 0 0-1.18 0l-8.706 6.24c-.786.564-1.844-.194-1.543-1.106l3.325-10.097a.982.982 0 0 0-.365-1.107l-8.706-6.24c-.786-.564-.382-1.79.59-1.79h10.761c.435 0 .82-.277.954-.685L16.046.684Z"/></symbol>
 </svg>
 
 <!--
@@ -178,13 +184,29 @@ embedded above. They may be styled via CSS.
                     </div>
                     <h2>arr-right, </h2>
                 </li>
-             <li title="logo">
+             <li title="close">
                     <div class="icon-box">
-                        <svg class="svg-logo-dims">
-                            <use xlink:href="#logo"></use>
+                        <svg class="svg-close-dims">
+                            <use xlink:href="#close"></use>
                         </svg>
                     </div>
-                    <h2>logo, </h2>
+                    <h2>close, </h2>
+                </li>
+             <li title="menu">
+                    <div class="icon-box">
+                        <svg class="svg-menu-dims">
+                            <use xlink:href="#menu"></use>
+                        </svg>
+                    </div>
+                    <h2>menu, </h2>
+                </li>
+             <li title="phone">
+                    <div class="icon-box">
+                        <svg class="svg-phone-dims">
+                            <use xlink:href="#phone"></use>
+                        </svg>
+                    </div>
+                    <h2>phone, </h2>
                 </li>
              <li title="soc-tgrm">
                     <div class="icon-box">
@@ -201,6 +223,14 @@ embedded above. They may be styled via CSS.
                         </svg>
                     </div>
                     <h2>soc-wapp, </h2>
+                </li>
+             <li title="star">
+                    <div class="icon-box">
+                        <svg class="svg-star-dims">
+                            <use xlink:href="#star"></use>
+                        </svg>
+                    </div>
+                    <h2>star, </h2>
                 </li>
          </ul>
 
@@ -237,13 +267,29 @@ SVG sprite. They may be styled via CSS.
                     </div>
                     <h2>arr-right</h2>
                 </li>
-             <li title="logo">
+             <li title="close">
                     <div class="icon-box">
-                        <svg class="svg-logo-dims">
-                            <use xlink:href="_sprite.svg#logo"></use>
+                        <svg class="svg-close-dims">
+                            <use xlink:href="_sprite.svg#close"></use>
                         </svg>
                     </div>
-                    <h2>logo</h2>
+                    <h2>close</h2>
+                </li>
+             <li title="menu">
+                    <div class="icon-box">
+                        <svg class="svg-menu-dims">
+                            <use xlink:href="_sprite.svg#menu"></use>
+                        </svg>
+                    </div>
+                    <h2>menu</h2>
+                </li>
+             <li title="phone">
+                    <div class="icon-box">
+                        <svg class="svg-phone-dims">
+                            <use xlink:href="_sprite.svg#phone"></use>
+                        </svg>
+                    </div>
+                    <h2>phone</h2>
                 </li>
              <li title="soc-tgrm">
                     <div class="icon-box">
@@ -261,6 +307,14 @@ SVG sprite. They may be styled via CSS.
                     </div>
                     <h2>soc-wapp</h2>
                 </li>
+             <li title="star">
+                    <div class="icon-box">
+                        <svg class="svg-star-dims">
+                            <use xlink:href="_sprite.svg#star"></use>
+                        </svg>
+                    </div>
+                    <h2>star</h2>
+                </li>
          </ul>
 
 <!--
@@ -269,7 +323,7 @@ SVG sprite. They may be styled via CSS.
 
         </section>
         <footer>
-            <p>Generated at Wed, 12 Feb 2025 09:57:23 GMT by <a href="https://github.com/svg-sprite/svg-sprite" target="_blank" rel="noopener noreferrer">svg-sprite</a>.</p>
+            <p>Generated at Thu, 13 Feb 2025 20:25:03 GMT by <a href="https://github.com/svg-sprite/svg-sprite" target="_blank" rel="noopener noreferrer">svg-sprite</a>.</p>
         </footer>
     </body>
 </html>

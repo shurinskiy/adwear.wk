@@ -1,0 +1,212 @@
+@use 'lib' as *;
+
+.header {
+	$self: &;
+	box-sizing: border-box;
+	position: fixed;
+	z-index: 12;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 75px;
+	background-color: #fff;
+
+	&__inner {
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		@include media('<=lg') {
+			gap: 8px;
+		}
+	}
+
+	&__logo-mobile {
+		display: none;
+		margin-right: auto;
+
+		@include media('<=lg') {
+			display: flex;
+		}
+	}
+
+	&__menu {
+		flex-basis: 45%;
+		box-sizing: border-box;
+
+		&-close {
+			@extend %reset-button;
+			display: none;
+			width: 18px;
+			height: 18px;
+			position: absolute;
+			top: 20px;
+			right: 20px;
+			z-index: 1;
+			display: none;
+	
+			@include media('<=sm') {
+				display: block;
+			}
+			
+			svg {
+				display: block;
+				fill: var(--text);
+				width: 100%;
+				max-width: 100%;
+				max-height: 100%;
+			}
+		}
+
+		&-navi {
+			display: flex;
+
+			@include media('<=lg') {
+				flex-flow: column nowrap;
+			}
+		}
+
+		&-link {
+			text-decoration: none;
+			color: inherit;
+			padding: 10px 20px;
+			
+			@include media('<=lg') {
+				padding: 10px 0;
+				font-size: 18px;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+	
+			&_note {
+				@include media('>lg') {
+					text-transform: uppercase;
+					background-color: var(--cloud);
+					border-radius: 100px;
+				}
+			}
+		}
+		
+		@include media('<=lg') {
+			flex-basis: auto;
+			padding: 60px 20px 30px;
+			background-color: #fff;
+			width: 100%;
+			height: 100vh;
+			height: 100dvh;
+			position: fixed;
+			z-index: 5;
+			top: 0;
+			left: -310px; 
+			max-width: 300px;
+			transition: left 0.3s linear;
+			box-shadow: 5px 0 5px rgba(0, 0, 0, 0.05);
+			display: block;
+	
+			&.opened {
+				left: 0;
+			}
+		}
+	}
+
+	&__logo {
+		width: 100%;
+		max-width: 230px;
+		padding: 0 10px;
+
+		@include media('<=lg') {
+			display: none;
+		}
+	}
+
+	&__side {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		padding-left: 14px;
+		flex-basis: 45%;
+		gap: 16px;
+
+		@include media('<=lg') {
+			display: none;
+		}
+	}
+
+	&__contact {
+		
+		a {
+			display: block;
+			color: var(--blue);
+			text-decoration: none;
+
+			&:nth-child(1) {
+				font-size: 18px;
+				font-weight: 500;
+			}
+			
+			&:nth-child(2) {
+				font-size: 12px;
+				font-weight: 300;
+			}
+		}
+	}
+
+	&__socials {
+		display: flex;
+		gap: 14px;
+	}
+
+	&__social {
+		width: 35px;
+		height: 35px;
+
+		svg {
+			width: 100%;
+			height: 100%;
+			fill: var(--blue);
+		}
+	}
+
+	&__button.button {
+		height: 42px;
+		padding: 0 20px;
+		white-space: nowrap;
+	}
+
+	&__phone {
+		@extend %reset-button;
+		display: none;
+		height: 34px;
+		width: 34px;
+
+		@include media('<=lg') {
+			display: block;
+		}
+
+		svg {
+			fill: var(--blue);
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&__toggle {
+		@extend %reset-button;
+		display: none;
+		height: 34px;
+		width: 34px;
+
+		@include media('<=lg') {
+			display: block;
+		}
+
+		svg {
+			fill: var(--blue);
+			width: 100%;
+			height: 100%;
+		}
+	}
+}

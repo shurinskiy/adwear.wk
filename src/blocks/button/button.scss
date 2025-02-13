@@ -1,0 +1,11 @@
+@use 'lib' as *;
+
+.button {
+	$self: &;
+	@extend %reset-button;
+	color: #fff;
+	background-color: var(--blue);
+	border-radius: 100px;
+	padding: 0 30px;
+	height: 55px;
+}

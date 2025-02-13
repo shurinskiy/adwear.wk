@@ -1,14 +1,19 @@
 :root {
 	--size: 16px;
-	--light: #FBF2DF;
-	--beige: #FBF2DF;
-	--text: #161C26;
-	--orange: #D69A37;
-	--green: #3DBE75;
-	--blue: #113859;
-	--blue-rgb: 17, 56, 89;
-	--container: 1400px;
-	--gap: 24px;
+	--cloud: #E3EBF6;
+	--black: #040402;
+	--text: #272727;
+	--sky: #81B7FF;
+	--blue: #002B69;
+	--blue-rgb: 0, 43, 105;
+	--background: #F9F9F9;
+
+	--container: 1360px;
+	--gap: 32px;
+	
+	@media screen and (max-width: 1100px) {
+		--gap: 24px;
+	}
 	
 	@media screen and (max-width: 480px) {
 		--gap: 16px;
