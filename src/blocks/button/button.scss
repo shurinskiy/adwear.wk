@@ -2,10 +2,24 @@
 
 .button {
 	$self: &;
+	--ground: var(--blue);
+	--color: #fff;
+	
 	@extend %reset-button;
-	color: #fff;
-	background-color: var(--blue);
+	background-color: var(--ground);
+	border: 1px solid var(--ground);
 	border-radius: 100px;
+	color: var(--color);
+	width: fit-content;
 	padding: 0 30px;
 	height: 55px;
+	display: flex;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	
+	&_empty {
+		--color: var(--blue);
+		background-color: transparent;
+	}
 }

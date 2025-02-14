@@ -2,6 +2,7 @@
 	--size: 16px;
 	--cloud: #E3EBF6;
 	--black: #040402;
+	--dark: #363636;
 	--text: #272727;
 	--sky: #81B7FF;
 	--blue: #002B69;
@@ -15,7 +16,11 @@
 		--gap: 24px;
 	}
 	
-	@media screen and (max-width: 480px) {
+	@media screen and (max-width: 640px) {
 		--gap: 16px;
+	}
+	
+	@media screen and (max-width: 480px) {
+		--gap: 12px;
 	}
 }
