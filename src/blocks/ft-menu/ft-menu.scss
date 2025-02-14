@@ -7,6 +7,10 @@
 		font-size: 18px;
 		font-weight: 600;
 		margin-bottom: 16px;
+		
+		@include media('<=xs') {
+			font-size: 16px;
+		}
 	}
 
 	&__links {
@@ -20,6 +24,10 @@
 		text-decoration: none;
 		white-space: nowrap;
 		color: inherit;
+		
+		@include media('<=xs') {
+			font-size: 14px;
+		}
 		
 		&_wide {
 			grid-column: span 2;
