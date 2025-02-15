@@ -1,0 +1,45 @@
+@use 'lib' as *;
+@use '../../node_modules/@yandex/ymaps3-default-ui-theme/dist/esm';
+
+.ymaps3 {
+	$self: &;
+	
+	ymaps3#{&}--pin &--hint {
+
+		&__stable {
+
+		}
+
+		&__big {
+			left: 15px;
+			border-radius: 8px;
+			padding: 4px 8px;
+		}
+	}
+
+	&#{x0}--controls_right {
+		align-items: center !important;
+	}
+	
+	&#{x0}--control:has(.ymaps3x0--fullscreen) {
+		margin-bottom: auto !important;
+	}
+	
+	&#{x0}--map-copyrights {
+		display: none !important;
+	}
+
+	&#{x0}--fullscreen {
+		@extend %reset-button;
+		border-radius: 8px;
+		user-select: none;
+		display: block;
+		height: 40px;
+		width: 40px;
+		background: svg-url('<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M23.4994 4.74413C23.5093 4.60573 23.3943 4.49067 23.2558 4.5006L18.1701 4.86576C17.9106 4.88439 17.7931 5.19947 17.9771 5.38347L19.5235 6.92997L14.5 11.9537L16.0463 13.5L21.0697 8.47631L22.6165 10.0231C22.8005 10.2071 23.1156 10.0897 23.1343 9.83011L23.4994 4.74413Z" fill="#4D4D4D"/><path fill-rule="evenodd" clip-rule="evenodd" d="M4.5006 23.2558C4.49067 23.3942 4.60572 23.5093 4.74412 23.4993L9.82989 23.1342C10.0894 23.1155 10.2069 22.8005 10.0229 22.6164L8.47648 21.0699L13.5 16.0462L11.9537 14.4999L6.9302 19.5236L5.38344 17.9768C5.19945 17.7928 4.88438 17.9102 4.86575 18.1698L4.5006 23.2558Z" fill="#4D4D4D"/></svg>') center / 28px 28px no-repeat #fff;
+
+		&.exit {
+			background-image: svg-url('<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M16.0006 11.7559C15.9906 11.8943 16.1057 12.0093 16.2441 11.9994L21.3299 11.6342C21.5894 11.6156 21.7069 11.3005 21.5229 11.1166L19.9765 9.57001L25 4.54634L23.4537 3L18.4302 8.02371L16.8834 6.47688C16.6994 6.29288 16.3843 6.41035 16.3657 6.66991L16.0006 11.7559Z" fill="#4d4d4d"/><path fill-rule="evenodd" clip-rule="evenodd" d="M11.9994 16.2441C12.0093 16.1057 11.8943 15.9906 11.7558 16.0006L6.67007 16.3658C6.41053 16.3844 6.29307 16.6995 6.47707 16.8835L8.02349 18.4299L3 23.4537L4.54628 25L9.56972 19.9764L11.1165 21.5231C11.3005 21.7072 11.6156 21.5896 11.6343 21.3301L11.9994 16.2441Z" fill="#4d4d4d"/></svg>');
+		}
+	}
+}

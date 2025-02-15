@@ -23,6 +23,10 @@ let webconf = {
 				}
 		}]
 	},
+	externals: {
+		ymaps3: ['https://api-maps.yandex.ru/v3/?apikey=72a9cfd7-0071-483d-a2fe-93431032706d&lang=ru_RU', 'ymaps3']
+	},
+	externalsType: 'script',
 	mode: isDev ? 'development' : 'production',
 	devtool: isDev ? 'eval-source-map' : false
 };

@@ -1,0 +1,31 @@
+@use 'lib' as *;
+
+.discuss {
+	$self: &;
+	--fill: var(--black);
+	--border: rgba(var(--black-rgb), 0.4);
+	display: flex;
+	gap: 10px;
+	
+
+	&__button {
+
+	}
+
+	&__social {
+		aspect-ratio: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 100%;
+		border: 1px solid var(--border);
+		background-color: #F5F4EF;
+		height: 55px;
+
+		svg {
+			fill: var(--fill);
+			height: 69%;
+			width: 69%;
+		}
+	}
+}

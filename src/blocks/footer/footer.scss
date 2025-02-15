@@ -95,31 +95,20 @@
 		}
 	}
 
-	&__buttons {
-		display: flex;
-		gap: 10px;
-	}
+	&__discuss {
 
-	&__button.button {
-		--ground: #fff;
-		--color: #fff;
-	}
-
-	&__social {
-		aspect-ratio: 1;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		border-radius: 100%;
-		border: 1px solid #fff;
-		height: 55px;
-
-		svg {
-			fill: #fff;
-			height: 69%;
-			width: 69%;
+		&-button.button {
+			--ground: #fff;
+			--color: #fff;
+		}
+	
+		&-social {
+			--fill: #fff;
+			--border: #fff;
+			background-color: transparent !important;
 		}
 	}
+
 
 	&__side {
 		display: flex;

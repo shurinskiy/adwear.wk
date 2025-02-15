@@ -1,0 +1,66 @@
+@use 'lib' as *;
+
+.partners {
+	$self: &;
+	margin-bottom: 80px;
+	
+	@keyframes marquee {
+		from { transform: translateX(-100%); }
+		to { transform: translateX(0%); }
+	}
+	
+	@keyframes marqueeBack {
+		from { transform: translateX(0%); }
+		to { transform: translateX(-100%); }
+	}
+
+	&__inner {
+		border-bottom: 1px solid rgba(var(--blue-rgb), 0.4);
+	}
+
+	&__title {
+		font-weight: 500;
+		margin-bottom: 60px;
+		font-size: fluid(30px, 24px);
+
+		@include media('<=xs') {
+			text-align: center;
+		}
+	}
+
+	&__box {
+		display: flex;
+		flex-flow: column nowrap;
+		margin-bottom: 70px;
+		overflow: hidden;
+		gap: 40px;
+	}
+
+	&__marquee {
+		display: flex;
+		animation-delay: 1s;
+		
+		&_inverse #{$self}__part {
+			animation: marqueeBack 15s linear infinite;
+		}
+		
+		&:hover #{$self}__part {
+			animation-play-state: paused;
+		}
+	}
+	
+	&__part {
+		display: flex;
+		flex-shrink: 0;
+		justify-content: space-between;
+		animation: marquee 15s linear infinite;
+		gap: 30px;
+		width: 110%;
+		min-width: 1200px;
+		padding-right: 30px;
+	}
+	
+	&__item {
+
+	}
+}

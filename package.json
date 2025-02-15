@@ -69,8 +69,10 @@
 		"suffix": "$self: &;"
 	},
 	"dependencies": {
+		"@yandex/ymaps3-default-ui-theme": "^0.0.19",
+		"enquire.js": "^2.1.6",
 		"scroll-lock": "^2.1.5",
 		"swiped-events": "^1.2.0",
-		"swiper": "^11.2.2"
+		"swiper": "^11.2.4"
 	}
 }

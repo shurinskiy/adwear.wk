@@ -1,0 +1,12 @@
+@use 'lib' as *;
+
+.title {
+	$self: &;
+	font-weight: 600;
+	color: var(--blue);
+	font-size: fluid(40px, 24px);
+
+	@include media('<=xs') {
+		text-align: center;
+	}
+}
