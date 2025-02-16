@@ -6,26 +6,32 @@
 	--border: rgba(var(--black-rgb), 0.4);
 	display: flex;
 	gap: 10px;
-	
 
 	&__button {
-
+		grid-column: span 2;
 	}
-
+	
 	&__social {
-		aspect-ratio: 1;
+		grid-column: span 1;
+		aspect-ratio: 1 / 1;
 		display: flex;
+		flex-shrink: 0;
 		align-items: center;
 		justify-content: center;
 		border-radius: 100%;
 		border: 1px solid var(--border);
 		background-color: #F5F4EF;
+		justify-self: end;
 		height: 55px;
 
 		svg {
 			fill: var(--fill);
 			height: 69%;
 			width: 69%;
+		}
+
+		&:last-child {
+			justify-self: start;
 		}
 	}
 }

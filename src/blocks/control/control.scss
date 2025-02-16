@@ -1,0 +1,19 @@
+@use 'lib' as *;
+
+.control {
+	$self: &;
+	@extend %reset-button;
+	height: 36px;
+	width: 36px;
+	border-radius: 5px;
+	background-color: rgba(255, 255, 255, 0.8);
+	border: 1px solid rgba(var(--black-rgb), 0.2);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	svg {
+		height: 12px;
+		width: 14px;
+	}
+}

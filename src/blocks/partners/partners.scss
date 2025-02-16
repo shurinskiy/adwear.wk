@@ -22,9 +22,10 @@
 		font-weight: 500;
 		margin-bottom: 60px;
 		font-size: fluid(30px, 24px);
-
+		
 		@include media('<=xs') {
 			text-align: center;
+			margin-bottom: 32px;
 		}
 	}
 
@@ -34,6 +35,11 @@
 		margin-bottom: 70px;
 		overflow: hidden;
 		gap: 40px;
+		
+		@include media('<=xs') {
+			margin-bottom: 55px;
+			gap: 20px;
+		}
 	}
 
 	&__marquee {
@@ -55,8 +61,7 @@
 		justify-content: space-between;
 		animation: marquee 15s linear infinite;
 		gap: 30px;
-		width: 110%;
-		min-width: 1200px;
+		min-width: 1400px;
 		padding-right: 30px;
 	}
 	

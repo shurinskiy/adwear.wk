@@ -1,0 +1,231 @@
+@use 'lib' as *;
+
+.hero {
+	$self: &;
+	
+	&__inner {
+		background: url('./images/parquet-1.svg') top 10% left 20% / 200% auto no-repeat transparent;
+		padding: 55px 0;
+		
+		@include media('<=xs') {
+			padding: 20px 0 42px;
+		}
+	}
+
+	&__title {
+		margin-bottom: 30px;
+		text-align: center;
+		color: var(--text);
+		font-weight: 500;
+		font-size: fluid(50px, 24px);
+		
+		@include media('<=xs') {
+			margin-bottom: 14px;
+			line-height: 1.3;
+		}
+	}
+
+	&__buttons {
+		display: flex;
+		justify-content: space-between;
+		gap: 16px;
+		max-width: 530px;
+		margin: 0 auto;
+
+		@include media('<=md') {
+			margin-bottom: 32px;
+		}
+	}
+
+	&__button {
+		@extend %reset-button;
+		font-size: 18px;
+		text-decoration: none;
+		color: var(--text);
+		border: 1px solid var(--blue);
+		padding: 7px 14px;
+		border-radius: 7px;
+		font-weight: 300;
+		
+		@include media('<=xs') {
+			font-size: 16px;
+		}
+		
+		@include media('<=xxs') {
+			padding: 6px 14px;
+			font-size: 12px;
+		}
+	}
+
+	&__discuss.discuss {
+		position: relative;
+		z-index: 2;
+		display: grid;
+		grid-gap: 10px 16px;
+		grid-template-columns: repeat(2, 1fr);
+		justify-items: center;
+		margin-bottom: -150px;
+		padding-top: 40px;
+		
+		@include media('<=md') {
+			margin: 0;
+			padding: 0;
+			display: flex;
+			justify-content: center;
+			margin-bottom: 16px;
+			grid-gap: 10px;
+		}
+	}
+
+	&__slider {
+		position: relative;
+
+		@include media('<=xlg') {
+			margin-bottom: 16px;
+		}
+	}
+
+	&__items.swiper {
+
+		@include media('<=xxs') {
+			margin-left: -12px;
+			margin-right: -12px;
+			padding-left: 12px;
+			padding-right: 12px;
+		}
+
+		.swiper-wrapper {
+			display: grid;
+			grid-template-columns: 1fr 300px 1fr;
+			grid-gap: 10px;
+			
+			@include media('<=xlg') {
+				grid-template-columns: repeat(3, 1fr);
+			}
+			
+			@include media('<=md') {
+				display: flex;
+				grid-gap: 0;
+			}
+		}
+	}
+
+	&__item {
+		gap: 10px;
+		
+		&.swiper-slide {
+			height: 460px;
+			display: flex;
+		}
+
+		@include media('<=xlg') {
+			#{$self}__gap {
+				display: none;
+			}
+		}
+	}
+
+	&__card {
+		width: 100%;
+		
+		@include media('>xlg') {
+			width: 300px;
+		}
+
+		&_half {
+			margin-top: auto;
+			height: 230px;
+			
+			@include media('<=md') {
+				height: auto;
+				margin: 0;
+			}
+		}
+	}
+
+	&__gap {
+		margin-top: auto;
+		box-sizing: border-box;
+		background-color: var(--cloud);
+		border-radius: 20px;
+		color: var(--text);
+		min-height: 330px;
+		padding: 10px;
+		display: flex;
+		text-align: center;
+		align-items: center;
+		justify-content: center;
+		flex-flow: column nowrap;
+		
+		@include media('<=xlg') {
+			min-height: 170px;
+			flex-grow: 1;
+		}
+		
+		strong {
+			font-weight: 600;
+			font-size: fluid(35px, 26px, 1440px, 1280px);
+			margin-bottom: 10px;
+			
+			@include media('<=xlg') {
+				font-size: 30px;
+			}
+		}
+		
+		span {
+			font-size: fluid(18px, 16px, 1440px, 1280px);
+			font-weight: 300;
+		
+			@include media('<=xxs') {
+				font-size: 14px;
+			}
+		}
+	}
+
+	&__controls {
+		@include media('>md') {
+			display: none;
+		}
+
+		@include media('<=xxs') {
+			display: none;
+		}
+	}
+
+	&__control {
+		position: absolute;
+		z-index: 1;
+		top: calc(50% - 18px);
+
+		&_prev {
+			left: -18px;
+			
+			@include media('<=xs') {
+				left: -14px;
+			}
+		}
+		
+		&_next {
+			right: -18px;
+			
+			@include media('<=xs') {
+				right: -14px;
+			}
+		}
+
+		&.hidden {
+			display: none;
+		}
+	}
+
+	&__bottom {
+		display: none;
+		gap: 12px;
+		max-width: 700px;
+		margin: 0 auto;
+		
+		@include media('<=xlg') {
+			display: flex;
+		}
+	}
+}

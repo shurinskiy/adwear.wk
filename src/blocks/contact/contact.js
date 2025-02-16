@@ -7,7 +7,7 @@ import * as ymaps3 from 'ymaps3';
 		await ymaps3.ready;
 
 		const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapControls, YMapControl } = ymaps3;
-		const { YMapDefaultMarker, YMapZoomControl, YMapRotateTiltControl, YMapGeolocationControl } = await import('@yandex/ymaps3-default-ui-theme');
+		const { YMapDefaultMarker, YMapZoomControl, YMapGeolocationControl, YMapRotateTiltControl } = await import('@yandex/ymaps3-default-ui-theme');
 
 		const map = new YMap(
 			rootContainer, {
@@ -45,7 +45,10 @@ import * as ymaps3 from 'ymaps3';
 				fullScreenButtonElement.onclick = fullScreenBtnHandler;
 				fullScreenButtonElement.classList.add('ymaps3x0--fullscreen');
 
-				document.addEventListener('fullscreenchange', e => fullScreenButtonElement.classList.toggle('exit'));
+				document.addEventListener('fullscreenchange', e => {
+					fullScreenButtonElement.classList.toggle('exit', document.fullscreenElement);
+				});
+
 				return fullScreenButtonElement;
 			}
 

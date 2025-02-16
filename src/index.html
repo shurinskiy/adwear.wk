@@ -1,9 +1,9 @@
 @@include("_head.html", {"id":"home"}) 
 @@include("_header.html")
 
-<section class="hero">
+<section class="hero" data-hero-js>
 	<div class="hero__inner container">
-		<h1 class="hero__title title">Корпоративная одежда и текстильные изделия<br/> с символикой вашего бренда под заказ</h1>
+		<h1 class="hero__title">Корпоративная одежда и текстильные изделия<br/> с символикой вашего бренда под заказ</h1>
 		<div class="hero__buttons">
 			<a class="hero__button" href="./">для сотрудников</a>
 			<a class="hero__button" href="./">для промо</a>
@@ -14,7 +14,56 @@
 			<a class="discuss__social" href="./"><svg><use xlink:href="#soc-tgrm"></use></svg></a>
 			<a class="discuss__social" href="./"><svg><use xlink:href="#soc-wapp"></use></svg></a>
 		</div>
-
+		<div class="hero__slider">
+			<div class="hero__items swiper">
+				<div class="swiper-wrapper">
+					<div class="hero__item swiper-slide">
+						<div class="hero__card card">
+							<img class="card__image" src="./images/stuff/card-5.webp" alt="">
+							<a class="card__more" href="./">Куртки <svg><use xlink:href="#arr-right"></use></svg></a>
+						</div>
+						<div class="hero__gap">
+							<strong>15 000<br/> изделий</strong>
+							<span>самый крупный заказ</span>
+						</div>
+					</div>
+					<div class="hero__item swiper-slide">
+						<div class="hero__card hero__card_half card">
+							<img class="card__image" src="./images/stuff/card-18.webp" alt="">
+							<a class="card__more" href="./">Сувениры <svg><use xlink:href="#arr-right"></use></svg></a>
+						</div>
+					</div>
+					<div class="hero__item swiper-slide">
+						<div class="hero__gap">
+							<strong>более<br/> 1 000</strong>
+							<span>выполненных заказов</span>
+						</div>
+						<div class="hero__card card">
+							<img class="card__image" src="./images/stuff/card-4.webp" alt="">
+							<a class="card__more" href="./">Униформа <svg><use xlink:href="#arr-right"></use></svg></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="hero__controls">
+				<button class="hero__control hero__control_prev control">
+					<svg><use xlink:href="#arr-left"></use></svg>
+				</button>
+				<button class="hero__control hero__control_next control">
+					<svg><use xlink:href="#arr-right"></use></svg>
+				</button>
+			</div>
+		</div>
+		<div class="hero__bottom">
+			<div class="hero__gap">
+				<strong>15 000<br/> изделий</strong>
+				<span>самый крупный заказ</span>
+			</div>
+			<div class="hero__gap">
+				<strong>более<br/> 1 000</strong>
+				<span>выполненных заказов</span>
+			</div>
+		</div>
 	</div>
 </section>
 
