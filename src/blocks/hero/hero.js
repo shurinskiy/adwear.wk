@@ -19,7 +19,7 @@ import enquire from 'enquire.js';
 			},
 			breakpoints: {
 				0: {
-					slidesPerView: 1.2,
+					slidesPerView: 1.15,
 				},
 				480: {
 					slidesPerView: 1.7,

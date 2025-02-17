@@ -1,27 +1,30 @@
 :root {
 	--size: 16px;
 	--cloud: #E3EBF6;
-	--dark: #363636;
 	--text: #272727;
 	--sky: #81B7FF;
 	--blue: #002B69;
+	--dark: #363636;
+	--dark-rgb: 54, 54, 54;
 	--black: #040402;
 	--black-rgb: 4, 4, 2;
 	--blue-rgb: 0, 43, 105;
 	--background: #F9F9F9;
 
-	--container: 1300px;
-	--gap: 32px;
+	--container: 1360px;
+	--container-gap: 32px;
+	--gap: 0px;
 	
 	@media screen and (max-width: 1100px) {
-		--gap: 24px;
+		// --gap: 24px;
 	}
 	
-	@media screen and (max-width: 640px) {
-		--gap: 16px;
+	@media screen and (max-width: 780px) {
+		--container-gap: 24px;
+		// --gap: 16px;
 	}
 	
 	@media screen and (max-width: 480px) {
-		--gap: 12px;
+		--container-gap: 12px;
 	}
 }

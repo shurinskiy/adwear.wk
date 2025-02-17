@@ -3,8 +3,37 @@
 .card {
 	$self: &;
 	position: relative;
-	overflow: hidden;
 	border-radius: 20px;
+	overflow: hidden;
+	
+	&_special {
+		transition: border-color 0.3s;
+		border: 1px solid rgba(var(--dark-rgb), 0.2);
+		
+		#{$self}__more {
+			transition: background-color 0.3s, color 0.3s;
+			background-color: rgba(255, 255, 255, 0.5);
+			backdrop-filter: blur(4px);
+			color: var(--text);
+		
+			svg {
+				fill: var(--text);
+			}
+		}
+		
+		&:hover {
+			border-color: rgba(var(--dark-rgb), 0.7);
+			
+			#{$self}__more {
+				background-color: #fff;
+				color: var(--blue);
+		
+				svg {
+					fill: var(--blue);
+				}
+			}
+		}
+	}
 
 	&__image {
 		display: block;
@@ -23,6 +52,7 @@
 		align-items: center;
 		justify-content: space-between;
 		padding: 15px 45px;
+		border: 1px solid #eee;
 		background-color: #fff;
 		border-radius: 10px;
 		color: var(--blue);

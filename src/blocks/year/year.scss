@@ -1,0 +1,91 @@
+@use 'lib' as *;
+
+.year {
+	$self: &;
+	margin-bottom: 100px;
+
+	&__inner {
+		padding: 85px 0;
+		background: url('./images/parquet-2.svg') center / 170% auto no-repeat #fff;
+		border-radius: 30px;
+		
+		@include media('<=xs') {
+			background-size: 1600px auto;
+			padding: 60px 0;
+		}
+	}
+
+	&__title {
+		font-weight: 600;
+		margin-bottom: 16px;
+		font-size: fluid(40px, 30px);
+		
+		@include media('<=xs') {
+			margin-bottom: 24px;
+			text-align: center;
+		}
+	}
+
+	&__text {
+		max-width: 680px;
+		margin-bottom: 75px;
+		font-size: fluid(18px, 14px);
+		
+		@include media('<=xs') {
+			text-align: center;
+			margin-bottom: 45px;
+		}
+	}
+
+	&__counts {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap: 24px;
+		
+		@include media('<=sm') {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		
+		@include media('<=xs') {
+			grid-template-columns: 1fr;
+			justify-items: center;
+		}
+	}
+
+	&__count {
+		grid-column: span 1;
+
+		&:nth-child(1) &-number span {
+			display: inline-block;
+			text-align: right;
+			min-width: 1.05em;
+		}
+
+		&:nth-child(2) &-number span {
+			display: inline-block;
+			text-align: right;
+			min-width: 2.0em;
+		}
+
+		&:nth-child(3) &-number span {
+			display: inline-block;
+			text-align: right;
+			min-width: 1.75em;
+		}
+	
+		&-number {
+			font-weight: 600;
+			white-space: nowrap;
+			margin-bottom: 32px;
+			font-size: fluid(70px, 50px);
+		
+			@include media('<=xs') {
+				text-align: center;
+			}
+		}
+		
+		&-sign {
+			font-size: fluid(30px, 20px);
+		}
+	}
+}

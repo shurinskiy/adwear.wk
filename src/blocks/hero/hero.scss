@@ -2,12 +2,18 @@
 
 .hero {
 	$self: &;
+	margin-bottom: 100px;
+
+	@include media('<=xs') {
+		margin-bottom: 0;
+	}
 	
 	&__inner {
 		background: url('./images/parquet-1.svg') top 10% left 20% / 200% auto no-repeat transparent;
 		padding: 55px 0;
 		
 		@include media('<=xs') {
+			background-size: 1600px auto;
 			padding: 20px 0 42px;
 		}
 	}
@@ -54,6 +60,10 @@
 		@include media('<=xxs') {
 			padding: 6px 14px;
 			font-size: 12px;
+		}
+		
+		@include media('<=xxxs') {
+			padding: 6px;
 		}
 	}
 

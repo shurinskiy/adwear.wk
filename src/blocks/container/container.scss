@@ -6,6 +6,13 @@
 	margin-right: auto;
 	box-sizing: border-box;
 	width: min(var(--container), calc(100% - var(--gap) * 2));
+	padding-right: var(--container-gap);
+	padding-left: var(--container-gap);
+
+	&_close {
+		padding-right: 0;
+		padding-left: 0;
+	}
 	
 	&_abs {
 		position: absolute;

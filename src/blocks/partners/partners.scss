@@ -4,6 +4,10 @@
 	$self: &;
 	margin-bottom: 80px;
 	
+	@include media('<=xs') {
+		margin-bottom: 60px;
+	}
+
 	@keyframes marquee {
 		from { transform: translateX(-100%); }
 		to { transform: translateX(0%); }
@@ -15,7 +19,14 @@
 	}
 
 	&__inner {
-		border-bottom: 1px solid rgba(var(--blue-rgb), 0.4);
+		&::after {
+			display: block;
+			content: '';
+			width: min(var(--container), calc(100% - var(--container-gap) * 2));
+			background-color: rgba(var(--blue-rgb), 0.4);
+			margin: 0 auto;
+			height: 1px;
+		}
 	}
 
 	&__title {
