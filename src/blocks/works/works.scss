@@ -2,48 +2,104 @@
 
 .works {
 	$self: &;
+	margin-bottom: 100px;
+	
+	@include media('<=xs') {
+		margin-bottom: 60px;
+	}
 
 	&__inner {
 
 	}
 
 	&__top {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 60px;
+		gap: 24px;
 
+		@include media('<=xs') {
+			margin-bottom: 32px;
+		}
 	}
 
 	&__title {
 
 	}
 
-	&__button {
+	&__button.button {
+		margin-left: auto;
 
+		@include media('<=sm') {
+			display: none;
+		}
 	}
 
 	&__slider {
-
+		position: relative;
+		
+		@include media('<=sm') {
+			margin-bottom: 24px;
+		}
 	}
 
 	&__cards {
 
+		&.swiper {
+			@include media('<=xs') {
+				padding-top: 0;
+				margin-left: -24px;
+				margin-right: -24px;
+				padding-left: 24px;
+				padding-right: 24px;
+			}
+	
+			@include media('<=xxs') {
+				margin-left: -12px;
+				margin-right: -12px;
+				padding-left: 12px;
+				padding-right: 12px;
+			}
+		}
 	}
 
-	&__card {
-
+	&__card.swiper-slide {
+		display: flex;
+		height: 500px;
 	}
 
 	&__controls {
 
+		@include media('<=xs') {
+			display: none;
+		}
 	}
 
 	&__control {
-
-		&_next {
-			
-		}
+		position: absolute;
+		z-index: 2;
+		top: calc(50% - 20px);
 
 		&_prev {
-			
+			left: -18px;
+		}
+
+		&_next {
+			right: -18px;
+		}
+
+		&.hidden {
+			display: none;
 		}
 	}
 
+	&__mobile-button.button {
+		display: none;
+		margin: 0 auto;
+
+		@include media('<=sm') {
+			display: flex;
+		}
+	}
 }

@@ -3,6 +3,10 @@
 .unity {
 	$self: &;
 	margin-bottom: 100px;
+	
+	@include media('<=xs') {
+		margin-bottom: 60px;
+	}
 
 	&__inner {
 
