@@ -1,0 +1,203 @@
+@use 'lib' as *;
+
+.warranty {
+	$self: &;
+	margin-bottom: 100px;
+
+	@include media('<=xs') {
+		margin-bottom: 60px;
+	}
+
+	&__inner {
+
+	}
+
+	&__title {
+		margin-bottom: 60px;
+
+		@include media('<=xs') {
+			margin-bottom: 50px;
+		}
+	}
+
+	&__cards {
+		display: flex;
+		flex-flow: row wrap;
+		margin: 0 -12px;
+		gap: 24px 0;
+		
+		@include media('<=xs') {
+			margin: 0 -8px;
+			gap: 16px 0;
+		}
+		
+		@include media('<=xxs') {
+			gap: 8px;
+		}
+	}
+
+	&__card {
+		margin: 0 12px;
+		display: flex;
+		flex-flow: column nowrap;
+
+		@include media('>md') {
+			width: calc(99.9% / 3 - 24px);
+
+
+			&:nth-child(6n + 1), &:nth-child(6n + 3) {
+				padding-top: 40px;
+				padding-bottom: 40px;
+			} 
+			
+			&:nth-child(6n + 2) {
+				margin-top: -40px;
+				margin-bottom: -40px;
+			}
+
+			&:nth-child(6n + 4), &:nth-child(6n + 6) {
+				margin-top: -40px;
+				margin-bottom: -40px;
+
+				#{$self}__card-body::before {
+					content: '';
+					height: 54px;
+					display: block;
+				}
+			} 
+			
+			&:nth-child(6n + 5) {
+				padding-top: 40px;
+				padding-bottom: 40px;
+			}
+
+			&:nth-child(-n + 3) {
+				padding-top: 0;
+				margin-top: 0;
+			}
+			
+			&:nth-last-child(-n + 3) {
+				padding-bottom: 0;
+				margin-bottom: 0;
+				
+				#{$self}__card-body {
+					padding-bottom: 30px;
+				}
+			}
+		}
+
+		@include media('<=md', '>xxs') {
+			width: calc(99.9% / 2 - 24px);
+
+			&:nth-child(4n + 1) {
+				padding-top: 40px;
+				padding-bottom: 40px;
+			} 
+			
+			&:nth-child(4n + 2) {
+				margin-top: -40px;
+				margin-bottom: -40px;
+			}
+
+			&:nth-child(4n + 3) {
+				margin-top: -40px;
+				margin-bottom: -40px;
+			} 
+			
+			&:nth-child(4n + 4) {
+				padding-top: 40px;
+				padding-bottom: 40px;
+			}
+
+			&:nth-child(-n + 2) {
+				padding-top: 0;
+				margin-top: 0;
+			}
+			
+			&:nth-last-child(-n + 2) {
+				padding-bottom: 0;
+				margin-bottom: 0;
+			}
+		}
+
+		@include media('<=xs') {
+			width: calc(99.9% / 2 - 16px);
+			margin: 0 8px;
+		}
+
+		@include media('<=xxs') {
+			width: calc(99.9% - 16px);
+		}
+
+		&_inverse &-body {
+
+			@include media('<=md') {
+				background-color: var(--cloud);
+			}
+
+			@include media('<=xxs') {
+				background-color: #f4f4f4;
+			}
+		}
+
+		&_blue-inverse &-body {
+			background-color: var(--cloud);
+			
+			@include media('<=md') {
+				background-color: #f4f4f4;
+			}
+			
+			@include media('<=xxs') {
+				background-color: var(--cloud);
+			}
+		}
+		
+		&_blue &-body {
+			background-color: var(--cloud);
+		}
+		
+		&_blue-1 &-body {
+			background: url('./images/parquet-3.svg') left 25% top -15% / auto no-repeat var(--cloud);	
+		}
+		
+		&_blue-2 &-body {
+			background: url('./images/parquet-4.svg') left 25% top 10% / auto no-repeat var(--cloud);	
+		}
+	}
+	
+	&__card-body {
+		border: 1px solid rgba(var(--black-rgb), 0.15);
+		border-radius: 20px;
+		background-color: #f4f4f4;
+		padding: 70px 32px 50px;
+		flex-grow: 1;
+		display: flex;
+		flex-flow: column nowrap;
+		gap: 26px;
+		
+		@include media('<=md') {
+			padding: 50px 24px 40px;
+		}
+		
+		@include media('<=xs') {
+			border-radius: 15px;
+			padding: 40px 16px;
+			gap: 16px;
+		}
+	}
+
+	&__card-title {
+		font-size: fluid(24px, 18px);
+		font-weight: 600;
+		margin-bottom: 6px;
+	}
+	
+	&__card-text {
+		font-size: fluid(18px, 14px);
+		margin: 0;
+
+		strong {
+			font-weight: 500;
+		}
+	}
+}

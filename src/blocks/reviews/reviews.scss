@@ -1,0 +1,61 @@
+@use 'lib' as *;
+
+.reviews {
+	$self: &;
+
+	&__inner {
+
+	}
+
+	&__top {
+
+	}
+
+	&__title {
+
+	}
+
+	&__respond {
+
+	}
+
+	&__middle {
+
+	}
+
+	&__yandex {
+
+	}
+
+	&__yandex-text {
+
+	}
+
+	&__yandex-value {
+
+	}
+
+	&__controls {
+
+	}
+
+	&__control {
+
+		&_next {
+			
+		}
+
+		&_prev {
+			
+		}
+	}
+
+	&__slider {
+
+	}
+
+	&__progress {
+
+	}
+
+}

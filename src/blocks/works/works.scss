@@ -1,0 +1,49 @@
+@use 'lib' as *;
+
+.works {
+	$self: &;
+
+	&__inner {
+
+	}
+
+	&__top {
+
+	}
+
+	&__title {
+
+	}
+
+	&__button {
+
+	}
+
+	&__slider {
+
+	}
+
+	&__cards {
+
+	}
+
+	&__card {
+
+	}
+
+	&__controls {
+
+	}
+
+	&__control {
+
+		&_next {
+			
+		}
+
+		&_prev {
+			
+		}
+	}
+
+}

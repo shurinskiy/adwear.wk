@@ -1,0 +1,19 @@
+.rating {
+	$self: &;
+	display: flex;
+	justify-content: center;
+	gap: 4px;
+
+	&__star {
+		width: 24px;
+		height: 23px;
+		fill: transparent;
+		stroke-width: 1;
+		stroke: #bbb;
+		
+		&.active {
+			stroke: #FFCC00;
+			fill: #FFCC00;
+		}
+	}
+}

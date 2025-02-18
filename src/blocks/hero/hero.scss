@@ -14,7 +14,8 @@
 		
 		@include media('<=xs') {
 			background-size: 1600px auto;
-			padding: 20px 0 42px;
+			padding-bottom: 42px;
+			padding-top: 20px;
 		}
 	}
 
@@ -96,6 +97,13 @@
 	}
 
 	&__items.swiper {
+
+		@include media('<=xs') {
+			margin-left: -24px;
+			margin-right: -24px;
+			padding-left: 24px;
+			padding-right: 24px;
+		}
 
 		@include media('<=xxs') {
 			margin-left: -12px;
@@ -197,7 +205,7 @@
 			display: none;
 		}
 
-		@include media('<=xxs') {
+		@include media('<=xs') {
 			display: none;
 		}
 	}

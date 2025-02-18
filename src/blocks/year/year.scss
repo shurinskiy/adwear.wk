@@ -4,6 +4,10 @@
 	$self: &;
 	margin-bottom: 100px;
 
+	@include media('<=xs') {
+		margin-bottom: 40px;
+	}
+
 	&__inner {
 		padding: 85px 0;
 		background: url('./images/parquet-2.svg') center / 170% auto no-repeat #fff;
