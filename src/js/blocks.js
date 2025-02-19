@@ -7,3 +7,4 @@ import "../blocks/culture/culture.js";
 import "../blocks/reviews/reviews.js";
 import "../blocks/service/service.js";
 import "../blocks/works/works.js";
+import "../blocks/price/price.js";

@@ -2,17 +2,14 @@
 	$self: &;
 	display: flex;
 	justify-content: center;
-	gap: 4px;
+	gap: 8px;
 
 	&__star {
-		width: 24px;
-		height: 23px;
-		fill: transparent;
-		stroke-width: 1;
-		stroke: #bbb;
+		width: 32px;
+		height: 30px;
+		fill: #dfdfdf;
 		
 		&.active {
-			stroke: #FFCC00;
 			fill: #FFCC00;
 		}
 	}

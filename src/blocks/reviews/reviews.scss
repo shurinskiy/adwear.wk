@@ -2,41 +2,93 @@
 
 .reviews {
 	$self: &;
+	margin-bottom: 100px;
+	
+	@include media('<=xs') {
+		margin-bottom: 60px;
+	}
 
 	&__inner {
-
+		display: flex;
+		flex-flow: column nowrap;
 	}
 
 	&__top {
+		display: flex;
+		margin-bottom: 60px;
+		justify-content: space-between;
+		gap: 24px;
 
+		@include media('<=md') {
+			display: contents;
+		}
+	}
+
+	&__head {
+
+		@include media('<=md') {
+			margin-bottom: 24px;
+		}
 	}
 
 	&__title {
+		margin-bottom: 24px;
+		
+		&.title {
+			
+			@include media('<=md') {
+				text-align: center;
+			}
+		}
+	}
+
+	&__ya {
+		display: flex;
+		align-items: center;
+		gap: 14px 40px;
+
+		@include media('<=md') {
+			flex-flow: column nowrap;
+			justify-content: center;
+		}
+	}
+
+	&__ya-text {
+		font-size: 18px;
+
+		span {
+			color: #F32C11;
+		}
+	}
+
+	&__ya-value {
+		font-size: 24px;
+		font-weight: 600;
+		line-height: 1.0;
+		display: flex;
+		align-items: center;
+		gap: 24px;
+	}
+
+	&__ya-rating {
 
 	}
 
-	&__respond {
+	&__navi {
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: flex-end;
+		gap: 24px;
 
-	}
-
-	&__middle {
-
-	}
-
-	&__yandex {
-
-	}
-
-	&__yandex-text {
-
-	}
-
-	&__yandex-value {
-
+		@include media('<=md') {
+			align-items: center;
+			order: 1;
+		}
 	}
 
 	&__controls {
-
+		display: flex;
+		gap: 6px;
 	}
 
 	&__control {
@@ -50,12 +102,46 @@
 		}
 	}
 
+	&__respond {
+		@include media('<=md') {
+			order: 1;
+		}
+	}
+
 	&__slider {
+		width: 100%;
+
+		.swiper-wrapper {
+			margin-bottom: 40px;
+		}
+
+		@include media('<=md') {
+			margin-bottom: 40px;
+		}
+	}
+
+	&__card {
 
 	}
 
 	&__progress {
+		width: 100%;
+		height: 2px;
+		background-color: rgba(var(--black-rgb), 0.1);
+		border-radius: 10px;
+		position: relative;
 
+		&::before {
+			content: '';
+			display: block;
+			width: calc(var(--progress) * 1%);
+			background-color: var(--blue);
+			transition: width 0.4s;
+			position: absolute;
+			height: 100%;
+			z-index: 1;
+			left: 0;
+			top: 0;
+		}
 	}
-
 }

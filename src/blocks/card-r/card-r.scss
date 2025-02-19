@@ -2,25 +2,68 @@
 
 .card-r {
 	$self: &;
+	border: 1px solid rgba(var(--black-rgb), 0.1);
+	background-color: #fff;
+	border-radius: 20px;
+	padding: 22px 24px;
+	
+	@include media('<=xs') {
+		border-radius: 15px;
+		padding: 16px;
+	}
 
 	&__top {
-
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 8px;
+		gap: 16px;
 	}
 
 	&__title {
+		font-weight: 600;
+		font-size: fluid(14px, 12px);
+	}
 
+	&__rating.rating {
+		gap: 5px;
+		
+		@include media('<=xs') {
+			gap: 4px;
+		}
+		
+		svg {
+			width: 19px;
+			height: 18px;
+			
+			@include media('<=xs') {
+				width: 14px;
+				height: 13px;
+			}
+		}
 	}
 
 	&__date {
-
+		color: rgba(var(--black-rgb), 0.5);
+		font-size: fluid(12px, 10px);
 	}
-
+	
 	&__text {
-
+		padding-top: 20px;
+		margin-bottom: 24px;
+		line-height: 1.45;
+		font-size: 14px;
+		font-size: fluid(14px, 12px);
+		
+		@include media('<=xs') {
+			padding-top: 8px;
+			margin-bottom: 6px;
+		}
 	}
-
+	
 	&__link {
-
+		text-decoration: none;
+		color: rgba(var(--black-rgb), 0.5);
+		font-size: fluid(12px, 10px);
 	}
-
 }
