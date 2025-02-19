@@ -3,10 +3,29 @@
 .unity {
 	$self: &;
 	margin-bottom: 100px;
+
+	@keyframes unityItemShow {
+		from { opacity: 0; translate: -100% 0; }
+		to { opacity: 1; translate: 0 0; }
+	}
 	
 	@include media('<=xs') {
 		margin-bottom: 60px;
 	}
+
+	
+	&.run &__item {
+		animation-fill-mode: forwards;
+		animation-duration: 1.0s;
+		animation-name: unityItemShow;
+
+		@for $i from 1 through 10 {
+			&:nth-child(#{$i}) {
+				animation-delay: #{$i * 0.2}s;
+			}
+		}
+	}
+
 
 	&__inner {
 
@@ -32,6 +51,7 @@
 	}
 
 	&__items {
+		overflow: hidden;
 		counter-reset: unityCount;
 	}
 
@@ -40,6 +60,7 @@
 		padding-left: fluid(110px, 70px);
 		border-top: 1px solid rgba(var(--black-rgb), 0.1);
 		position: relative;
+		opacity: 0;
 		
 		&::before {
 			display: block;

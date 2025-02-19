@@ -58,7 +58,7 @@
 		animation-delay: 1s;
 		
 		&_inverse #{$self}__part {
-			animation: marqueeBack 15s linear infinite;
+			animation: marqueeBack 20s linear infinite;
 		}
 		
 		&:hover #{$self}__part {
@@ -70,7 +70,7 @@
 		display: flex;
 		flex-shrink: 0;
 		justify-content: space-between;
-		animation: marquee 15s linear infinite;
+		animation: marquee 20s linear infinite;
 		gap: 30px;
 		min-width: 1400px;
 		padding-right: 30px;

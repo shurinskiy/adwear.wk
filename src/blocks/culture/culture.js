@@ -1,12 +1,17 @@
 import Swiper from 'swiper';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Autoplay } from 'swiper/modules';
 
 (() => {
 	new Swiper(document.querySelector('.culture__items.swiper'), {
-		modules: [Navigation],
+		modules: [Navigation, Autoplay],
 		watchOverflow: true,
 		spaceBetween: 24,
 		threshold: 10,
+		loop: true,
+		autoplay: {
+			delay: 4000,
+			disableOnInteraction: true,
+		},
 		navigation: {
 			nextEl: '.culture__control_next',
 			prevEl: '.culture__control_prev',
