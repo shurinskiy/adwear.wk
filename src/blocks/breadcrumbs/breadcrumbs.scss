@@ -1,0 +1,26 @@
+@use 'lib' as *;
+
+.breadcrumbs {
+	$self: &;
+	display: flex;
+	align-items: center;
+	font-size: fluid(16px, 12px);
+	color: var(--blue);
+	gap: 4px;
+	
+	&__link {
+		display: flex;
+		text-decoration: none;
+		color: inherit;
+		gap: 4px;
+		
+		&::after {
+			display: block;
+			content: '>';
+		}
+	}
+
+	&__current {
+
+	}
+}

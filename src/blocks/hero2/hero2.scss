@@ -1,0 +1,157 @@
+@use 'lib' as *;
+
+.hero2 {
+	$self: &;
+	padding-top: 50px;
+	margin-bottom: 65px;
+	
+	@include media('<=xs') {
+		padding-top: 24px;
+	}
+
+	&__inner {
+
+	}
+
+	&__top {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		margin-bottom: 24px;
+		grid-gap: 24px;
+		
+		@include media('<=xs') {
+			grid-template-columns: 1fr;
+			margin-bottom: 12px;
+		}
+	}
+	
+	&__side {
+		background-color: #fff;
+		padding: 24px 32px 48px;
+		border-radius: 30px;
+		display: flex;
+		flex-flow: column nowrap;
+		gap: 30px;
+		
+		@include media('<=lg') {
+			padding: 24px;
+		}
+		
+		@include media('<=sm') {
+			grid-gap: 16px;
+		}
+
+		@include media('<=xs') {
+			border-radius: 15px;
+			padding: 24px 16px;
+		}
+	}
+
+	&__breadcrumbs {
+		@include media('<=xs') {
+			margin-bottom: 30px;
+		}
+	}
+
+	&__title {
+		color: var(--text);
+		margin-top: auto;
+		font-weight: 500;
+		font-size: fluid(50px, 24px);
+
+		@include media('<=xs') {
+			text-align: center;
+
+			br {
+				display: none;
+			}
+		}
+	}
+
+	&__text {
+		font-size: fluid(18px, 14px);
+		color: var(--text);
+		line-height: 1.5;
+		max-width: 500px;
+
+		@include media('<=xs') {
+			text-align: center;
+		}
+
+		p {
+			margin: 0;
+		}
+	}
+
+	&__discuss.discuss {
+
+		@include media('<=sm') {
+			display: grid;
+			grid-gap: 10px 16px;
+			grid-template-columns: repeat(2, 1fr);
+			justify-items: center;
+		}
+	}
+
+	&__image {
+		overflow: hidden;
+		border-radius: 30px;
+
+		@include media('<=xs') {
+			border-radius: 15px;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			display: block;
+			object-fit: cover;
+		}
+	}
+
+	&__plates {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap: 24px;
+		
+		@include media('<=xs') {
+			grid-template-columns: 1fr;
+			grid-gap: 10px;
+		}
+	}
+
+	&__plate {
+		background-color: #fff;
+		color: var(--text);
+		padding: 38px 24px;
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		border-radius: 20px;
+		font-size: fluid(18px, 14px);
+		line-height: 1.5;
+		font-weight: 300;
+		
+		@include media('<=lg') {
+			padding: 16px 24px;
+		}
+		
+		@include media('<=sm') {
+			br {
+				display: none;
+			}
+		}
+		
+		@include media('<=xs') {
+			border-radius: 15px;
+			padding: 28px 22px;
+		}
+		
+		&_inverse {
+			background-color: var(--blue);
+			color: #fff;
+		}
+	}
+}

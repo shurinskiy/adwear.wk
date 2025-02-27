@@ -95,6 +95,10 @@
 		@include media('<=sm') {
 			margin: 0 auto;
 		}
+
+		@include media('<=xxs') {
+			margin: 0;
+		}
 	}
 
 	&__slider.swiper {

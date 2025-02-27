@@ -1,0 +1,102 @@
+@@include("_head.html", {"id":"inner"}) 
+@@include("_header.html")
+
+<section class="hero2">
+	<div class="hero2__inner container">
+		<div class="hero2__top">
+			<div class="hero2__side">
+				<div class="hero2__breadcrumbs breadcrumbs">
+					<a class="breadcrumbs__link" href="./">Главная</a>
+					<span class="breadcrumbs__current">Пошив одежды оптом</span>
+				</div>
+				<h2 class="hero2__title">Пошив одежды<br/> на заказ</h2>
+				<div class="hero2__text">
+					<p>Изделия любой сложности: разработка лекала, пошив образца, запуск тиража.</p>
+					<p>Индивидуальный подбор фурнитуры и материалов под ваше изделие</p>
+				</div>
+				<div class="hero2__discuss discuss">
+					<a class="discuss__button button" href="./">Обсудить проект</a>
+					<a class="discuss__social" href="./"><svg><use xlink:href="#soc-tgrm"></use></svg></a>
+					<a class="discuss__social" href="./"><svg><use xlink:href="#soc-wapp"></use></svg></a>
+				</div>
+			</div>
+			<div class="hero2__image">
+				<img src="./images/stuff/hero2/hero2-image.webp" alt="">
+			</div>
+		</div>
+		<div class="hero2__plates">
+			<div class="hero2__plate">Изготавливаем эксклюзивные модели<br/> на профессиональном швейном<br/> оборудовании</div>
+			<div class="hero2__plate">Большой выбор качественных<br/> тканей и премиальной<br/> фурнитуры</div>
+			<div class="hero2__plate hero2__plate_inverse">Бесплатная доставка<br/> тиража по Москве<br/> в пределах МКАД</div>
+		</div>
+	</div>
+</section>
+
+<section class="samples" data-samples-js>
+	<div class="samples__inner container">
+		<h2 class="samples__title title">Примеры изделий</h2>
+		<div class="samples__top">
+			<div class="samples__text">За счет опыта конструирования разных типов изделий, производство способно воплотить пожелания заказчика от концептуальной идеи до отшива</div>
+			<div class="samples__controls">
+				<button class="samples__control samples__control_prev control">
+					<svg><use xlink:href="#arr-left"></use></svg>
+				</button>
+				<button class="samples__control samples__control_next control">
+					<svg><use xlink:href="#arr-right"></use></svg>
+				</button>
+			</div>
+		</div>
+		<div class="samples__slider swiper">
+			<div class="swiper-wrapper">
+				@@include("_card-s.html", { cls: 'samples__card', image: 19, title: 'Футболка с логотипом "Градиент"'})
+				@@include("_card-s.html", { cls: 'samples__card', image: 17, title: 'Куртка'})
+				@@include("_card-s.html", { cls: 'samples__card', image: 20, title: 'Бомбер'})
+				@@include("_card-s.html", { cls: 'samples__card', image: 8, title: 'Толстовка'})
+				@@include("_card-s.html", { cls: 'samples__card', image: 4, title: 'Униформа'})
+				@@include("_card-s.html", { cls: 'samples__card', image: 12, title: 'Сумка'})
+			</div>
+			<div class="samples__progress"></div>
+		</div>
+	</div>
+</section>
+
+<section class="reviews" data-reviews-js>
+	<div class="reviews__inner container">
+		<div class="reviews__top">
+			<div class="reviews__head">
+				<h2 class="reviews__title title">Вот что пишут о нас наши клиенты</h2>
+				<div class="reviews__ya">
+					<div class="reviews__ya-text">наш рейтинг на <span>Яндекс</span>.Картах</div>
+					<div class="reviews__ya-value">
+						<span>5.0</span>
+						@@include("_rating.html", { cls: "reviews__ya-rating", rate: "4.8"})
+					</div>
+				</div>
+			</div>
+			<div class="reviews__navi">
+				<a class="reviews__respond button button_empty" href="./">Оставить свой отзыв</a>
+				<div class="reviews__controls">
+					<button class="reviews__control reviews__control_prev control">
+						<svg><use xlink:href="#arr-left"></use></svg>
+					</button>
+					<button class="reviews__control reviews__control_next control">
+						<svg><use xlink:href="#arr-right"></use></svg>
+					</button>
+				</div>
+			</div>
+		</div>
+		<div class="reviews__slider swiper">
+			<div class="swiper-wrapper">
+				@@include("_card-r.html", { cls: "reviews__card", rate: "4.7"})
+				@@include("_card-r.html", { cls: "reviews__card", rate: "4.7"})
+				@@include("_card-r.html", { cls: "reviews__card", rate: "4.7"})
+				@@include("_card-r.html", { cls: "reviews__card", rate: "4.7"})
+				@@include("_card-r.html", { cls: "reviews__card", rate: "4.7"})
+			</div>
+			<div class="reviews__progress"></div>
+		</div>
+
+	</div>
+</section>
+
+@@include("_bottom.html")

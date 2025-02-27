@@ -110,12 +110,30 @@
 
 	&__slider {
 		width: 100%;
-
-		.swiper-wrapper {
-			margin-bottom: 40px;
+		
+		&.swiper {
+			@include media('<=md') {
+				margin-bottom: 40px;
+			}
+			
+			@include media('<=xs') {
+				width: auto;
+				margin-left: -24px;
+				margin-right: -24px;
+				padding-top: 0;
+				padding-left: 24px;
+				padding-right: 24px;
+			}
+	
+			@include media('<=xxs') {
+				margin-left: -12px;
+				margin-right: -12px;
+				padding-left: 12px;
+				padding-right: 12px;
+			}
 		}
 
-		@include media('<=md') {
+		.swiper-wrapper {
 			margin-bottom: 40px;
 		}
 	}
@@ -139,7 +157,6 @@
 			transition: width 0.4s;
 			position: absolute;
 			height: 100%;
-			z-index: 1;
 			left: 0;
 			top: 0;
 		}

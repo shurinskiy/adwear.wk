@@ -2,6 +2,7 @@ import * as ymaps3 from 'ymaps3';
 
 (async function initMap() {
 	const rootContainer = document.querySelector('[data-contact-js]');
+	if (! rootContainer) return;
 
 	try {
 		await ymaps3.ready;

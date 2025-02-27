@@ -1,0 +1,104 @@
+@use 'lib' as *;
+
+.samples {
+	$self: &;
+
+	&__inner {
+
+	}
+
+	&__title {
+		margin-bottom: 24px;
+	}
+	
+	&__top {
+		margin-bottom: 32px;
+		display: flex;
+		justify-content: space-between;
+		gap: 24px;
+
+		@include media('<=xs') {
+			margin-bottom: 24px;
+		}
+	}
+
+	&__text {
+		font-size: fluid(18px, 14px);
+		font-weight: 300;
+		max-width: 700px;
+
+		@include media('<=xs') {
+			text-align: center;
+			line-height: 1.4;
+		}
+	}
+
+	&__controls {
+		display: flex;
+		gap: 6px;
+
+		@include media('<=xs') {
+			display: none;
+		}
+	}
+
+	&__control {
+
+		&_prev {
+			
+		}
+
+		&_next {
+			
+		}
+	}
+
+	&__slider.swiper {
+		padding-bottom: 140px;
+
+		@include media('<=xs') {
+			width: auto;
+			margin-left: -24px;
+			margin-right: -24px;
+			padding-left: 24px;
+			padding-right: 24px;
+			padding-bottom: 100px;
+		}
+
+		@include media('<=xxs') {
+			margin-left: -12px;
+			margin-right: -12px;
+			padding-left: 12px;
+			padding-right: 12px;
+		}
+	}
+
+	&__card.swiper-slide {
+		height: auto;
+	}
+
+	&__progress {
+		width: 100%;
+		height: 2px;
+		background-color: rgba(var(--black-rgb), 0.1);
+		border-radius: 10px;
+		position: absolute;
+		bottom: 100px;
+		
+		@include media('<=xs') {
+			bottom: 60px;
+		}
+
+		&::before {
+			content: '';
+			display: block;
+			width: calc(var(--progress) * 1%);
+			background-color: var(--blue);
+			transition: width 0.4s;
+			position: absolute;
+			height: 100%;
+			left: 0;
+			top: 0;
+		}
+	}
+}

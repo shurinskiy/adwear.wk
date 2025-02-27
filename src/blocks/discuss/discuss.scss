@@ -7,7 +7,15 @@
 	display: flex;
 	gap: 10px;
 
-	&__button {
+	&_wide &__button.button {
+		
+		@include media('<=xxs') {
+			width: 100%;
+			padding: 0 16px;
+		}
+	}
+
+	&__button.button {
 		grid-column: span 2;
 	}
 	
