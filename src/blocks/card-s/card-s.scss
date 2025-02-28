@@ -21,6 +21,7 @@
 		border-radius: 20px;
 		border: 1px solid rgba(var(--black-rgb), 0.1);
 		background-color: #fff;
+		pointer-events: none;
 		min-height: 100%;
 
 		@include media('<=xs') {
@@ -32,6 +33,7 @@
 		@extend %reset-button;
 		border: 1px solid rgba(var(--black-rgb), 0.15);
 		background-color: #fff;
+		pointer-events: all;
 		border-radius: 5px;
 		display: flex;
 		align-items: center;

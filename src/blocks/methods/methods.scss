@@ -1,6 +1,6 @@
 @use 'lib' as *;
 
-.service {
+.methods {
 	$self: &;
 	margin-bottom: 100px;
 	
@@ -17,12 +17,12 @@
 	}
 	
 	&__text {
-		margin-bottom: 45px;
+		margin-bottom: 50px;
 		font-size: fluid(18px, 14px);
+		font-weight: 300;
 
 		@include media('<=xs') {
-			text-align: center;
-			margin-bottom: 32px;
+			margin-bottom: 38px;
 		}
 	}
 
@@ -31,7 +31,6 @@
 	}
 
 	&__cards.swiper {
-		padding-top: 45px;
 		
 		@include media('<=xs') {
 			padding-top: 0;
@@ -51,38 +50,10 @@
 
 	&__card {
 
-		&_up {
-			@include media('>xs') {
-				translate: 0 -45px;
-			}
-		}
+	}
 
-		&-image {
-			height: 460px;
-			overflow: hidden;
-			border-radius: 20px;
-			
-			@include media('<=xs') {
-				border-radius: 15px;
-			}
+	&__controls {
 
-			img {
-				object-fit: cover;
-				display: block;
-				height: 100%;
-				width: 100%;
-			}
-		}
-	
-		&-name {
-			padding-top: 30px;
-			font-weight: 500;
-			font-size: fluid(18px, 16px);
-			
-			@include media('<=xs') {
-				padding-top: 12px;
-			}
-		}
 	}
 
 	&__controls {

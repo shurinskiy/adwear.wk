@@ -5,9 +5,15 @@
 	overflow: hidden;
 	border-radius: 20px;
 	border: 1px solid rgba(var(--black-rgb), 0.1);
-	flex-flow: column nowrap;
 	display: flex;
-	
+	flex-flow: column nowrap;
+	text-decoration: none;
+	color: inherit;
+
+	&:hover &__text svg {
+		translate: 5px 0;
+	}
+
 	&__image {
 		flex-grow: 1;
 		overflow: hidden;
@@ -32,10 +38,6 @@
 		flex-shrink: 0;
 		height: 95px;
 		gap: 20px;
-
-		&:hover svg {
-			translate: 5px 0;
-		}
 	
 		svg {
 			transition: translate 0.3s;

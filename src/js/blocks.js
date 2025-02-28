@@ -11,3 +11,6 @@ import "../blocks/price/price.js";
 import "../blocks/skill/skill.js";
 import "../blocks/card-s/card-s.js";
 import "../blocks/samples/samples.js";
+import "../blocks/atyour/atyour.js";
+import "../blocks/methods/methods.js";
+import "../blocks/article/article.js";

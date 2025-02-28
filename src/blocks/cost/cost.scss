@@ -1,0 +1,85 @@
+@use 'lib' as *;
+
+.cost {
+	$self: &;
+	margin-bottom: 100px;
+	color: #fff;
+	
+	@include media('<=xs') {
+		margin-bottom: 60px;
+	}
+
+	&__inner {
+
+	}
+	
+	&__body {
+		display: block;
+		grid-template-columns: repeat(2, 1fr);
+		border-radius: 20px;
+		overflow: hidden;
+		
+		@include media('>sm') {
+			display: grid;
+			height: 420px;
+		}
+	}
+
+	&__side {
+		grid-column: span 1;
+		padding: 35px 30px;
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: center;
+		background-color: var(--blue);
+		gap: 32px;
+	}
+	
+	&__title.title {
+		color: #fff;
+
+		@include media('<=sm') {
+			text-align: center;
+		}
+	}
+	
+	&__text {
+		font-size: fluid(18px, 14px);
+
+		@include media('<=sm') {
+			text-align: center;
+		}
+	}
+	
+	&__button.button {
+		background-color: #fff;
+		color: var(--blue);
+
+		@include media('<=sm') {
+			margin: 0 auto;
+		}
+	}
+	
+	&__image {
+		grid-column: span 1;
+
+		@include media('<=sm') {
+			height: 280px;
+		}
+
+		@include media('<=xs') {
+			height: 280px;
+		}
+
+		@include media('<=xxs') {
+			height: 230px;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			display: block;
+			object-fit: cover;
+		}
+	}
+}

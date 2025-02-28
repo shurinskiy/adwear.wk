@@ -64,11 +64,12 @@
 		"from": "src/**/[^-]*.html",
 		"to": "src/blocks",
 		"js": "src/js/blocks.js",
-		"omit": "@@,js-,active,opened,svg,sprite,icon-box,swiper,gap",
+		"omit": "@@,js-,active,opened,hidden,svg,sprite,icon-box,swiper,gap",
 		"prefix": "@use 'lib' as *;",
 		"suffix": "$self: &;"
 	},
 	"dependencies": {
+		"@fancyapps/ui": "^5.0.36",
 		"@yandex/ymaps3-default-ui-theme": "^0.0.19",
 		"enquire.js": "^2.1.6",
 		"scroll-lock": "^2.1.5",

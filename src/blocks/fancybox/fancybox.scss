@@ -1,0 +1,41 @@
+@use 'lib' as *;
+@use "../../node_modules/@fancyapps/ui/dist/fancybox/fancybox";
+
+.fancybox {
+	$self: &;
+
+	&__container {
+		--fancybox-bg: rgba(var(--blue-rgb), 0.6);
+		backdrop-filter: blur(3px);
+	}
+
+	&__content {
+		border-radius: 6px;
+		overflow: hidden;
+
+		@include media('<=sm') {
+			border-radius: 0;
+		}
+	}
+
+	&__html5video {
+		outline: none;
+	}
+
+	&__toolbar {
+		--f-button-color: #fff;
+		--f-button-bg: transparent;
+		--f-button-hover-bg: rgba(var(--blue-rgb), 0.8);
+	}
+
+	&__footer {
+
+		.is-classic .is-nav-selected .f-thumbs__slide__button::after {
+			border-color: var(--orange);
+		}
+
+		.f-thumbs__slide__button {
+			background-color: #fff;
+		}
+	}
+}

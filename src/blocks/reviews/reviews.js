@@ -33,23 +33,23 @@ import { Navigation, Autoplay } from 'swiper/modules';
 				spaceBetween: 16,
 				slidesPerView: 1.15,
 			},
-			480: {
+			481: {
 				spaceBetween: 16,
 				slidesPerView: 1.5,
 			},
-			640: {
+			641: {
 				spaceBetween: 16,
 				slidesPerView: 2.0,
 			},
-			780: {
+			781: {
 				spaceBetween: 16,
 				slidesPerView: 2.2,
 			},
-			960: {
+			961: {
 				spaceBetween: 24,
 				slidesPerView: 2.7,
 			},
-			1100: {
+			1101: {
 				spaceBetween: 24,
 				slidesPerView: 3,
 			}

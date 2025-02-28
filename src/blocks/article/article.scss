@@ -1,0 +1,111 @@
+@use 'lib' as *;
+
+.article {
+	$self: &;
+	margin-bottom: 100px;
+	
+	@include media('<=xs') {
+		margin-bottom: 60px;
+	}
+
+	&__inner {
+		font-weight: 300;
+		line-height: 1.55;
+		background-color: #fff;
+		border-radius: 30px;
+		padding-top: 40px;
+		padding-bottom: 40px;
+		font-size: fluid(18px, 12px);
+
+		@include media('<=xs') {
+			border-radius: 0;
+		}
+
+		p {
+			margin-bottom: 24px;
+		}
+
+		strong {
+			font-weight: 500;
+		}
+
+		li {
+			padding-left: 10px;
+
+			&::before {
+				display: inline-block;
+				content: '\2022';
+				margin-right: 10px;
+			}
+		}
+	}
+
+	&__top {
+		display: flex;
+		align-items: flex-start;
+		margin-bottom: 24px;
+		max-width: 1030px;
+		gap: 60px;
+
+		@include media('<=md') {
+			gap: 40px;
+		}
+		
+		@include media('<=xs') {
+			flex-flow: column nowrap;
+			gap: 24px;
+		}
+	}
+	
+	&__image {
+		max-width: 370px;
+		min-width: 250px;
+		width: 100%;
+		border-radius: 1000px;
+		overflow: hidden;
+		margin: 0 auto;
+
+		@include media('<=xs') {
+			width: 78%;
+		}
+
+		img {
+			display: block;
+		}
+	}
+
+	&__side {
+		max-width: 600px;
+	}
+
+	&__body {
+		max-width: 1030px;
+	}
+
+	&__hidden {
+		animation: fadeIn 0.3s;
+
+		&.hidden {
+			display: none;
+		}
+	}
+
+	&__more {
+		@extend %reset-button;
+		font-weight: 500;
+		font-size: fluid(18px, 16px);
+		display: flex;
+		align-items: center;
+		gap: 18px;
+		
+		@include media('<=xs') {
+			gap: 16px;
+		}
+
+		svg {
+			fill: var(--blue);
+			height: 9px;
+			width: 15px;
+		}
+	}
+}

@@ -1,0 +1,70 @@
+@use 'lib' as *;
+
+.card-m {
+	$self: &;
+	display: block;
+	color: inherit;
+	text-decoration: none;
+	border: 1px solid rgba(var(--black-rgb), 0.1);
+	background-color: #fff;
+	border-radius: 20px;
+	overflow: hidden;
+
+	@include media('<=xs') {
+		border-radius: 15px;
+	}
+		
+	&:hover &__bottom svg {
+		translate: 5px 0;
+	}
+
+	&__image {
+		height: fluid(270px, 200px);
+
+		img {
+			width: 100%;
+			height: 100%;
+			display: block;
+			object-fit: cover;
+		}
+	}
+
+	&__body {
+		padding: 20px 30px;
+		
+		@include media('<=xs') {
+			padding: 20px 15px;
+		}
+	}
+
+	&__title {
+		font-size: fluid(18px, 14px);
+		margin-bottom: 10px;
+		font-weight: 500;
+	}
+
+	&__bottom {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 24px;
+	
+		svg {
+			transition: translate 0.3s;
+			translate: -5px 0;
+			width: 24px;
+			height: 20px;
+			flex-shrink: 0;
+			fill: var(--blue);
+			
+			@include media('<=xs') {
+				height: 16px;
+				width: 18px;
+			}
+		}
+	}
+
+	&__text {
+		font-size: fluid(14px, 12px);
+	}
+}

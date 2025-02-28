@@ -2,14 +2,14 @@ import Swiper from 'swiper';
 import { Navigation } from 'swiper/modules';
 
 (() => {
-	new Swiper(document.querySelector('.works__cards.swiper'), {
+	new Swiper(document.querySelector('.atyour__cards.swiper'), {
 		modules: [Navigation],
 		watchOverflow: true,
 		spaceBetween: 24,
 		threshold: 10,
 		navigation: {
-			nextEl: '.works__control_next',
-			prevEl: '.works__control_prev',
+			nextEl: '.atyour__control_next',
+			prevEl: '.atyour__control_prev',
 			lockClass: 'hidden'
 		},
 		breakpoints: {
@@ -19,28 +19,24 @@ import { Navigation } from 'swiper/modules';
 			},
 			481: {
 				spaceBetween: 16,
-				slidesPerView: 1.8,
+				slidesPerView: 1.5,
 			},
 			641: {
 				spaceBetween: 16,
-				slidesPerView: 2.4,
+				slidesPerView: 2.0,
 			},
 			781: {
 				spaceBetween: 16,
-				slidesPerView: 2.7,
+				slidesPerView: 2.2,
 			},
 			961: {
 				spaceBetween: 24,
-				slidesPerView: 3,
+				slidesPerView: 2.7,
 			},
 			1101: {
 				spaceBetween: 24,
-				slidesPerView: 3.6,
-			},
-			1281: {
-				spaceBetween: 24,
-				slidesPerView: 4,
-			},
+				slidesPerView: 3,
+			}
 		}
 	});
 

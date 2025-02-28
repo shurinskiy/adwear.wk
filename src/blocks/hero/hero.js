@@ -21,13 +21,13 @@ import enquire from 'enquire.js';
 				0: {
 					slidesPerView: 1.15,
 				},
-				480: {
+				481: {
 					slidesPerView: 1.7,
 				},
-				640: {
+				641: {
 					slidesPerView: 2.2,
 				},
-				780: {
+				781: {
 					slidesPerView: 2.6,
 				}
 			}

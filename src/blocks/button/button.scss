@@ -6,6 +6,7 @@
 	--color: #fff;
 	
 	@extend %reset-button;
+	transition: background-color 0.3s, color 0.3s;
 	background-color: var(--ground);
 	border: 1px solid var(--ground);
 	border-radius: 100px;

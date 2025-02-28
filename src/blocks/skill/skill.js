@@ -41,27 +41,27 @@ import { Autoplay } from 'swiper/modules';
 				spaceBetween: 8,
 				slidesPerView: 1.8,
 			},
-			480: {
+			481: {
 				spaceBetween: 16,
 				slidesPerView: 2.6,
 			},
-			640: {
+			641: {
 				spaceBetween: 16,
 				slidesPerView: 3.4,
 			},
-			780: {
+			781: {
 				spaceBetween: 16,
 				slidesPerView: 2.4,
 			},
-			960: {
+			961: {
 				spaceBetween: 24,
 				slidesPerView: 3,
 			},
-			1100: {
+			1101: {
 				spaceBetween: 24,
 				slidesPerView: 3.6,
 			},
-			1280: {
+			1281: {
 				spaceBetween: 24,
 				slidesPerView: 4,
 			},
