@@ -58,18 +58,11 @@
 
 		@include media('<=xs') {
 			width: auto;
-			margin-left: -24px;
-			margin-right: -24px;
-			padding-left: 24px;
-			padding-right: 24px;
 			padding-bottom: 100px;
-		}
-
-		@include media('<=xxs') {
-			margin-left: -12px;
-			margin-right: -12px;
-			padding-left: 12px;
-			padding-right: 12px;
+			margin-left: calc(var(--gap) * -1);
+			margin-right: calc(var(--gap) * -1);
+			padding-left: var(--gap);
+			padding-right: var(--gap);
 		}
 	}
 

@@ -14,3 +14,4 @@ import "../blocks/samples/samples.js";
 import "../blocks/atyour/atyour.js";
 import "../blocks/methods/methods.js";
 import "../blocks/article/article.js";
+import "../blocks/stages/stages.js";

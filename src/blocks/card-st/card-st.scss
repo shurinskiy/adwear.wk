@@ -1,0 +1,54 @@
+@use 'lib' as *;
+
+.card-st {
+	$self: &;
+	border-radius: 20px;
+	padding: 32px 20px 24px;
+	border: 1px solid rgba(var(--black-rgb), 0.1);
+	background-repeat: no-repeat;
+	background-color: #f4f4f4;
+	position: relative;
+	z-index: 2;
+	
+	&_blue {
+		background-color: var(--cloud);
+	}
+
+	&_parquet-1 {
+		background-image: url('./images/parquet-3.svg');
+		background-position: left 60% top -40%;
+		background-size: 160% auto;
+	}
+
+	&_parquet-2 {
+		background-image: url('./images/parquet-3.svg');
+		background-position: left 160% top 50%;
+		background-size: 160% auto;
+	}
+
+	&_parquet-3 {
+		background-image: url('./images/parquet-3.svg');
+		background-position: left -20% top 10%;
+		background-size: 160% auto;
+	}
+
+	&__title {
+		font-size: 18px;
+		font-weight: 500;
+		margin-bottom: 20px;
+	}
+
+	&__text {
+		font-weight: 300;
+		line-height: 1.4;
+
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__button.button {
+		height: 42px;
+		padding: 0 20px;
+	}
+}

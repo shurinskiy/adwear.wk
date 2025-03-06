@@ -91,20 +91,12 @@
 			}
 
 			@include media('<=xs') {
-				margin-left: -24px;
-				margin-right: -24px;
-				padding-left: 24px;
-				padding-right: 24px;
-			}
-	
-			@include media('<=xxs') {
-				margin-left: -12px;
-				margin-right: -12px;
-				padding-left: 12px;
-				padding-right: 12px;
+				margin-left: calc(var(--container-gap) * -1);
+				margin-right: calc(var(--container-gap) * -1);
+				padding-left: var(--container-gap);
+				padding-right: var(--container-gap);
 			}
 		}
-
 	}
 
 	&__item {
