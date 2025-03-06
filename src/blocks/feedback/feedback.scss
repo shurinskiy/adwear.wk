@@ -1,0 +1,160 @@
+@use 'lib' as *;
+
+.feedback {
+	$self: &;
+
+	&.success {
+		#{$self}__success {
+			display: flex;
+		}
+
+		#{$self}__form {
+			display: none;
+		}
+	}
+
+	&__logo {
+		margin-bottom: 40px;
+	}
+
+	&__title {
+		margin-bottom: 20px;
+
+		&_success {
+			
+		}
+	}
+
+	&__text {
+		line-height: 1.5;
+		font-weight: 300;
+		margin-bottom: 16px;
+		font-size: fluid(16px, 12px);
+	}
+
+	&__form {
+
+	}
+
+	&__fields {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 16px 24px;
+		margin-bottom: 16px;
+		
+		@include media('<=xs') {
+			grid-gap: 16px;
+		}
+		
+		@include media('<=xxs') {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__field {
+		display: flex;
+		grid-column: span 1;
+		flex-flow: column nowrap;
+		gap: 8px;
+			
+		&_wide {
+			grid-column: span 2;
+			
+			@include media('<=xxs') {
+				grid-column: span 1;
+			}
+		}
+
+		span {
+			font-weight: 300;
+			font-size: 12px;
+			color: #555;
+		}
+
+		input, textarea {
+			@extend %reset-input;
+			border: 1px solid #555;
+			border-radius: 10px;
+			font-weight: 300;
+			min-height: 55px;
+			padding: 10px;
+			resize: none;
+			width: 100%;
+			
+			@include media('<=xxs') {
+				border-radius: 7px;
+				min-height: 45px;
+			}
+		}
+
+		textarea {
+			min-height: 70px;
+		}
+	}
+
+	&__bottom {
+
+	}
+
+	&__agree {
+		display: flex;
+		align-items: center;
+		margin-bottom: 16px;
+		font-size: 12px;
+		color: #555;
+		gap: 8px;
+
+		input[type='checkbox'] {
+			@extend %reset-input;
+			border: 1px solid #555;
+			display: inline-flex;
+			vertical-align: middle;
+			justify-content: center;
+			align-items: center;
+			border-radius: 2px;
+			margin-bottom: 1px;
+			cursor: pointer;
+			height: 12px;
+			width: 12px;
+
+			&:checked::before {
+				display: block;
+				content: '';
+				width: 5px;
+				height: 4px;
+				background: svg-url('<svg width="5" height="4" viewBox="0 0 5 4" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.89682 0.597189L2.03967 3.39719C1.90572 3.52846 1.66855 3.52846 1.5346 3.39719L0.106025 1.99719C-0.222622 1.67512 0.288455 1.18602 0.611101 1.50221L1.78713 2.65473L4.39174 0.102214C4.71438 -0.213979 5.22546 0.275115 4.89682 0.597189Z" fill="#545454"/></svg>') center / contain no-repeat transparent;
+				animation: showItem 0.1s linear;
+			}
+		}
+
+		a {
+			color: inherit;
+		}
+	}
+
+	&__submit.button {
+	
+		@include media('<=xxs') {
+			width: 100%;			
+		}
+	}
+
+	&__success {
+		display: none;
+		flex-flow: column nowrap;
+		justify-content: center;
+		gap: 20px;
+		padding: 70px 0 55px;
+		max-width: 480px;
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	&__note {
+
+	}
+
+	&__bye {
+
+	}
+}

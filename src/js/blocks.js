@@ -9,6 +9,7 @@ import "../blocks/service/service.js";
 import "../blocks/works/works.js";
 import "../blocks/price/price.js";
 import "../blocks/skill/skill.js";
+import "../blocks/modal/modal.js";
 import "../blocks/card-s/card-s.js";
 import "../blocks/samples/samples.js";
 import "../blocks/atyour/atyour.js";
