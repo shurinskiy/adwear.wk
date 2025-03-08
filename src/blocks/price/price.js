@@ -2,7 +2,10 @@ import enquire from 'enquire.js';
 import Swiper from 'swiper';
 
 (() => {
-	const slider = document.querySelector('.price__cols.swiper');
+	const price = document.querySelector('[data-price-js]');
+	if (! price) return;
+
+	const slider = price.querySelector('.price__cols.swiper');
 	let swiper;
 
 	const enableSwiper = (el) => {

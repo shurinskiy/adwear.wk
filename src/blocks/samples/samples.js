@@ -2,13 +2,15 @@ import Swiper from 'swiper';
 import { Navigation, Autoplay } from 'swiper/modules';
 
 (() => {
+	const samples = document.querySelector('[data-samples-js]');
+	if (! samples) return;
 
 	const updateProgress = function(sw) {
 		const progress = (sw.realIndex + 1) / sw.slides.length * 100;
 		sw.el.style.setProperty('--progress', progress);
 	}
 
-	new Swiper(document.querySelector('.samples__slider.swiper'), {
+	new Swiper(samples.querySelector('.samples__slider.swiper'), {
 		modules: [Navigation, Autoplay],
 		watchOverflow: true,
 		spaceBetween: 24,

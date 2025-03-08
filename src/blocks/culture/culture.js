@@ -2,7 +2,10 @@ import Swiper from 'swiper';
 import { Navigation, Autoplay } from 'swiper/modules';
 
 (() => {
-	new Swiper(document.querySelector('.culture__items.swiper'), {
+	const culture = document.querySelector('[data-culture-js]');
+	if (! culture) return;
+
+	new Swiper(culture.querySelector('.culture__items.swiper'), {
 		modules: [Navigation, Autoplay],
 		watchOverflow: true,
 		spaceBetween: 24,

@@ -3,7 +3,10 @@ import { Navigation } from 'swiper/modules';
 import enquire from 'enquire.js';
 
 (() => {
-	const slider = document.querySelector('.hero__items.swiper');
+	const hero = document.querySelector('[data-hero-js]');
+	if (! hero) return;
+
+	const slider = hero.querySelector('.hero__items.swiper');
 	let swiper;
 
 	const enableSwiper = (el) => {

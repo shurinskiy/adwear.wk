@@ -1,4 +1,5 @@
 import { Fancybox } from "@fancyapps/ui";
+import { runCounter } from "./libs/runCounter";
 import { scrollBasedToggle } from "./libs/scrollBasedToggle";
 import "../../node_modules/swiped-events/dist/swiped-events.min.js";
 import "./polyfills.js";
@@ -20,3 +21,12 @@ Fancybox.bind('[data-fbox]', {
 		},
 	},
 });
+
+runCounter(document.querySelectorAll('[data-count-anime]'), {
+	duration: 1,
+});
+
+new ResizeObserver(() => {
+	let vw = document.documentElement.clientWidth / 100;
+	document.documentElement.style.setProperty('--vw', `${vw}px`);
+}).observe(document.documentElement);

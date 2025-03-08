@@ -17,8 +17,12 @@
 		}
 	}
 
-	&#{x0}--controls_right {
-		align-items: center !important;
+	&#{x0}--controls {
+		z-index: 10 !important;
+		
+		&_right {
+			align-items: center !important;
+		}
 	}
 	
 	&#{x0}--control:has(.ymaps3x0--fullscreen) {

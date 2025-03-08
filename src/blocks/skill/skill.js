@@ -3,7 +3,7 @@ import { Autoplay } from 'swiper/modules';
 
 (() => {
 
-	const section = document.querySelector('.skill');
+	const section = document.querySelector('[data-skill-js]');
 	if(!section) return;
 	
 	const bigImage = section.querySelector('.skill__image img');

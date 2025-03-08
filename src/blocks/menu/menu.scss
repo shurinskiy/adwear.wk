@@ -1,0 +1,193 @@
+@use 'lib' as *;
+
+.menu {
+	$self: &;
+
+	@include media('<=lg') {
+		padding: 60px 20px 30px;
+		background-color: #fff;
+	}
+
+	&__close {
+		@extend %reset-button;
+		display: none;
+		width: 32px;
+		height: 32px;
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		z-index: 1;
+		background-color: var(--blue);
+		border-radius: 10px;
+		align-items: center;
+		justify-content: center;
+		
+		@include media('<=lg') {
+			display: flex;
+		}
+		
+		@include media('<=xs') {
+			top: 14px;
+		}
+		
+		svg {
+			display: block;
+			fill: #fff;
+			width: 55%;
+			height: 55%;
+		}
+	}
+
+	&__wrapper {
+		display: flex;
+		height: 100%;
+
+		@include media('<=lg') {
+			flex-flow: column nowrap;
+		}
+	}
+
+	&__head-link, &__head-catalog {
+		text-decoration: none;
+		color: var(--text);
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		
+		@include media('<=lg') {
+			font-size: 18px;
+			
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		
+		> span {
+			padding: 10px 20px;
+		
+			@include media('<=lg') {
+				padding: 10px 0;
+				font-size: 18px;
+				
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+
+	&__head-catalog {
+		@include media('>lg') {
+			position: relative;
+			
+			&:hover {
+				&::before {
+					display: block;
+					content: '';
+					width: 100%;
+					height: 50%;
+					position: absolute;
+					background-color: var(--cloud);
+					animation: fadeIn 0.3s;
+					z-index: -1;
+					top: 50%;
+					left: 0;
+				}
+
+				#{$self}__panel {
+					display: block;
+				}
+			}
+
+			> span {
+				text-transform: uppercase;
+				background-color: var(--cloud);
+				border-radius: 100px;
+			}
+		}
+	}
+
+	&__panel {
+		display: none;
+		padding: 32px 32px 64px;
+		gap: 40px;
+		border-radius: 0 0 20px 20px;
+		animation: fadeIn 0.3s;
+		position: fixed;
+		z-index: 1;
+		top: 75px;
+		left: max(var(--container-gap), (calc(var(--vw, 1vw) * 100 - var(--container)) / 2) + var(--container-gap));
+		width: min(calc(var(--container) - var(--container-gap) * 2), calc(var(--vw, 1vw) * 100 - var(--container-gap) * 2));
+		background-color: var(--cloud);
+		background-image: url('./images/parquet-5.svg');
+		background-repeat: no-repeat;
+		background-size: 80% auto;
+		background-position: top 3% right -140%;
+	}
+
+	&__item {
+		display: block;
+		color: var(--blue);
+		text-decoration: none;
+
+		&_haschild {
+			> span {
+				display: block;
+				font-weight: 500;
+				margin-bottom: 24px;
+			}
+		}
+	}
+
+	&__controls {
+		margin-bottom: 32px;
+		display: flex;
+		gap: 24px;
+	}
+
+	&__control {
+		@extend %reset-button;
+		text-transform: uppercase;
+		text-decoration: none;
+
+		&:hover, &.active {
+			text-decoration: underline;
+			color: var(--blue);
+		}
+
+		&.active {
+			font-weight: 600;
+		}
+	}
+
+	&__level {
+
+		&_0 {
+			@include media('>lg') {
+				display: none;
+				animation: fadeIn 0.3s;
+				gap: 40px;
+
+				&.active {
+					display: flex;
+				}
+			}
+		}
+
+		&_1 {
+			@include media('>lg') {
+				display: flex;
+				flex-flow: column nowrap;
+				gap: 16px;
+			}
+		}
+	}
+
+	&__catalog {
+		@include media('>lg') {
+			> #{$self}__item > span {
+				display: none;
+			}
+		}
+	}
+}

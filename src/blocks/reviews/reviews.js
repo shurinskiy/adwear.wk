@@ -2,13 +2,15 @@ import Swiper from 'swiper';
 import { Navigation, Autoplay } from 'swiper/modules';
 
 (() => {
+	const reviews = document.querySelector('[data-reviews-js]');
+	if (! reviews) return;
 
 	const updateProgress = function(sw) {
 		const progress = (sw.realIndex + 1) / sw.slides.length * 100;
 		sw.el.style.setProperty('--progress', progress);
 	}
 
-	new Swiper(document.querySelector('.reviews__slider.swiper'), {
+	new Swiper(reviews.querySelector('.reviews__slider.swiper'), {
 		modules: [Navigation, Autoplay],
 		watchOverflow: true,
 		spaceBetween: 24,

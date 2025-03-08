@@ -4,13 +4,16 @@
 			<img src="./images/logo.svg" alt="">
 			<span>Шьём для бизнеса</span>
 		</a>
-		<div class="header__menu">
-			<button class="header__menu-close"><svg><use xlink:href="#close"></use></svg></button>
-			<nav class="header__menu-navi">
-				<a class="header__menu-link header__menu-link_note" href="./">Каталог</a>
-				<a class="header__menu-link" href="./">Цены</a>
-				<a class="header__menu-link" href="./typical.html">Работы</a>
-				<a class="header__menu-link" href="./">Контакты</a>
+		<div class="header__menu menu" data-menu-js>
+			<button class="header__close menu__close"><svg><use xlink:href="#close"></use></svg></button>
+			<nav class="menu__wrapper">
+				<div class="menu__head-catalog">
+					<span>Каталог</span>
+					@@include('_menu-panel.html')
+				</div>
+				<a class="menu__head-link" href="./"><span>Цены</span></a>
+				<a class="menu__head-link" href="./typical.html"><span>Работы</span></a>
+				<a class="menu__head-link" href="./"><span>Контакты</span></a>
 			</nav>
 		</div>
 		<a class="header__logo logo" href="./">
@@ -33,6 +36,6 @@
 			<button class="header__button button" data-modal="#order">Обсудить проект</button>
 		</div>
 		<a class="header__phone" href="tel:+74951214384"><svg><use xlink:href="#phone"></use></svg></a>
-		<button class="header__toggle"><svg><use xlink:href="#menu"></use></svg></button>
+		<button class="header__toggle toggle"><span></span><span></span><span></span></button>
 	</div>
 </header>

@@ -38,73 +38,10 @@
 
 	&__menu {
 		flex-basis: 45%;
-		box-sizing: border-box;
-
-		&-close {
-			@extend %reset-button;
-			display: none;
-			width: 32px;
-			height: 32px;
-			position: absolute;
-			top: 20px;
-			right: 20px;
-			z-index: 1;
-			background-color: var(--blue);
-			border-radius: 10px;
-			align-items: center;
-			justify-content: center;
-			
-			@include media('<=lg') {
-				display: flex;
-			}
-			
-			@include media('<=xs') {
-				top: 14px;
-			}
-			
-			svg {
-				display: block;
-				fill: #fff;
-				width: 55%;
-				height: 55%;
-			}
-		}
-
-		&-navi {
-			display: flex;
-
-			@include media('<=lg') {
-				flex-flow: column nowrap;
-			}
-		}
-
-		&-link {
-			text-decoration: none;
-			color: var(--text);
-			padding: 10px 20px;
-			
-			@include media('<=lg') {
-				padding: 10px 0;
-				font-size: 18px;
-
-				&:hover {
-					text-decoration: underline;
-				}
-			}
-	
-			&_note {
-				@include media('>lg') {
-					text-transform: uppercase;
-					background-color: var(--cloud);
-					border-radius: 100px;
-				}
-			}
-		}
+		align-self: stretch;
 		
 		@include media('<=lg') {
 			flex-basis: auto;
-			padding: 60px 20px 30px;
-			background-color: #fff;
 			width: 100%;
 			height: 100vh;
 			height: 100dvh;
@@ -190,34 +127,25 @@
 	&__phone {
 		@extend %reset-button;
 		display: none;
-		height: 34px;
-		width: 34px;
+		height: 32px;
+		width: 32px;
+		border: 2px solid var(--blue);
+		border-radius: 10px;
+		align-items: center;
+		justify-content: center;
 
 		@include media('<=lg') {
-			display: block;
+			display: flex;
 		}
 
 		svg {
 			fill: var(--blue);
-			width: 100%;
-			height: 100%;
+			width: 20px;
+			height: 20px;
 		}
 	}
 
 	&__toggle {
-		@extend %reset-button;
-		display: none;
-		height: 34px;
-		width: 34px;
 
-		@include media('<=lg') {
-			display: block;
-		}
-
-		svg {
-			fill: var(--blue);
-			width: 100%;
-			height: 100%;
-		}
 	}
 }

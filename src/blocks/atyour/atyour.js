@@ -2,7 +2,10 @@ import Swiper from 'swiper';
 import { Navigation } from 'swiper/modules';
 
 (() => {
-	new Swiper(document.querySelector('.atyour__cards.swiper'), {
+	const atyour = document.querySelector('[data-atyour-js]');
+	if (! atyour) return;
+
+	new Swiper(atyour.querySelector('.atyour__cards.swiper'), {
 		modules: [Navigation],
 		watchOverflow: true,
 		spaceBetween: 24,

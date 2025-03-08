@@ -2,7 +2,10 @@ import Swiper from 'swiper';
 import enquire from 'enquire.js';
 
 (() => {
-	const slider = document.querySelector('.stages__steps.swiper');
+	const stages = document.querySelector('[data-stages-js]');
+	if (! stages) return;
+
+	const slider = stages.querySelector('.stages__steps.swiper');
 	let swiper;
 
 	const enableSwiper = (el) => {

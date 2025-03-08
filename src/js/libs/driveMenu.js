@@ -50,7 +50,7 @@ export const driveMenu = (menu, toggles, options = {}) => {
 				...options
 			};
 
-			this._init();
+			this.#init();
 			this.opened = false;
 		}
 
@@ -83,13 +83,13 @@ export const driveMenu = (menu, toggles, options = {}) => {
 		}
 
 
-		_omitToClose(e) {
+		#omitToClose(e) {
 			const omits = this.options.omitToClose?.split(",").map((item) => item.trim());
 			return omits?.some(omit => !!e.target.closest(`${omit}`));
 		}
 
 		
-		_init() {
+		#init() {
 			toggles.forEach(toggle => {
 				toggle.addEventListener('click', (e) => this.menuToggle(e));
 			});
@@ -99,7 +99,7 @@ export const driveMenu = (menu, toggles, options = {}) => {
 					document.addEventListener(event, (e) => {
 						const isself = e.target.closest(`.${menu.className.split(' ')[0]}`);
 
-						if(this.opened && !isself && !this._omitToClose(e)) {
+						if(this.opened && !isself && !this.#omitToClose(e)) {
 							e.preventDefault();
 							this.menuClose(e);
 						}
