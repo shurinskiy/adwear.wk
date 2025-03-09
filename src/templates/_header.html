@@ -1,20 +1,33 @@
 <header class="header @@if(this.mod){header_@@mod}" data-header-js data-scroll-lock-fill-gap>
 	<div class="header__inner container">
-		<a class="header__logo-mobile logo" href="./">
-			<img src="./images/logo.svg" alt="">
-			<span>Шьём для бизнеса</span>
-		</a>
 		<div class="header__menu menu" data-menu-js>
 			<button class="header__close menu__close"><svg><use xlink:href="#close"></use></svg></button>
-			<nav class="menu__wrapper">
+			<div class="menu__top">
+				<div class="menu__contact">
+					<a href="tel:+74951214384">+7 495 121 43 84</a>
+					<a href="mailto:info+458761973@adwear.ru">info+458761973@adwear.ru</a>
+				</div>
+				<button class="menu__button button" data-modal="#order">Обсудить проект</button>
+			</div>
+			<nav class="menu__wrapper" data-scroll-lock-scrollable>
 				<div class="menu__head-catalog">
 					<span>Каталог</span>
 					@@include('_menu-panel.html')
 				</div>
+				<a class="menu__head-link" href="./"><span>О компании</span></a>
 				<a class="menu__head-link" href="./"><span>Цены</span></a>
 				<a class="menu__head-link" href="./typical.html"><span>Работы</span></a>
 				<a class="menu__head-link" href="./"><span>Контакты</span></a>
 			</nav>
+			<div class="menu__socials">
+				<span>Мессенджеры</span>
+				<a class="menu__social" href="./">
+					<svg><use xlink:href="#soc-tgrm"></use></svg>
+				</a>
+				<a class="menu__social" href="./">
+					<svg><use xlink:href="#soc-wapp"></use></svg>
+				</a>
+			</div>
 		</div>
 		<a class="header__logo logo" href="./">
 			<img src="./images/logo.svg" alt="">

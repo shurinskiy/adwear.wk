@@ -4,8 +4,31 @@
 	$self: &;
 
 	@include media('<=lg') {
-		padding: 60px 20px 30px;
-		background-color: #fff;
+		padding: 75px 0 30px 24px;
+		background-color: var(--cloud);
+		background-image: url('./images/parquet-4.svg');
+		background-repeat: no-repeat;
+		background-size: auto 130%;
+		background-position: top 30% right 20%;
+		
+		@include media('<=xs') {
+			padding: 60px 0 30px 12px;
+		}
+
+		&::before {
+			display: block;
+			content: '';
+			width: 100%;
+			height: 75px;
+			background-color: #fff;
+			position: absolute;
+			left: 0;
+			top: 0;
+
+			@include media('<=xs') {
+				height: 60px;
+			}
+		}
 	}
 
 	&__close {
@@ -30,6 +53,10 @@
 			top: 14px;
 		}
 		
+		@include media('<=xxs') {
+			display: none;
+		}
+		
 		svg {
 			display: block;
 			fill: #fff;
@@ -38,46 +65,120 @@
 		}
 	}
 
-	&__wrapper {
-		display: flex;
-		height: 100%;
-
+	&__top {
+		display: none;
+		align-items: center;
+		justify-content: space-between;
+		gap: 16px;
+		padding: 16px 24px 24px 0;
+		
 		@include media('<=lg') {
-			flex-flow: column nowrap;
+			display: flex;
+		}
+
+		@include media('<=xxs') {
+			padding-right: 12px;
 		}
 	}
 
-	&__head-link, &__head-catalog {
-		text-decoration: none;
-		color: var(--text);
-		cursor: pointer;
+	&__contact {
+		
+		a {
+			display: block;
+			color: var(--blue);
+			text-decoration: none;
+
+			&:nth-child(1) {
+				font-size: 18px;
+				font-weight: 500;
+			}
+			
+			&:nth-child(2) {
+				font-size: 12px;
+				font-weight: 300;
+			}
+		}
+	}
+
+	&__button.button {
+		height: 40px;
+		padding: 0 20px;
+		white-space: nowrap;
+		font-size: 14px;
+		
+		@include media('<=xxxs') {
+			height: 36px;
+			padding: 0 16px;
+			font-size: 13px;
+		}
+	}
+
+	&__wrapper {
 		display: flex;
-		align-items: center;
+		gap: fluid(24px, 14px, 1280, 1100);
+		height: 100%;
 		
 		@include media('<=lg') {
-			font-size: 18px;
+			height: auto;
+			margin-bottom: auto;
+			flex-flow: column nowrap;
+			gap: 0;
+			padding-right: 24px;
+			overflow: auto;
 			
-			&:hover {
-				text-decoration: underline;
+			&::-webkit-scrollbar {
+				width: 6px;
+				height: 6px;
 			}
+			
+			&::-webkit-scrollbar-track {
+				background-color: #fff;
+			}
+			
+			&::-webkit-scrollbar-thumb {
+				background-color: var(--blue);
+			}
+			
+			&::-webkit-scrollbar-corner {
+				background-color: transparent;
+			}
+		}
+		
+		@include media('<=xs') {
+			padding-right: 12px;
+		}
+	}
+
+	&__head-link {
+		color: var(--text);
+		text-decoration: none;
+		font-size: fluid(16px, 15px, 1280, 1100);
+		display: flex;
+		align-items: center;
+	
+		@include media('<=lg') {
+			color: var(--blue);
+			font-weight: 500;
+			font-size: 16px;
+			padding: 15px 0;
+			border-bottom: 1px solid rgba(var(--blue-rgb), 0.15);
 		}
 		
 		> span {
-			padding: 10px 20px;
-		
-			@include media('<=lg') {
-				padding: 10px 0;
-				font-size: 18px;
-				
-				&:hover {
-					text-decoration: underline;
-				}
-			}
+			display: block;
+			white-space: nowrap;
 		}
 	}
-
+	
 	&__head-catalog {
+		cursor: pointer;
+		text-decoration: none;
+		font-size: fluid(16px, 15px, 1280, 1100);
+		color: var(--text);
+
 		@include media('>lg') {
+			display: flex;
+			align-items: center;
 			position: relative;
 			
 			&:hover {
@@ -93,16 +194,26 @@
 					top: 50%;
 					left: 0;
 				}
-
+				
 				#{$self}__panel {
 					display: block;
 				}
 			}
-
+			
 			> span {
+				padding: 10px 20px;
 				text-transform: uppercase;
 				background-color: var(--cloud);
 				border-radius: 100px;
+			}
+		}
+
+		@include media('<=lg') {
+			font-size: 16px;
+			order: 1;
+
+			> span {
+				display: none;
 			}
 		}
 	}
@@ -110,7 +221,6 @@
 	&__panel {
 		display: none;
 		padding: 32px 32px 64px;
-		gap: 40px;
 		border-radius: 0 0 20px 20px;
 		animation: fadeIn 0.3s;
 		position: fixed;
@@ -122,7 +232,11 @@
 		background-image: url('./images/parquet-5.svg');
 		background-repeat: no-repeat;
 		background-size: 80% auto;
-		background-position: top 3% right -140%;
+		background-position: top -15px right -140%;
+
+		@include media('<=lg') {
+			display: contents;
+		}
 	}
 
 	&__item {
@@ -132,10 +246,29 @@
 
 		&_haschild {
 			> span {
-				display: block;
 				font-weight: 500;
-				margin-bottom: 24px;
+				
+				@include media('>lg') {
+					margin-bottom: 24px;
+				}
+
+				@include media('<=lg') {
+					background: svg-url('<svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M23.7351 10.6512L14.4843 19.7472C13.683 20.5353 12.3145 19.3049 13.1744 18.4592L20.847 10.9168H0.878261C-0.256427 10.9168 -0.328526 9.09753 0.878261 9.09753H20.847L13.1744 1.55505C12.3623 0.756451 13.6332 -0.569905 14.4843 0.267039L23.7351 9.36314C24.0864 9.70758 24.0902 10.3028 23.7351 10.6512Z" fill="#002B69"/></svg>') center right / 17px 14px no-repeat transparent;
+				}
 			}
+		}
+		
+		> span {
+			display: block;
+			
+			@include media('<=lg') {
+				padding: 15px 0;
+				border-bottom: 1px solid rgba(var(--blue-rgb), 0.15);
+			}
+		}
+
+		a:hover {
+			text-decoration: underline;
 		}
 	}
 
@@ -143,6 +276,10 @@
 		margin-bottom: 32px;
 		display: flex;
 		gap: 24px;
+
+		@include media('<=lg') {
+			display: none;
+		}
 	}
 
 	&__control {
@@ -152,11 +289,12 @@
 
 		&:hover, &.active {
 			text-decoration: underline;
+			text-shadow: 0 0 0 var(--blue);
 			color: var(--blue);
 		}
 
 		&.active {
-			font-weight: 600;
+			text-shadow: 0 0 0 var(--blue);
 		}
 	}
 
@@ -172,6 +310,10 @@
 					display: flex;
 				}
 			}
+
+			@include media('<=lg') {
+				display: none;
+			}
 		}
 
 		&_1 {
@@ -179,6 +321,10 @@
 				display: flex;
 				flex-flow: column nowrap;
 				gap: 16px;
+			}
+
+			@include media('<=lg') {
+				display: none;
 			}
 		}
 	}
@@ -188,6 +334,33 @@
 			> #{$self}__item > span {
 				display: none;
 			}
+		}
+
+		@include media('<=lg') {
+			padding-top: 20px;
+		}
+	}
+
+	&__socials {
+		padding-top: 30px;
+		display: none;
+		align-items: center;
+		gap: 16px;
+		font-size: 14px;
+
+		@include media('<=lg') {
+			display: flex;
+		}
+	}
+
+	&__social {
+		height: 35px;
+		width: 35px;
+
+		svg {
+			fill: var(--blue);
+			width: 100%;
+			height: 100%;
 		}
 	}
 }

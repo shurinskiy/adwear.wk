@@ -27,15 +27,6 @@
 		}
 	}
 
-	&__logo-mobile {
-		display: none;
-		margin-right: auto;
-
-		@include media('<=lg') {
-			display: flex;
-		}
-	}
-
 	&__menu {
 		flex-basis: 45%;
 		align-self: stretch;
@@ -48,11 +39,12 @@
 			position: fixed;
 			z-index: 5;
 			top: 0;
-			left: -310px; 
-			max-width: 300px;
+			left: -480px; 
+			max-width: 470px;
 			transition: left 0.3s linear;
 			box-shadow: 5px 0 5px rgba(0, 0, 0, 0.05);
-			display: block;
+			display: flex;
+			flex-flow: column nowrap;
 	
 			&.opened {
 				left: 0;
@@ -60,13 +52,23 @@
 		}
 	}
 
-	&__logo {
+	&__logo.logo {
 		width: 100%;
 		max-width: 230px;
 		padding: 0 10px;
+		position: relative;
 
 		@include media('<=lg') {
-			display: none;
+			margin-right: auto;
+			padding: 0;
+		}
+		
+		@include media('<=xs') {
+			max-width: 150px;
+		}
+
+		@include media('<=xxs') {
+			z-index: 6;
 		}
 	}
 
@@ -126,6 +128,7 @@
 
 	&__phone {
 		@extend %reset-button;
+		position: relative;
 		display: none;
 		height: 32px;
 		width: 32px;
@@ -133,9 +136,14 @@
 		border-radius: 10px;
 		align-items: center;
 		justify-content: center;
+		flex-shrink: 0;
 
 		@include media('<=lg') {
 			display: flex;
+		}
+
+		@include media('<=xxs') {
+			z-index: 6;
 		}
 
 		svg {
@@ -145,7 +153,17 @@
 		}
 	}
 
-	&__toggle {
+	&__toggle.toggle {
+		position: relative;
+		flex-shrink: 0;
+		display: none;
+		
+		@include media('<=lg') {
+			display: flex;
+		}
 
+		@include media('<=xxs') {
+			z-index: 6;
+		}
 	}
 }
