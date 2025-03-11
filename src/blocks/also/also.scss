@@ -1,6 +1,6 @@
 @use 'lib' as *;
 
-.atyour {
+.also {
 	$self: &;
 	margin-bottom: 100px;
 	
@@ -32,6 +32,17 @@
 			margin-right: calc(var(--container-gap) * -1);
 			padding-left: var(--container-gap);
 			padding-right: var(--container-gap);
+		}
+
+		.swiper-wrapper {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-gap: 24px;
+
+			@include media('<=lg') {
+				display: flex;
+				grid-gap: 0;
+			}
 		}
 	}
 
@@ -87,6 +98,11 @@
 	}
 
 	&__controls {
+		display: none;
+
+		@include media('<=lg') {
+			display: block;
+		}
 
 		@include media('<=xs') {
 			display: none;

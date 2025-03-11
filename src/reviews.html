@@ -1,0 +1,33 @@
+@@include("_head.html", {"id":"inner"}) 
+@@include("_header.html")
+
+<div class="head">
+	<div class="head__inner container">
+		<div class="head__breadcrumbs breadcrumbs">
+			<a class="breadcrumbs__link" href="./">Главная</a>
+			<a class="breadcrumbs__link" href="./">О компании</a>
+			<span class="breadcrumbs__current">Отзывы</span>
+		</div>
+		<h1 class="head__title title title_head">Отзывы</h1>
+	</div>
+</div>
+
+<section class="cost">
+	<div class="cost__inner container">
+		<div class="cost__body">
+			<div class="cost__side">
+				<h2 class="cost__title title">Рассчитаем стоимость вашей услуги прямо сейчас</h2>
+				<div class="cost__text">Отправьте заявку на обратный звонок и наш менеджер свяжется с вами в течение рабочего дня</div>
+				<div class="cost__buttons">
+					<a class="cost__button button button_inverse" href="./" data-modal="#order">Оставить заявку</a>
+					<a class="cost__button button button_empty button_inverse" href="./" data-modal="#callback">Позвонить</a>
+				</div>
+			</div>
+			<div class="cost__image">
+				<img src="./images/stuff/cost/cost-image.webp" alt="">
+			</div>
+		</div>
+	</div>
+</section>
+
+@@include("_bottom.html")

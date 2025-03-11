@@ -1,0 +1,21 @@
+@use 'lib' as *;
+
+.head {
+	$self: &;
+	padding-top: 70px;
+	margin-bottom: 40px;
+
+	&__inner {
+		display: flex;
+		flex-flow: column nowrap;
+		gap: 32px;
+	}
+
+	&__breadcrumbs {
+
+	}
+
+	&__title {
+
+	}
+}

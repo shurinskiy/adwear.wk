@@ -9,6 +9,12 @@
 		margin-bottom: 60px;
 	}
 
+	&_inverse {
+		#{$self}__side {
+			order: 1;
+		}
+	}
+
 	&__inner {
 
 	}
@@ -45,19 +51,25 @@
 	
 	&__text {
 		font-size: fluid(18px, 14px);
+		line-height: 1.4;
 
 		@include media('<=sm') {
 			text-align: center;
 		}
 	}
 	
-	&__button.button {
-		background-color: #fff;
-		color: var(--blue);
+	&__buttons {
+		display: flex;
+		gap: 16px;
 
 		@include media('<=sm') {
-			margin: 0 auto;
+			flex-flow: column nowrap;
+			align-items: center;
 		}
+	}
+
+	&__button.button {
+		white-space: nowrap;
 	}
 	
 	&__image {

@@ -18,9 +18,19 @@
 	text-align: center;
 	align-items: center;
 	justify-content: center;
+
+	&_inverse {
+		--ground: #fff;
+		--color: var(--blue);
+	}
 	
 	&_empty {
-		--color: var(--blue);
 		background-color: transparent;
+		--color: var(--blue);
+	}
+	
+	&_empty#{&}_inverse {
+		border-color: #fff;
+		--color: #fff;
 	}
 }

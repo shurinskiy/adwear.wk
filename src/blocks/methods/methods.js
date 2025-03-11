@@ -2,10 +2,10 @@ import Swiper from 'swiper';
 import { Navigation } from 'swiper/modules';
 
 (() => {
-	const methods = document.querySelector('[data-methods-js]');
-	if (! methods) return;
+	const section = document.querySelector('[data-methods-js]');
+	if (! section) return;
 
-	new Swiper(methods.querySelector('.methods__cards.swiper'), {
+	new Swiper(section.querySelector('.methods__cards.swiper'), {
 		modules: [Navigation],
 		watchOverflow: true,
 		spaceBetween: 24,

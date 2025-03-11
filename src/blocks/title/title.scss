@@ -4,9 +4,15 @@
 	$self: &;
 	font-weight: 600;
 	color: var(--blue);
-	font-size: fluid(40px, 24px);
-
+	font-size: fluid(40px, 20px);
+	
 	@include media('<=xs') {
 		text-align: center;
+	}
+	
+	&_head {
+		font-weight: 500;
+		color: var(--text);
+		font-size: fluid(50px, 24px);
 	}
 }

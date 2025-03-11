@@ -54,10 +54,7 @@
 	}
 
 	&__title {
-		color: var(--text);
 		margin-top: auto;
-		font-weight: 500;
-		font-size: fluid(50px, 24px);
 
 		@include media('<=xs') {
 			text-align: center;

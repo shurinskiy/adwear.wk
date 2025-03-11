@@ -22,9 +22,6 @@
 	&__title {
 		margin-bottom: 30px;
 		text-align: center;
-		color: var(--text);
-		font-weight: 500;
-		font-size: fluid(50px, 24px);
 		
 		@include media('<=xs') {
 			margin-bottom: 14px;

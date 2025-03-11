@@ -3,7 +3,7 @@
 .discuss {
 	$self: &;
 	--fill: var(--black);
-	--border: rgba(var(--black-rgb), 0.4);
+	--border: rgba(var(--black-rgb), 0.15);
 	display: flex;
 	gap: 10px;
 

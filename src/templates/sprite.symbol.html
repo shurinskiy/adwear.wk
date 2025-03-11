@@ -105,6 +105,11 @@ They might well be outsourced to an external stylesheet of course.
 -->
 
 <style>
+ .svg-A-dims { width: 30px; height: 30px; }
+ .svg-D-dims { width: 30px; height: 30px; }
+ .svg-E-dims { width: 30px; height: 30px; }
+ .svg-R-dims { width: 30px; height: 30px; }
+ .svg-W-dims { width: 30px; height: 30px; }
  .svg-arr-left-dims { width: 24px; height: 20px; }
  .svg-arr-right-dims { width: 24px; height: 20px; }
  .svg-close-dims { width: 18px; height: 17px; }
@@ -135,6 +140,11 @@ for further details on how to create this embeddable sprite variant.
 -->
 
 <svg width="0" height="0" style="position:absolute">
+     <symbol viewBox="0 0 30 30" id="A" xmlns="http://www.w3.org/2000/svg"><path d="M11.265 1 1 29h6.803l2.02-5.815h10.354L22.197 29H29L18.735 1h-7.473.003Zm.298 17.17L15 8.264l3.437 9.904h-6.874Z"/></symbol>
+     <symbol viewBox="0 0 30 30" id="D" xmlns="http://www.w3.org/2000/svg"><path d="M18.356 1H2v28h16.356c3.156 0 5.555-.753 7.192-2.256C27.185 25.238 28 23.034 28 20.127V9.876c0-2.907-.819-5.114-2.452-6.617C23.915 1.753 21.516 1 18.356 1Zm2.523 19.49c0 2.315-1.256 3.474-3.776 3.474H9.292V6.036h7.811c2.516 0 3.776 1.159 3.776 3.473v10.985-.003Z"/></symbol>
+     <symbol viewBox="0 0 30 30" id="E" xmlns="http://www.w3.org/2000/svg"><path d="M29 7.808V1H1v6.808h28ZM25.143 18.404v-6.808H1v6.808h24.143ZM29 29v-6.808H1V29h28Z"/></symbol>
+     <symbol viewBox="0 0 30 30" id="R" xmlns="http://www.w3.org/2000/svg"><path d="M22.303 19.52c1.626-.387 2.95-1.335 3.697-2.52.745-1.182.982-2.676.982-4.81V8.72c0-2.701-.694-4.496-1.982-5.72-1.291-1.221-3.308-2-6.157-2H2v28h7.075v-9.094h6.167L20.494 29H28l-5.704-9.477.007-.004Zm-2.396-7.33c0 1.541-.815 2.314-2.442 2.314H9.082V6.038h8.383c1.63 0 2.442.773 2.442 2.315v3.84-.003Z"/></symbol>
+     <symbol viewBox="0 0 30 30" id="W" xmlns="http://www.w3.org/2000/svg"><path d="M7.808 1H1v28h6.808V1ZM18.404 4.857h-6.808V29h6.808V4.857ZM29 1h-6.808v28H29V1Z"/></symbol>
      <symbol viewBox="0 0 24 20" id="arr-left" xmlns="http://www.w3.org/2000/svg"><path d="M.265 9.349 9.515.253c.802-.788 2.17.442 1.31 1.288L3.154 9.083h19.969c1.134 0 1.206 1.82 0 1.82H3.153l7.673 7.542c.812.799-.46 2.125-1.31 1.288L.265 10.637a.915.915 0 0 1 0-1.288Z"/></symbol>
      <symbol viewBox="0 0 24 20" id="arr-right" xmlns="http://www.w3.org/2000/svg"><path d="m23.735 10.651-9.25 9.096c-.802.788-2.17-.442-1.31-1.288l7.672-7.542H.878c-1.134 0-1.207-1.82 0-1.82h19.969l-7.673-7.542c-.812-.799.46-2.125 1.31-1.288l9.251 9.096a.915.915 0 0 1 0 1.288Z"/></symbol>
      <symbol viewBox="0 0 18 17" id="close" xmlns="http://www.w3.org/2000/svg"><path d="m9 10.703-5.963 5.962c-1.032 1.033-2.805-.6-1.703-1.703L7.296 9 1.334 3.038C.302 2.006 1.935.232 3.037 1.335L9 7.297l5.962-5.962c1.032-1.032 2.814.592 1.704 1.703L10.703 9l5.962 5.962c1.102 1.102-.672 2.736-1.704 1.703L9 10.703Z"/></symbol>
@@ -170,6 +180,46 @@ embedded above. They may be styled via CSS.
             <h3>A) Inline SVG with embedded sprite</h3>
             <ul>
 
+             <li title="A">
+                    <div class="icon-box">
+                        <svg class="svg-A-dims">
+                            <use xlink:href="#A"></use>
+                        </svg>
+                    </div>
+                    <h2>A, </h2>
+                </li>
+             <li title="D">
+                    <div class="icon-box">
+                        <svg class="svg-D-dims">
+                            <use xlink:href="#D"></use>
+                        </svg>
+                    </div>
+                    <h2>D, </h2>
+                </li>
+             <li title="E">
+                    <div class="icon-box">
+                        <svg class="svg-E-dims">
+                            <use xlink:href="#E"></use>
+                        </svg>
+                    </div>
+                    <h2>E, </h2>
+                </li>
+             <li title="R">
+                    <div class="icon-box">
+                        <svg class="svg-R-dims">
+                            <use xlink:href="#R"></use>
+                        </svg>
+                    </div>
+                    <h2>R, </h2>
+                </li>
+             <li title="W">
+                    <div class="icon-box">
+                        <svg class="svg-W-dims">
+                            <use xlink:href="#W"></use>
+                        </svg>
+                    </div>
+                    <h2>W, </h2>
+                </li>
              <li title="arr-left">
                     <div class="icon-box">
                         <svg class="svg-arr-left-dims">
@@ -261,6 +311,46 @@ SVG sprite. They may be styled via CSS.
             <h3>B) Inline SVG with external sprite</h3>
             <ul>
 
+             <li title="A">
+                    <div class="icon-box">
+                        <svg class="svg-A-dims">
+                            <use xlink:href="_sprite.svg#A"></use>
+                        </svg>
+                    </div>
+                    <h2>A</h2>
+                </li>
+             <li title="D">
+                    <div class="icon-box">
+                        <svg class="svg-D-dims">
+                            <use xlink:href="_sprite.svg#D"></use>
+                        </svg>
+                    </div>
+                    <h2>D</h2>
+                </li>
+             <li title="E">
+                    <div class="icon-box">
+                        <svg class="svg-E-dims">
+                            <use xlink:href="_sprite.svg#E"></use>
+                        </svg>
+                    </div>
+                    <h2>E</h2>
+                </li>
+             <li title="R">
+                    <div class="icon-box">
+                        <svg class="svg-R-dims">
+                            <use xlink:href="_sprite.svg#R"></use>
+                        </svg>
+                    </div>
+                    <h2>R</h2>
+                </li>
+             <li title="W">
+                    <div class="icon-box">
+                        <svg class="svg-W-dims">
+                            <use xlink:href="_sprite.svg#W"></use>
+                        </svg>
+                    </div>
+                    <h2>W</h2>
+                </li>
              <li title="arr-left">
                     <div class="icon-box">
                         <svg class="svg-arr-left-dims">
@@ -341,7 +431,7 @@ SVG sprite. They may be styled via CSS.
 
         </section>
         <footer>
-            <p>Generated at Sat, 08 Mar 2025 21:36:41 GMT by <a href="https://github.com/svg-sprite/svg-sprite" target="_blank" rel="noopener noreferrer">svg-sprite</a>.</p>
+            <p>Generated at Mon, 10 Mar 2025 18:20:53 GMT by <a href="https://github.com/svg-sprite/svg-sprite" target="_blank" rel="noopener noreferrer">svg-sprite</a>.</p>
         </footer>
     </body>
 </html>

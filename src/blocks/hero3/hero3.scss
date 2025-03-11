@@ -1,0 +1,82 @@
+@use 'lib' as *;
+
+.hero3 {
+	$self: &;
+	padding-top: 45px;
+	margin-bottom: 80px;
+	
+	@include media('<=xxs') {
+		padding-top: 24px;
+	}
+
+	&__inner {
+		background: url('./images/stuff/hero3/hero3-image.webp') center / cover no-repeat transparent;
+		border-radius: 20px;
+		min-height: 550px;
+		padding-top: 32px;
+		padding-bottom: 32px;
+		display: flex;
+		flex-flow: column nowrap;
+		gap: 32px;
+
+		@include media('<=xlg') {
+			border-radius: 0;
+		}
+		
+		@include media('<=xxs') {
+			padding-top: 24px;
+			padding-bottom: 12px;
+		}
+	}
+	
+	&__breadcrumbs {
+		
+	}
+	
+	&__body {
+		margin-top: auto;
+		max-width: 570px;
+		background-color: rgba(255, 255, 255, 0.7);
+		backdrop-filter: blur(3px);
+		border-radius: 20px;
+		padding: 30px;
+		display: flex;
+		flex-flow: column nowrap;
+		gap: 30px;
+		
+		@include media('<=xxs') {
+			border-radius: 15px;
+			gap: 16px;
+		}
+	}
+
+	&__title {
+	
+		@include media('<=xs') {
+			text-align: center;
+		}
+	}
+
+	&__text {
+		font-size: fluid(18px, 14px);
+		line-height: 1.4;
+
+		p:last-child {
+			color: var(--text);
+		}
+
+		@include media('<=xs') {
+			text-align: center;
+		}
+	}
+
+	&__discuss.discuss {
+
+		@include media('<=xs') {
+			display: grid;
+			grid-gap: 10px 16px;
+			grid-template-columns: repeat(2, 1fr);
+			justify-items: center;
+		}
+	}
+}
