@@ -19,7 +19,7 @@ Fancybox.bind('[data-fbox]', {
 			left: ["infobar"],
 			middle: [],
 		},
-	},
+	}
 });
 
 runCounter(document.querySelectorAll('[data-count-anime]'), {
