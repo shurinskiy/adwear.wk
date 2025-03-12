@@ -90,6 +90,7 @@ body {
 p { margin-bottom: 10px; }
 strong { font-weight: bold; }
 em { font-style: italic; }
+a { color: inherit; }
 
 @keyframes fadeIn {
 	from { opacity: 0; }

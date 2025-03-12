@@ -20,7 +20,7 @@
 	}
 
 	&__title {
-
+		
 		@include media('<=xs') {
 			text-align: center;
 		}
