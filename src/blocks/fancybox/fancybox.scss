@@ -28,6 +28,23 @@
 		--f-button-hover-bg: rgba(var(--blue-rgb), 0.8);
 	}
 
+	&__nav {
+		.f-button {
+			--f-button-width: 42px;
+			--f-button-height: 42px;
+			--f-button-border-radius: 6px;
+			--f-button-bg:  rgba(var(--blue-rgb), 0.2);
+			--f-button-hover-bg: rgba(var(--blue-rgb), 0.8);
+			--f-button-active-bg: rgba(var(--blue-rgb), 0.8);
+			--f-button-shadow: none;
+			--f-button-svg-width: 20px;
+			--f-button-svg-height: 20px;
+			--f-button-svg-stroke-width: 0;
+			--f-button-svg-fill: #fff;
+			--f-button-svg-filter: none;
+		}
+	}
+
 	&__footer {
 
 		.is-classic .is-nav-selected .f-thumbs__slide__button::after {

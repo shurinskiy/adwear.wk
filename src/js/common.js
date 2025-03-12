@@ -19,7 +19,13 @@ Fancybox.bind('[data-fbox]', {
 			left: ["infobar"],
 			middle: [],
 		},
-	}
+	},
+	Carousel: {
+		Navigation: {
+			prevTpl: '<svg tabindex="-1"><use xlink:href="#arr-left"></use></svg></button>',
+			nextTpl: '<svg tabindex="-1"><use xlink:href="#arr-right"></use></svg></button>',
+		},
+	},
 });
 
 runCounter(document.querySelectorAll('[data-count-anime]'), {
