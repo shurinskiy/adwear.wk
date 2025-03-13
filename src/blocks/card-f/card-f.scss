@@ -1,0 +1,57 @@
+@use 'lib' as *;
+
+.card-f {
+	$self: &;
+	padding: 32px 24px;
+	background-color: #fff;
+	border-radius: 15px;
+	
+	&__head {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		cursor: pointer;
+		gap: 32px;
+
+		&.opened #{$self}__icon svg {
+			transform: rotate(90deg);
+		}
+	}
+
+	&__title {
+		font-size: fluid(18px, 14px);
+		font-weight: 500;
+	}
+
+	&__icon {
+		@extend %reset-button;
+		height: 36px;
+		width: 36px;
+		border-radius: 5px;
+		background-color: rgba(255, 255, 255, 0.8);
+		border: 1px solid rgba(var(--black-rgb), 0.2);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+	
+		svg {
+			transition: transform 0.3s;
+			height: 12px;
+			width: 14px;
+		}
+	}
+
+	&__text {
+		font-size: fluid(16px, 12px);
+		font-weight: 300;
+		max-width: 75%;
+		display: none;
+
+		&::before {
+			display: block;
+			height: 8px;
+			content: '';
+		}
+	}
+}
