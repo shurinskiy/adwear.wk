@@ -1,0 +1,59 @@
+@@include("_head.html", {"id":"inner"}) 
+@@include("_header.html")
+
+<div class="head">
+	<div class="head__inner container">
+		<div class="head__breadcrumbs breadcrumbs">
+			<a class="breadcrumbs__link" href="./">Главная</a>
+			<a class="breadcrumbs__link" href="./">О компании</a>
+			<span class="breadcrumbs__current">Оплата</span>
+		</div>
+		<h1 class="head__title title title_head">Оплата</h1>
+	</div>
+</div>
+
+<section class="payment">
+	<h2 class="payment__title title container">У нас два юридических лица для вашего удобства:</h2>
+	<div class="payment__inner container">
+		<div class="payment__box">
+			<div class="payment__side">
+				<h3 class="payment__subtitle">ООО «Адвир», ИНН 9722030321</h3>
+				<div class="payment__text">
+					<p>Подходит компаниям, которые работают на ОСНО и платят НДС.</p>
+					<p>Оплаты принимаются только безналичным переводом на р/с, после выставления счета.</p>
+				</div>
+				<div class="payment__buttons">
+					<a class="cost__button button button_empty" href="./" data-modal="#callback">Связаться с менеджером</a>
+					<a class="cost__button button button_empty" href="tel:+74951214384">Позвонить</a>
+				</div>
+			</div>
+			<div class="payment__image">
+				<img src="./images/stuff/payment/payment-image-1.webp" alt="">
+			</div>
+		</div>
+		<div class="payment__box payment__box_inverse">
+			<div class="payment__side">
+				<h3 class="payment__subtitle">ИП Богатырев Т.А, ИНН 502724089378</h3>
+				<div class="payment__text">
+					<p>Подходит компаниям, которые работают на УСН и не платят НДС.</p>
+					<div>
+						<span>Оплаты принимаются двумя способами:</span>
+						<ul>
+							<li>Безналичный перевод на р/с,</li>
+							<li>Оплата наличными в офисе компании, выдается кассовый чек.</li>
+						</ul>
+					</div>
+				</div>
+				<div class="payment__buttons">
+					<a class="cost__button button button_empty" href="./" data-modal="#callback">Связаться с менеджером</a>
+					<a class="cost__button button button_empty" href="tel:+74951214384">Позвонить</a>
+				</div>
+			</div>
+			<div class="payment__image">
+				<img src="./images/stuff/payment/payment-image-2.webp" alt="">
+			</div>
+		</div>
+	</div>
+</section>
+
+@@include("_bottom.html")

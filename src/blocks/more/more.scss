@@ -1,0 +1,45 @@
+@use 'lib' as *;
+
+.more {
+	$self: &;
+	@extend %reset-button;
+	transition: background-color 0.3s, color 0.3s;
+	background-color: transparent;
+	border: 1px solid var(--blue);
+	border-radius: 100px;
+	color: var(--blue);
+	width: fit-content;
+	padding: 0 40px;
+	height: 55px;
+	display: flex;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	
+	&_hidden {
+		background-color: var(--blue);
+		color: #fff;
+	
+		span {
+			&:nth-child(1) {
+				display: block !important;
+			}
+			
+			&:nth-child(2) {
+				display: none !important;
+			}
+		}
+	}
+
+	span {
+		animation: fadeIn 0.3s;
+
+		&:nth-child(1) {
+			display: none;
+		}
+		
+		&:nth-child(2) {
+			display: block;
+		}
+	}
+}

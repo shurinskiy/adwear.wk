@@ -3,80 +3,101 @@
 .price {
 	$self: &;
 	margin-bottom: 100px;
-	
+
 	@include media('<=xs') {
 		margin-bottom: 60px;
 	}
 
 	&__inner {
-		padding-top: 34px;
-		padding-bottom: 34px;
-		background-color: #fff;
 		border-radius: 30px;
-		
-		@include media('<=xs') {
-			padding-top: 48px;
-			
+		background-color: #fff;
+		padding-bottom: 40px;
+		padding-top: 40px;
+
+		@include media('<=xlg') {
+			border-radius: 0;
 		}
+	}
+
+	&__head {
+		margin-bottom: 50px;
 	}
 
 	&__title {
-		margin-bottom: 24px;
+		margin-bottom: 16px;
+	}
+
+	&__note {
+		font-size: fluid(16px, 14px);
+		margin-bottom: 30px;
+		font-weight: 300;
 
 		@include media('<=xs') {
-			margin-bottom: 42px;
+			text-align: center;
+			margin-bottom: 16px;
 		}
 	}
 
-	&__cols {
-		margin-bottom: 40px;
-		
-		.swiper-wrapper {
-			display: grid;
-			grid-template-columns: repeat(2, 1fr);
-			grid-gap: 24px;
+	&__items {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 0 24px;
+
+		@include media('<=xs') {
+			grid-template-columns: 1fr;
+			grid-gap: 0;
+		}
+	}
+
+	&__item {
+		display: flex;
+		justify-content: space-between;
+		padding: 20px 0;
+		gap: 24px;
+		font-size: fluid(18px, 14px);
+		border-bottom: 1px solid rgba(var(--blue-rgb), 0.3);
+
+		@include media('>xs') {
+			&:nth-child(-n + 18) {
+				display: flex !important;
+			}
+		}
 			
-			@include media('<=xs') {
-				display: flex;
-				grid-gap: 0;
+		@include media('<=xs') {
+			padding: 16px 0;
+
+			&:first-child {
+				display: none;
+			}
+		}
+
+		&_head {
+			font-size: fluid(18px, 16px);
+			border-bottom: 1px solid var(--blue);
+			font-weight: 500;
+		}
+
+		&_hide {
+			animation: fadeIn 0.3s;
+			
+			&.hidden {
+				display: none;
 			}
 		}
 	}
-
-	&__col {
-
-	}
-
-	&__col-head {
-		display: flex;
-		justify-content: space-between;
-		border-bottom: 1px solid var(--blue);
-		font-size: fluid(18px, 16px);
-		font-weight: 500;
-		padding: 20px 0;
-		
-		@include media('<=xs') {
-			padding: 16px 0;
-		}
-	}
 	
-	&__col-line {
-		display: flex;
-		justify-content: space-between;
-		border-bottom: 1px solid rgba(var(--blue-rgb), 0.3);
-		font-size: fluid(18px, 14px);
-		padding: 20px 0;
-		
-		@include media('<=xs') {
-			padding: 16px 0;
-		}
-		
-		span:last-child {
-			font-size: fluid(18px, 16px);
-		}
+	&__more {
+		margin: 40px auto 0;
 	}
 
-	&__more {
-		margin: 0 auto;
+	&__bottom {
+		padding-top: 60px;
+		line-height: 1.4;
+		font-size: fluid(18px, 14px);
+		font-weight: 500;
+
+		p {
+			margin: 0;
+		}
 	}
 }

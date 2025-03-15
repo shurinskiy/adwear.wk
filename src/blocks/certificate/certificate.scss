@@ -12,46 +12,6 @@
 
 	}
 
-	&__head {
-		display: flex;
-		flex-flow: column nowrap;
-		margin-bottom: 54px;
-		gap: 24px;
-
-		@include media('<=xs') {
-			margin-bottom: 32px;
-		}
-	}
-
-	&__title {
-
-	}
-
-	&__note {
-		line-height: 1.5;
-		font-size: fluid(18px, 14px);
-		display: flex;
-		justify-content: space-between;
-		gap: 24px;
-
-		@include media('<=xs') {
-			text-align: center;
-		}
-
-		p {
-			margin: 0;
-		}
-
-		a {
-			align-self: end;
-			color: var(--text);
-
-			@include media('<=sm') {
-				display: none;
-			}
-		}
-	}
-
 	&__items {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);

@@ -1,0 +1,100 @@
+@use 'lib' as *;
+
+.price2 {
+	$self: &;
+	margin-bottom: 100px;
+
+	@include media('<=xs') {
+		margin-bottom: 60px;
+	}
+
+	&__inner {
+		border-radius: 30px;
+		background-color: #fff;
+		padding-bottom: 40px;
+		padding-top: 40px;
+
+		@include media('<=xlg') {
+			border-radius: 0;
+		}
+	}
+
+	&__title {
+		margin-bottom: 16px;
+	}
+
+	&__note {
+		font-size: fluid(16px, 14px);
+		margin-bottom: 30px;
+		font-weight: 300;
+
+		@include media('<=xs') {
+			text-align: center;
+			margin-bottom: 16px;
+		}
+	}
+
+	&__table {
+		overflow-x: auto;
+			
+		&::-webkit-scrollbar {
+			width: 4px;
+			height: 4px;
+		}
+		
+		&::-webkit-scrollbar-track {
+			background-color: #fff;
+		}
+		
+		&::-webkit-scrollbar-thumb {
+			background-color: var(--blue);
+		}
+		
+		&::-webkit-scrollbar-corner {
+			background-color: transparent;
+		}
+
+		table {
+			font-size: fluid(18px, 16px);
+			border-collapse: collapse;
+			border-spacing: 0;
+			width: 100%;
+		}
+
+		thead tr {
+			border-bottom: 1px solid var(--blue);
+		}
+		
+		tbody tr {
+			border-bottom: 1px solid rgba(var(--blue-rgb), 0.2);
+		}
+
+		th, td {
+			padding: 20px;
+			text-align: left;
+			white-space: nowrap;
+			
+			@include media('<=xs') {
+				padding: 16px;
+			}
+			
+			&:first-child {
+				padding-left: 0;
+				width: 270px;
+				min-width: 120px;
+			}
+		}
+		
+		th {
+			font-weight: 500;
+		}
+		
+		td {
+			&:first-child {
+				@include media('<=xxs') {
+					font-size: 14px;
+				}
+			}
+		}
+	}
+}

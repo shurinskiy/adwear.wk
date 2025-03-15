@@ -1,0 +1,56 @@
+@use 'lib' as *;
+
+.pages {
+	$self: &;
+	padding-top: 100px;
+
+	@include media('<=md') {
+		padding-top: 80px;
+	}
+	
+	@include media('<=xxs') {
+		padding-top: 60px;
+	}
+
+	&__inner {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-gap: 24px;
+		padding: 40px 20px;
+		border-radius: 8px;
+		background-color: #fff;
+		counter-reset: pages_ctr;
+		
+		@include media('<=xlg') {
+			grid-template-columns: repeat(3, 1fr);
+		}
+		
+		@include media('<=lg') {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		
+		@include media('<=xs') {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__link {
+		color: inherit;
+		text-decoration: none;
+		font-size: 18px;
+		color: #777;
+
+		&::before {
+			display: inline-block;
+			counter-increment: pages_ctr;
+			content: counter(pages_ctr)'.';
+			margin-right: 10px;
+			font-weight: 700;
+			color: var(--blue);
+		}
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

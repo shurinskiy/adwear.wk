@@ -9,62 +9,6 @@
 	}
 
 	&__inner {
-
-	}
-
-	&__head {
-		padding-bottom: 50px;
-		margin-bottom: 48px;
-		border-bottom: 2px solid rgba(var(--dark-rgb), 0.1);
-		
-		@include media('<=xs') {
-			margin-bottom: 20px;
-			border: none;
-			padding: 0;
-		}
-	}
-
-	&__title {
-		margin-bottom: 50px;
-
-		@include media('<=xs') {
-			margin-bottom: 24px;
-		}
-	}
-
-	&__note {
-		font-size: fluid(24px, 14px);
-		margin-bottom: 24px;
-		font-weight: 500;
-		line-height: 1.5;
-
-		@include media('<=xs') {
-			text-align: center;
-		}
-	}
-	
-	&__explain {
-		font-size: fluid(16px, 14px);
-		margin-bottom: 32px;
-		font-weight: 300;
-
-		@include media('<=xs') {
-			text-align: center;
-
-			br {
-				display: none;
-			}
-		}
-	}
-
-	&__ask {
-		
-		@include media('<=xs') {
-			margin: 0 auto;
-		}
-	}
-
-	&__items {
 		column-count: 2;
 		column-gap: 24px;
 		column-width: 350px
@@ -73,5 +17,9 @@
 	&__item {
 		break-inside: avoid;
 		margin-bottom: 16px;
+
+		@include media('<=xs') {
+			margin-bottom: 8px;	
+		}
 	}
 }

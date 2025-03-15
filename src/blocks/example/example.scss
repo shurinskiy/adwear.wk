@@ -1,0 +1,75 @@
+@use 'lib' as *;
+
+.example {
+	$self: &;
+	display: flex;
+	flex-flow: column nowrap;
+	gap: 24px;
+
+	&__title {
+		display: none;
+		font-weight: 500;
+		font-size: 18px;
+		text-align: center;
+
+		@include media('<=md') {
+			display: block;
+		}
+	}
+
+	&__text {
+		order: 1;
+		font-size: 12px;
+		font-weight: 300;
+		line-height: 1.5;
+
+		@include media('<=md') {
+			order: 0;	
+		}
+	}
+
+	&__cols {
+		display: flex;
+		gap: 24px;
+
+		@include media('<=md') {
+			flex-flow: column nowrap;
+		}
+	}
+
+	&__col {
+		border-radius: 15px;
+		border: 1px solid rgba(var(--blue-rgb), 0.1);
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: space-between;
+		align-items: center;
+
+		@include media('<=lg') {
+			border-radius: 12px;
+		}
+
+		&_small {
+
+			@include media('<=md') {
+				flex-flow: row nowrap;
+			}
+
+			#{$self}__item span {
+				font-size: 9px;
+			}
+		}
+	}
+
+	&__item {
+
+		span {
+			font-size: 13px;
+			color: var(--text);
+			display: block;
+			text-align: center;
+			font-weight: 500;
+			padding: 8px 0 4px;
+		}
+	}
+}
