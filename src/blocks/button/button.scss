@@ -18,6 +18,13 @@
 	text-align: center;
 	align-items: center;
 	justify-content: center;
+	gap: 10px;
+	font-size: 18px;
+	
+	@include media('<=xs') {
+		font-size: 16px;
+		height: 52px;
+	}
 
 	&_inverse {
 		--ground: #fff;
@@ -32,5 +39,10 @@
 	&_empty#{&}_inverse {
 		border-color: #fff;
 		--color: #fff;
+	}
+
+	svg {
+		fill: var(--blue);
+		width: 24px;
 	}
 }

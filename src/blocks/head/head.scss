@@ -108,9 +108,15 @@
 		}
 	}
 
-	&__button {
+	&__button.button {
+		
 		@include media('<=xs') {
 			margin: 0 auto;
 		}
+	}
+	
+	&__back.button {
+		margin-bottom: 48px;
+		padding: 0 30px;
 	}
 }

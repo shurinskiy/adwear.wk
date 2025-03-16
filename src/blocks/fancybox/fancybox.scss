@@ -42,6 +42,14 @@
 			--f-button-svg-stroke-width: 0;
 			--f-button-svg-fill: #fff;
 			--f-button-svg-filter: none;
+			
+			@include media('<=xxs') {
+				--f-button-width: 34px;
+				--f-button-height: 34px;
+				--f-button-svg-width: 16px;
+				--f-button-svg-height: 16px;
+				--f-button-border-radius: 4px;
+			}
 		}
 	}
 

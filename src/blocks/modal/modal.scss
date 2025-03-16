@@ -32,10 +32,12 @@
 			max-width: 750px;
 		}
 	}
-
+	
 	&_example {
+		
 		#{$self}__body {
 			max-width: 400px;
+			border-radius: 15px;
 			padding: 40px 24px 24px;
 		}
 	}

@@ -3,7 +3,8 @@
 .pages {
 	$self: &;
 	padding-top: 100px;
-
+	margin-bottom: 60px;
+	
 	@include media('<=md') {
 		padding-top: 80px;
 	}
