@@ -53,11 +53,12 @@
 		}
 	}
 
-	&__footer {
-
-		.is-classic .is-nav-selected .f-thumbs__slide__button::after {
-			border-color: var(--blue);
-		}
+	&__thumbs {
+		--f-thumb-outline-color: #e7bd01;
+		--f-thumb-border-radius: 3px;
+		--f-thumb-outline: 2px;
+		--f-thumb-height: 72px;
+		--f-thumb-width: 96px;
 
 		.f-thumbs__slide__button {
 			background-color: #fff;

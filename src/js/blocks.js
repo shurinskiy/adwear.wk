@@ -18,3 +18,4 @@ import "../blocks/menu/menu.js";
 import "../blocks/more/more.js";
 import "../blocks/reviews2/reviews2.js";
 import "../blocks/card-f/card-f.js";
+import "../blocks/alliance/alliance.js";
