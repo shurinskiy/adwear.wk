@@ -1,0 +1,102 @@
+@use 'lib' as *;
+
+.route {
+	$self: &;
+	margin-bottom: 100px;
+
+	@include media('<=xs') {
+		margin-bottom: 60px;
+	}
+
+	&__inner {
+
+	}
+
+	&__head {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 60px;
+		gap: 24px;
+		
+		@include media('<=md') {
+			align-items: stretch;
+			flex-flow: column nowrap;
+		}
+
+		@include media('<=xs') {
+			margin-bottom: 40px;
+		}
+	}
+
+	&__title {
+
+	}
+
+	&__buttons {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 16px 24px;
+
+		@include media('<=xs') {
+			justify-content: center;
+		}
+	}
+
+	&__button {
+
+	}
+
+	&__items {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 24px;
+		
+		@include media('<=sm') {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__item {
+		overflow: hidden;
+		border-radius: 20px;
+		border: 1px solid rgba(var(--black-rgb), 0.1);
+		display: flex;
+		flex-flow: column nowrap;
+	}
+
+	&__top {
+		background-color: #fff;
+		padding: 30px 24px 16px;
+		display: flex;
+		flex-flow: column nowrap;
+		flex-grow: 1;
+		gap: 16px;
+		
+		@include media('<=xs') {
+			padding: 30px 24px;
+		}
+	}
+
+	&__subtitle {
+		font-size: fluid(18px, 14px);
+
+		@include media('<=xs') {
+			text-align: center;
+		}
+	}
+	
+	&__text {
+		font-size: fluid(16px, 12px);
+		font-weight: 300;
+		line-height: 1.5;
+
+		@include media('<=xs') {
+			text-align: center;
+		}
+	}
+
+	&__map {
+		min-height: 390px;
+	}
+}

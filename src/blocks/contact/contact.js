@@ -1,49 +1,38 @@
 import * as ymaps3 from 'ymaps3';
 
 (async function initMap() {
-	const rootContainer = document.querySelector('[data-contact-js]');
-	if (! rootContainer) return;
+	const officeContainer = document.querySelector('[data-contact-js]');
 
 	try {
 		await ymaps3.ready;
 
 		const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapControls, YMapControl } = ymaps3;
 		const { YMapDefaultMarker, YMapZoomControl, YMapGeolocationControl, YMapRotateTiltControl } = await import('@yandex/ymaps3-default-ui-theme');
-
-		const map = new YMap(
-			rootContainer, {
-				location: {
-					center: [37.704764, 55.722914],
-					zoom: 16
-				}
-			}, [
-				new YMapDefaultSchemeLayer({}),
-				new YMapDefaultFeaturesLayer({})
-			]		
-		);
-
-		function fullScreenBtnHandler() {
-			if (document.fullscreenElement) {
-				document.exitFullscreen();
-				rootContainer.removeAttribute('style');
-			} else {
-				map.container.requestFullscreen();
-				rootContainer.style.height = 'auto';
-			}
-		}
-
+	
 		class FullscreenButton extends ymaps3.YMapComplexEntity {
-			constructor() {
+			constructor(map, rootContainer) {
 				super({});
+				this.map = map;
+				this.rootContainer = rootContainer;
 				this._element = null;
 				this._control = null;
+			}
+	
+			_fullScreenBtnHandler() {
+				if (document.fullscreenElement) {
+					document.exitFullscreen();
+					this.rootContainer.removeAttribute('style');
+				} else {
+					this.map.container.requestFullscreen();
+					this.rootContainer.style.height = 'auto';
+				}
 			}
 
 			_createElement() {
 				const fullScreenButtonElement = document.createElement('button');
 
 				fullScreenButtonElement.type = 'button';
-				fullScreenButtonElement.onclick = fullScreenBtnHandler;
+				fullScreenButtonElement.onclick = this._fullScreenBtnHandler.bind(this);
 				fullScreenButtonElement.classList.add('ymaps3x0--fullscreen');
 
 				document.addEventListener('fullscreenchange', e => {
@@ -65,27 +54,44 @@ import * as ymaps3 from 'ymaps3';
 			}
 		}
 
+		if (officeContainer) {
+			const map1 = new YMap(
+				officeContainer, {
+					location: {
+						center: [37.704764, 55.722914],
+						zoom: 16
+					}
+				}, [
+					new YMapDefaultSchemeLayer({}),
+					new YMapDefaultFeaturesLayer({})
+				]		
+			);
+	
+			map1.addChild(new YMapDefaultMarker({
+				coordinates: [37.704764, 55.722914],
+				color: 'red',
+				title: 'Adwear ★5.0',
+				subtitle: 'До 18:00',
+				size: 'normal',
+				iconName: 'clothes_shop'
+			}));
+	
+			map1.addChild(
+				new YMapControls({position: 'right'}, [
+					new YMapControl().addChild(new FullscreenButton(map1, officeContainer)),
+					new YMapZoomControl({}),
+					new YMapGeolocationControl({}),
+					new YMapRotateTiltControl({}),
+				])
+			);
+		}
 
-		map.addChild(new YMapDefaultMarker({
-			coordinates: [37.704764, 55.722914],
-			color: 'red',
-			title: 'Adwear ★5.0',
-			subtitle: 'До 18:00',
-			size: 'normal',
-			iconName: 'clothes_shop'
-		}));
-
-		map.addChild(
-			new YMapControls({position: 'right'}, [
-				new YMapControl().addChild(new FullscreenButton({})),
-				new YMapZoomControl({}),
-				new YMapGeolocationControl({}),
-				new YMapRotateTiltControl({}),
-			])
-		);
 
 	} catch (error) {
 		console.error("Ошибка при инициализации карты:", error);
-	}		
+	}
 
+	document.addEventListener('click', e => {
+		officeContainer.classList.toggle('active', e.target.closest('[data-contact-js]'));
+	});
 })();

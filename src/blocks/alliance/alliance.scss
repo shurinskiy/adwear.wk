@@ -27,6 +27,18 @@
 			background-position: left -550px top -125px;
 			margin-bottom: -190px;
 		}
+		
+		&_left {
+			background-position: right -380px top -125px;
+			
+			@include media('<=xs') {
+				background-position: left -550px top -125px;
+			}
+	
+			#{$self}__side {
+				margin: 0;
+			}
+		}
 	}
 
 	&__side {
