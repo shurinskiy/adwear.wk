@@ -1,5 +1,4 @@
 import "../blocks/header/header.js";
-import "../blocks/contact/contact.js";
 import "../blocks/hero/hero.js";
 import "../blocks/rating/rating.js";
 import "../blocks/culture/culture.js";
@@ -19,4 +18,5 @@ import "../blocks/more/more.js";
 import "../blocks/reviews2/reviews2.js";
 import "../blocks/card-f/card-f.js";
 import "../blocks/alliance/alliance.js";
+import "../blocks/ymaps3/ymaps3.js";
 import "../blocks/route/route.js";

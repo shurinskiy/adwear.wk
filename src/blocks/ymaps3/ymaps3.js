@@ -1,7 +1,8 @@
 import * as ymaps3 from 'ymaps3';
+import DATA from './ymaps3.json';
 
 (async function initMap() {
-	const officeContainer = document.querySelector('[data-contact-js]');
+	const officeContainer = document.querySelector(DATA.office.selector);
 
 	try {
 		await ymaps3.ready;
@@ -55,11 +56,11 @@ import * as ymaps3 from 'ymaps3';
 		}
 
 		if (officeContainer) {
-			const map1 = new YMap(
+			const office = new YMap(
 				officeContainer, {
 					location: {
-						center: [37.704764, 55.722914],
-						zoom: 16
+						center: DATA.office.location,
+						zoom: DATA.office.zoom
 					}
 				}, [
 					new YMapDefaultSchemeLayer({}),
@@ -67,18 +68,18 @@ import * as ymaps3 from 'ymaps3';
 				]		
 			);
 	
-			map1.addChild(new YMapDefaultMarker({
-				coordinates: [37.704764, 55.722914],
-				color: 'red',
-				title: 'Adwear ★5.0',
-				subtitle: 'До 18:00',
-				size: 'normal',
-				iconName: 'clothes_shop'
+			office.addChild(new YMapDefaultMarker({
+				coordinates: DATA.office.location,
+				title: DATA.office.marker.title,
+				subtitle: DATA.office.marker.subtitle,
+				iconName: DATA.office.marker.iconName,
+				color: DATA.office.marker.color,
+				size: DATA.office.marker.size,
 			}));
 	
-			map1.addChild(
+			office.addChild(
 				new YMapControls({position: 'right'}, [
-					new YMapControl().addChild(new FullscreenButton(map1, officeContainer)),
+					new YMapControl().addChild(new FullscreenButton(office, officeContainer)),
 					new YMapZoomControl({}),
 					new YMapGeolocationControl({}),
 					new YMapRotateTiltControl({}),
@@ -86,12 +87,11 @@ import * as ymaps3 from 'ymaps3';
 			);
 		}
 
-
 	} catch (error) {
 		console.error("Ошибка при инициализации карты:", error);
 	}
 
 	document.addEventListener('click', e => {
-		officeContainer.classList.toggle('active', e.target.closest('[data-contact-js]'));
+		officeContainer.classList.toggle('active', e.target.closest('.ymaps3'));
 	});
 })();

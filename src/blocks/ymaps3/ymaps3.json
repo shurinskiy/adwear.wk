@@ -1,0 +1,14 @@
+{
+	"office": {
+		"selector": ".ymaps3_office",
+		"location": [ 37.704764, 55.722914 ],
+		"zoom": 16,
+		"marker": {
+			"color": "red",
+			"title": "Adwear ★5.0",
+			"subtitle": "До 18:00",
+			"size": "normal",
+			"iconName": "clothes_shop"
+		}
+	}
+}
