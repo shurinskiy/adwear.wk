@@ -93,7 +93,8 @@ import DATA from './ymaps3.json';
 	}
 
 	document.addEventListener('click', e => {
-		allContainers.forEach(ct => ct.classList.toggle('active', e.target.closest('.ymaps3') === ct));
+		if (allContainers)
+			allContainers.forEach(ct => ct.classList.toggle('active', e.target.closest('.ymaps3') === ct));
 	});
 
 })();
