@@ -2,6 +2,7 @@ import * as ymaps3 from 'ymaps3';
 import DATA from './ymaps3.json';
 
 (async function initMap() {
+	const allContainers = document.querySelectorAll('.ymaps3');
 	const officeContainer = document.querySelector(DATA.office.selector);
 
 	try {
@@ -92,6 +93,7 @@ import DATA from './ymaps3.json';
 	}
 
 	document.addEventListener('click', e => {
-		officeContainer.classList.toggle('active', e.target.closest('.ymaps3'));
+		allContainers.forEach(ct => ct.classList.toggle('active', e.target.closest('.ymaps3') === ct));
 	});
+
 })();

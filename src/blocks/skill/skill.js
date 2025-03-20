@@ -13,6 +13,15 @@ import { Autoplay } from 'swiper/modules';
 		section.style.setProperty('--progress', progress);
 	}
 
+	const updateBigImage = function(sw, index) {
+		bigImage.src = sw.slides[index].querySelector('img').src;
+		bigImage.classList.add('showing');
+		
+		bigImage.addEventListener('animationend', e => {
+			bigImage.classList.remove('showing');
+		}, { once: true });
+	}
+
 	new Swiper(document.querySelector('.skill__slider.swiper'), {
 		modules: [Autoplay],
 		watchOverflow: true,
@@ -28,13 +37,11 @@ import { Autoplay } from 'swiper/modules';
 			slideChange: updateProgress,
 			slideChangeTransitionEnd(sw) {
 				const prevIndex = sw.activeIndex ? sw.activeIndex - 1 : sw.slides.length - 1;
-				bigImage.src = sw.slides[prevIndex].querySelector('img').src;
-				bigImage.classList.add('showing');
-				
-				bigImage.addEventListener('animationend', e => {
-					bigImage.classList.remove('showing');
-				}, { once: true });
+				updateBigImage(sw, prevIndex);
 			},
+			click(sw, e) {
+				e.target.closest('.skill__slide') && updateBigImage(sw, sw.clickedIndex);
+			}
 		},
 		breakpoints: {
 			0: {

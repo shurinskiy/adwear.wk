@@ -169,10 +169,7 @@
 		}
 
 		&:not(.active) * { pointer-events: none; }
-
-		&.active::before {
-			display: none;
-		}
+		&.active::before { display: none; }
 
 		&_tall {
 			height: 550px;

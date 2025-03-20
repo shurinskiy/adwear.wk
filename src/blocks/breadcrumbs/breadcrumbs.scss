@@ -3,6 +3,7 @@
 .breadcrumbs {
 	$self: &;
 	display: flex;
+	flex-wrap: wrap;
 	align-items: center;
 	font-size: fluid(16px, 12px);
 	color: var(--blue);

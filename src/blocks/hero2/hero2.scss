@@ -93,17 +93,27 @@
 	&__image {
 		overflow: hidden;
 		border-radius: 30px;
-
+		background-color: var(--cloud);
+		background-image: url('./images/parquet-6.svg');
+		background-size: 1400px;
+		background-position: left -70px top -130px;
+		background-repeat: no-repeat;
+		display: flex;
+		flex-flow: column nowrap;
+		
 		@include media('<=xs') {
+			background-size: 1100px;
 			border-radius: 15px;
 		}
 
+		&_grey {
+			background-color: #E7E8EA;
+		}
+
 		img {
-			width: auto;
-			height: 100%;
 			display: block;
-			margin: 0 auto;
-			object-fit: cover;
+			margin: auto auto 0;
+			max-width: calc(100% - 48px);
 		}
 	}
 
