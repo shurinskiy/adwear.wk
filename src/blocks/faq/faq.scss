@@ -9,17 +9,30 @@
 	}
 
 	&__inner {
-		column-count: 2;
-		column-gap: 24px;
-		column-width: 350px
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 16px 24px;
+		
+		@include media('<=sm') {
+			grid-template-columns: 1fr;
+		}
+		
+		@include media('<=xs') {
+			grid-gap: 8px;
+		}
+	}
+
+	&__col {
+		display: flex;
+		flex-flow: column nowrap;
+		gap: 16px;
+		
+		@include media('<=xs') {
+			gap: 8px;
+		}
 	}
 
 	&__item {
-		break-inside: avoid;
-		margin-bottom: 16px;
 
-		@include media('<=xs') {
-			margin-bottom: 8px;	
-		}
 	}
 }
