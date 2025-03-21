@@ -20,3 +20,4 @@ import "../blocks/card-f/card-f.js";
 import "../blocks/alliance/alliance.js";
 import "../blocks/ymaps3/ymaps3.js";
 import "../blocks/route/route.js";
+import "../blocks/cookie/cookie.js";

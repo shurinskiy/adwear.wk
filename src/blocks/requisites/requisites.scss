@@ -1,0 +1,74 @@
+@use 'lib' as *;
+
+.requisites {
+	$self: &;
+	margin-bottom: 100px;
+
+	@include media('<=xs') {
+		margin-bottom: 60px;
+	}
+
+	&__inner {
+
+	}
+
+	&__table {
+		overflow-x: auto;
+			
+		&::-webkit-scrollbar {
+			width: 4px;
+			height: 4px;
+		}
+		
+		&::-webkit-scrollbar-track {
+			background-color: #fff;
+		}
+		
+		&::-webkit-scrollbar-thumb {
+			background-color: var(--blue);
+		}
+		
+		&::-webkit-scrollbar-corner {
+			background-color: transparent;
+		}
+
+		table {
+			font-size: fluid(18px, 14px);
+			border-collapse: collapse;
+			border-spacing: 0;
+			min-width: 600px;
+			width: 100%;
+		}
+
+		thead tr {
+			background-color: var(--cloud);
+		}
+
+		tbody tr {
+			&:nth-child(even) {
+				background-color: rgba(var(--black-rgb), 0.03);
+			}
+		}
+
+		th, td {
+			padding: 18px;
+			text-align: left;
+			border: 3px solid var(--background);
+			font-weight: 300;
+			
+			@include media('<=xs') {
+				padding: 12px;
+			}
+		}
+		
+		th {
+			color: var(--dark);
+			font-weight: 500;
+			line-height: 1.4;
+
+			span {
+				font-weight: 300;
+			}
+		}
+	}
+}
