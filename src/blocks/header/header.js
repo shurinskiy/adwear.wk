@@ -13,10 +13,10 @@ import { driveMenu } from "../../js/libs/driveMenu";
 		omitToClose: '.modal',
 		class: 'opened',
 		open: function() {
-			const maxw = parseInt(getComputedStyle(this).maxWidth);
-			const scrollw = scrollLock.getPageScrollBarWidth();
+			// const maxw = parseInt(getComputedStyle(this).maxWidth);
+			// const scrollw = scrollLock.getPageScrollBarWidth();
+			// Object.assign(this.style, { maxWidth: maxw + scrollw + 'px' });
 
-			Object.assign(this.style, { maxWidth: maxw + scrollw + 'px' });
 			scrollLock.disablePageScroll();
 			toggle.classList.add('opened');
 			document.body.classList.add('underlay');

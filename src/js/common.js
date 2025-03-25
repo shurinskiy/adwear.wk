@@ -33,6 +33,10 @@ runCounter(document.querySelectorAll('[data-count-anime]'), {
 });
 
 new ResizeObserver(() => {
-	let vw = document.documentElement.clientWidth / 100;
-	document.documentElement.style.setProperty('--vw', `${vw}px`);
+	const root = document.documentElement;
+	const vw = root.clientWidth / 100;
+	const vh = root.clientHeight / 100;
+
+	root.style.setProperty('--vw', `${vw}px`);
+	root.style.setProperty('--vh', `${vh}px`);
 }).observe(document.documentElement);
