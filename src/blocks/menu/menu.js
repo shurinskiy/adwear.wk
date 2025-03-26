@@ -27,7 +27,7 @@ import enquire from 'enquire.js';
 	enquire.register("screen and (max-width: 1100px", {
 		match: function() {
 			// Предотвращаем горизонтальное перемещение через touch-события
-			let startX = 0;
+			/* let startX = 0;
 			let startY = 0;
 			wrapper.addEventListener('touchstart', function (e) {
 				startX = e.touches[0].clientX;
@@ -43,20 +43,21 @@ import enquire from 'enquire.js';
 				if (Math.abs(deltaX) > Math.abs(deltaY)) {
 					e.preventDefault();
 				}
-			}, { passive: false });
+			}, { passive: false }); */
 		
 			// Открытие уровня 0
-			const insideLinks = menu.querySelectorAll(".menu__item_haschild > .menu__inside");
+			const insideLinks = menu.querySelectorAll(".menu__inside");
 	
 			insideLinks.forEach(item => {
 				item.addEventListener("click", function (event) {
-	
 					const level0 = item.nextElementSibling.closest('.menu__level_0');
+
 					if (level0) {
 						level0.style.overflowY = "auto";
 						level0.style.overflowX = "hidden";
 						level0.classList.add("active");
 					}
+					
 					wrapper.style.transform = "translateX(calc(-100% - 12px))";
 				});
 			});
@@ -65,24 +66,23 @@ import enquire from 'enquire.js';
 			const subcategories = menu.querySelectorAll(".menu__level_0 .menu__inside");
 			subcategories.forEach(link => {
 				link.addEventListener("click", function (event) {
+					if (! event.target.closest('.menu__icon')) return;
 					event.preventDefault();
-					wrapper.style.transform = "translateX(calc( -200% - 24px ))";
 					
 					const level0 = link.closest(".menu__level_0");
+					const level1 = link.nextElementSibling.closest('.menu__level_1');
+					
 					if (level0) {
 						level0.style.overflow = "visible";
 					}
-			
-					const parentItem = link.closest(".menu__item_haschild");
-					if (parentItem) {
-			
-						const level1 = parentItem.querySelector(".menu__level_1");
-						if (level1) {
-							level1.style.overflowY = "auto";
-							level1.style.overflowX = "hidden";
-							level1.classList.add("active");
-						}
+					
+					if (level1) {
+						level1.style.overflowY = "auto";
+						level1.style.overflowX = "hidden";
+						level1.classList.add("active");
 					}
+
+					wrapper.style.transform = "translateX(calc( -200% - 24px ))";
 				});
 			});
 		
@@ -91,21 +91,23 @@ import enquire from 'enquire.js';
 			backLevel0Buttons.forEach((backBtn) => {
 				backBtn.addEventListener("click", function (event) {
 					event.stopPropagation();
-					wrapper.style.transform = "translateX(0)";
-		
+
 					const level0 = backBtn.closest(".menu__level_0");
+					const level1 = level0.querySelector(".menu__level_1");
+		
 					if (level0) {
 						level0.style.overflowY = "hidden";
 						level0.style.overflowX = "hidden";
 						level0.classList.remove("active");
 		
-						const level1 = level0.querySelector(".menu__level_1");
 						if (level1) {
 							level1.classList.remove("active");
 							level1.style.overflowY = "hidden";
 							level1.style.overflowX = "hidden";
 						}
 					}
+
+					wrapper.style.transform = "translateX(0)";
 				});
 			});
 		
@@ -114,22 +116,24 @@ import enquire from 'enquire.js';
 			backLevel1Buttons.forEach((backBtn) => {
 				backBtn.addEventListener("click", function (event) {
 					event.stopPropagation();
-					wrapper.style.transform = "translateX(calc( -100% - 12px))";
-		
+
 					const level1 = backBtn.closest(".menu__level_1");
+					const level0 = backBtn.closest(".menu__level_0");
+		
 					if (level1) {
 						level1.classList.remove("active");
 						level1.style.overflowY = "hidden";
 						level1.style.overflowX = "hidden";
 					}
 				
-					const level0 = backBtn.closest(".menu__level_0");
 					if (level0) {
 						level0.classList.add("active");
 						
 						level0.style.overflowY = "auto";
 						level0.style.overflowX = "hidden";
 					}
+
+					wrapper.style.transform = "translateX(calc( -100% - 12px))";
 				});
 			});
 		},
