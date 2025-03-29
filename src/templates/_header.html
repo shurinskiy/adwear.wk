@@ -9,16 +9,32 @@
 				</div>
 				<button class="menu__button button" data-modal="#order">Обсудить проект</button>
 			</div>
-			<nav class="menu__viewbox" data-scroll-lock-scrollable>
+			<nav class="menu__viewbox">
 				<div class="menu__wrapper">
 					<div class="menu__head-catalog">
 						<span>Каталог</span>
 						@@include('_menu-panel.html')
 					</div>
-					<a class="menu__head-link" href="./reviews.html"><span>О компании</span></a>
-					<a class="menu__head-link" href="./manufacture.html"><span>Цены</span></a>
-					<a class="menu__head-link" href="./typical.html"><span>Работы</span></a>
-					<a class="menu__head-link" href="./"><span>Контакты</span></a>
+					<div class="menu__head-link h-about">
+						<a class="h-about__head" href="./about.html">О компании
+							<i class="h-about__icon menu__icon"><svg><use xlink:href="#arr-right"></use></svg></i>
+						</a>
+						<div class="h-about__ddown menu__level menu__level_0">
+							<button class="h-about__back menu__back">Назад</button>
+							<a class="h-about__link" href="./reviews.html">Отзывы</a>
+							<a class="h-about__link" href="./clients.html">Наши клиенты</a>
+							<a class="h-about__link" href="./warranty.html">Гарантии</a>
+							<a class="h-about__link" href="./certificate.html">Сертификаты</a>
+							<a class="h-about__link" href="./payment.html">Оплата</a>
+							<a class="h-about__link" href="./delivery.html">Доставка</a>
+							<a class="h-about__link" href="./faq.html">Вопросы и ответы</a>
+							<a class="h-about__link" href="./requisites.html">Реквизиты</a>
+							<a class="h-about__link" href="./vacancy.html">Вакансии</a>
+						</div>
+					</div>
+					<a class="menu__head-link" href="./prices.html"><span>Цены</span></a>
+					<a class="menu__head-link" href="./works.html"><span>Работы</span></a>
+					<a class="menu__head-link" href="./contact.html"><span>Контакты</span></a>
 				</div>
 			</nav>
 			<div class="menu__socials">

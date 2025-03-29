@@ -1,0 +1,76 @@
+@use 'lib' as *;
+
+.h-about {
+	$self: &;
+
+	@include media('>lg') {
+		position: relative;
+	
+		&:hover {
+			#{$self}__ddown {
+				display: flex;
+			}
+		}
+	}
+
+	@include media('<=lg') {
+		position: static;
+		align-items: stretch;
+	}
+
+	&__head {
+		text-decoration: none;
+		white-space: nowrap;
+		
+		@include media('<=lg') {
+			display: flex;
+			align-items: center;
+			width: 100%;
+		}
+	}
+
+	&__icon {
+
+	}
+
+	&__ddown {
+		
+		@include media('>lg') {
+			display: none;
+			position: absolute;
+			top: calc(100% - 15px);
+			z-index: 2;
+			left: 0;
+			border-radius: 12px;
+			padding: 24px;
+			flex-flow: column nowrap;
+			gap: 16px;
+			width: auto;
+			background-size: auto 400px;
+			background-repeat: no-repeat;
+			background-color: var(--cloud);
+			background-image: url('./images/parquet-5.svg');
+			background-position: bottom -180px right -200px;
+		}
+	}
+
+	&__link {
+		display: block;
+		color: var(--blue);
+		text-decoration: none;
+		white-space: nowrap;
+		font-weight: normal;
+
+		@include media('<=lg') {
+			min-height: 50px;
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: center;
+			border-bottom: 1px solid rgba(var(--blue-rgb), 0.15);
+		}
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

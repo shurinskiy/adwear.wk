@@ -7,8 +7,6 @@ import enquire from 'enquire.js';
 
 	const wrapper = menu.querySelector('.menu__wrapper');
 
-	// const viewbox = menu.querySelector('.menu__viewbox');
-
 	driveTabs({
 		container: menu,
 		controls: menu.querySelectorAll('.menu__control'),
@@ -45,12 +43,27 @@ import enquire from 'enquire.js';
 				}
 			}, { passive: false }); */
 		
+			const slide = (offset = 0) => {
+				wrapper.style.setProperty('--slide', `${offset}%`);
+				wrapper.classList.add('sliding');
+
+				wrapper.addEventListener('transitionend', e => {
+					wrapper.classList.remove('sliding')
+				}, { once: true });
+			}
+
 			// Открытие уровня 0
-			const insideLinks = menu.querySelectorAll(".menu__inside");
+			const insideLinks = menu.querySelectorAll(".menu__inside, .h-about__head");
 	
 			insideLinks.forEach(item => {
-				item.addEventListener("click", function (event) {
+				item.addEventListener("click", function (e) {
 					const level0 = item.nextElementSibling.closest('.menu__level_0');
+				
+					// костыль для меню "о компании"
+					if (item.classList.contains('h-about__head')) {
+						if (! e.target.closest('.h-about__icon')) return;
+						e.preventDefault();
+					}
 
 					if (level0) {
 						level0.style.overflowY = "auto";
@@ -58,16 +71,16 @@ import enquire from 'enquire.js';
 						level0.classList.add("active");
 					}
 					
-					wrapper.style.transform = "translateX(calc(-100% - 12px))";
+					slide(-100);
 				});
 			});
 		
 			// Открытие уровня 1
 			const subcategories = menu.querySelectorAll(".menu__level_0 .menu__inside");
 			subcategories.forEach(link => {
-				link.addEventListener("click", function (event) {
-					if (! event.target.closest('.menu__icon')) return;
-					event.preventDefault();
+				link.addEventListener("click", function (e) {
+					if (! e.target.closest('.menu__icon')) return;
+					e.preventDefault();
 					
 					const level0 = link.closest(".menu__level_0");
 					const level1 = link.nextElementSibling.closest('.menu__level_1');
@@ -82,15 +95,15 @@ import enquire from 'enquire.js';
 						level1.classList.add("active");
 					}
 
-					wrapper.style.transform = "translateX(calc( -200% - 24px ))";
+					slide(-200);
 				});
 			});
 		
 			// Обработчик кнопок "Назад" в уровне 0 (для каждой кнопки)
 			const backLevel0Buttons = menu.querySelectorAll(".menu__level_0 .menu__back");
 			backLevel0Buttons.forEach((backBtn) => {
-				backBtn.addEventListener("click", function (event) {
-					event.stopPropagation();
+				backBtn.addEventListener("click", function (e) {
+					e.stopPropagation();
 
 					const level0 = backBtn.closest(".menu__level_0");
 					const level1 = level0.querySelector(".menu__level_1");
@@ -107,15 +120,15 @@ import enquire from 'enquire.js';
 						}
 					}
 
-					wrapper.style.transform = "translateX(0)";
+					slide(0);
 				});
 			});
 		
 			// Обработчик кнопок "Назад" в уровне 1 (для каждой кнопки)
 			const backLevel1Buttons = menu.querySelectorAll(".menu__level_1 .menu__back");
 			backLevel1Buttons.forEach((backBtn) => {
-				backBtn.addEventListener("click", function (event) {
-					event.stopPropagation();
+				backBtn.addEventListener("click", function (e) {
+					e.stopPropagation();
 
 					const level1 = backBtn.closest(".menu__level_1");
 					const level0 = backBtn.closest(".menu__level_0");
@@ -133,12 +146,14 @@ import enquire from 'enquire.js';
 						level0.style.overflowX = "hidden";
 					}
 
-					wrapper.style.transform = "translateX(calc( -100% - 12px))";
+					slide(-100);
 				});
 			});
 		},
 		unmatch: function() {
 			wrapper.removeAttribute('style');
+			wrapper.classList.remove('sliding')
+
 			wrapper.querySelectorAll('.menu__level').forEach(menu => {
 				menu.classList.remove('active');
 				menu.removeAttribute('style');

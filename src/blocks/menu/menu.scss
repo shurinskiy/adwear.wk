@@ -4,7 +4,7 @@
 	$self: &;
 
 	@include media('<=lg') {
-		padding: 75px 0 30px 24px;
+		padding: 75px 24px 30px;
 		background-color: var(--cloud);
 		background-image: url('./images/parquet-4.svg');
 		background-repeat: no-repeat;
@@ -12,7 +12,7 @@
 		background-position: top 30% right 20%;
 
 		@include media('<=xs') {
-			padding: 60px 0 30px 12px;
+			padding: 60px 12px 30px;
 		}
 
 		&::before {
@@ -70,14 +70,10 @@
 		align-items: center;
 		justify-content: space-between;
 		gap: 16px;
-		padding: 16px 24px 24px 0;
+		padding: 16px 0 24px;
 
 		@include media('<=lg') {
 			display: flex;
-		}
-
-		@include media('<=xxs') {
-			padding-right: 12px;
 		}
 	}
 
@@ -119,10 +115,9 @@
 		@include media('<=lg') {
 			height: 100%;
 			display: flex;
-			padding-right: 24px;
 			overflow: hidden;
 
-			&::-webkit-scrollbar {
+			/* &::-webkit-scrollbar {
 				width: 6px;
 				height: 6px;
 			}
@@ -137,11 +132,7 @@
 
 			&::-webkit-scrollbar-corner {
 				background-color: transparent;
-			}
-		}
-
-		@include media('<=xs') {
-			padding-right: 12px;
+			} */
 		}
 	}
 
@@ -160,12 +151,18 @@
 			width: 100%;
 			gap: 0;
 			position: relative;
-			transform: translateX(0);
+			transform: translateX(var(--slide, 0));
 			transition: transform 0.5s ease;
+		}
+
+		&.sliding {
+			#{$self}__icon {
+				visibility: hidden;
+			}
 		}
 	}
 
-	&__head-link {
+	&__head-link, &__head-about {
 		color: var(--text);
 		text-decoration: none;
 		font-size: fluid(16px, 15px, 1280, 1100);
@@ -176,18 +173,18 @@
 			color: var(--blue);
 			font-weight: 500;
 			font-size: 16px;
-			padding: 15px 0;
+			min-height: 50px;
 			border-bottom: 1px solid rgba(var(--blue-rgb), 0.15);
 		}
 
 		> span {
 			display: block;
+			text-decoration: none;
 			white-space: nowrap;
 		}
 	}
 
 	&__head-catalog {
-		cursor: pointer;
 		text-decoration: none;
 		font-size: fluid(16px, 15px, 1280, 1100);
 		color: var(--text);
@@ -217,6 +214,7 @@
 			}
 
 			> span {
+				cursor: pointer;
 				padding: 10px 20px;
 				text-transform: uppercase;
 				background-color: var(--cloud);
@@ -276,9 +274,9 @@
 		}
 		
 		@include media('<=lg') {
+			cursor: pointer;
 			min-height: 50px;
 			display: flex;
-			flex-wrap: wrap;
 			align-items: center;
 			// background: svg-url('<svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M23.7351 10.6512L14.4843 19.7472C13.683 20.5353 12.3145 19.3049 13.1744 18.4592L20.847 10.9168H0.878261C-0.256427 10.9168 -0.328526 9.09753 0.878261 9.09753H20.847L13.1744 1.55505C12.3623 0.756451 13.6332 -0.569905 14.4843 0.267039L23.7351 9.36314C24.0864 9.70758 24.0902 10.3028 23.7351 10.6512Z" fill="#002B69"/></svg>') center right / 17px 14px no-repeat transparent;
 		}
@@ -288,9 +286,10 @@
 		display: flex;
 		margin-left: auto;
 		align-self: stretch;
-		min-width: 50px;
+		min-width: 70px;
 		align-items: center;
 		justify-content: flex-end;
+		animation: fadeIn 0.2s;
 
 		@include media('>lg') {
 			display: none;
@@ -351,10 +350,11 @@
 	&__level {
 		position: relative;
 		flex-shrink: 0;
-		width: 100%;
-
+		// justify-content: space-between;
+		
 		@include media('<=lg') {
 			opacity: 0;
+			width: 100%;
 			visibility: hidden;
 			transition: opacity 0.5s ease;
 		}
@@ -382,11 +382,11 @@
 			@include media('<=lg') {
 				display: block;
 				position: absolute;
-				right: 12px;
+				right: 0;
 				bottom: 0;
 				top: 0;
+				left: 100%;
 				flex-direction: column;
-				left: calc(100% + 12px);
 				height: 100%;
 			}
 		}
@@ -400,9 +400,9 @@
 
 			@include media('<=lg') {
 				flex-direction: column;
-				left: calc(100% + 12px);
 				position: absolute;
-				right: 12px;
+				left: 100%;
+				right: 0;
 				top: 0;
 				height: 100%;
 			}
