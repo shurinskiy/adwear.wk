@@ -162,7 +162,7 @@
 		}
 	}
 
-	&__head-link, &__head-about {
+	&__head-link {
 		color: var(--text);
 		text-decoration: none;
 		font-size: fluid(16px, 15px, 1280, 1100);
@@ -175,6 +175,10 @@
 			font-size: 16px;
 			min-height: 50px;
 			border-bottom: 1px solid rgba(var(--blue-rgb), 0.15);
+
+			> span:hover {
+				text-decoration: underline;
+			}
 		}
 
 		> span {
@@ -282,14 +286,18 @@
 		}
 	}
 
+	a#{&}__inside > span:hover {
+		text-decoration: underline;
+	}
+
 	&__icon {
 		display: flex;
 		margin-left: auto;
 		align-self: stretch;
-		min-width: 70px;
 		align-items: center;
 		justify-content: flex-end;
-		animation: fadeIn 0.2s;
+		min-width: 50px;
+		flex-grow: 1;
 
 		@include media('>lg') {
 			display: none;
@@ -315,10 +323,10 @@
 			justify-content: center;
 			border-bottom: 1px solid rgba(var(--blue-rgb), 0.15);
 		}
+	}
 
-		a:hover {
-			text-decoration: underline;
-		}
+	a#{&}__item:hover {
+		text-decoration: underline;
 	}
 
 	&__controls {

@@ -15,33 +15,8 @@ import enquire from 'enquire.js';
 		cls: 'showed'
 	});
 
-	/* menu.querySelectorAll('.menu__item_haschild > span').forEach((haschild, i) => {
-		haschild.addEventListener('click', e => {
-			const submenu = haschild.nextElementSibling.closest('.menu__level');
-			console.log(submenu);
-		});
-	}); */
-
 	enquire.register("screen and (max-width: 1100px", {
 		match: function() {
-			// Предотвращаем горизонтальное перемещение через touch-события
-			/* let startX = 0;
-			let startY = 0;
-			wrapper.addEventListener('touchstart', function (e) {
-				startX = e.touches[0].clientX;
-				startY = e.touches[0].clientY;
-			}, { passive: true });
-		
-			wrapper.addEventListener('touchmove', function (e) {
-				const currentX = e.touches[0].clientX;
-				const currentY = e.touches[0].clientY;
-				const deltaX = currentX - startX;
-				const deltaY = currentY - startY;
-				// Если горизонтальное смещение больше вертикального — отменяем событие
-				if (Math.abs(deltaX) > Math.abs(deltaY)) {
-					e.preventDefault();
-				}
-			}, { passive: false }); */
 		
 			const slide = (offset = 0) => {
 				wrapper.style.setProperty('--slide', `${offset}%`);
