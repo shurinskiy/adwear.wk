@@ -11,7 +11,7 @@
 	height: 75px;
 	background-color: #fff;
 	transition: box-shadow 0.3s;
-	padding-right: var(--fancybox-scrollbar-compensate, 0px);
+	padding-right: calc(var(--noscroll-target-scrollbar-width, 0px) + var(--fancybox-scrollbar-compensate, 0px));
 
 	@include media('<=xs') {
 		height: 60px;

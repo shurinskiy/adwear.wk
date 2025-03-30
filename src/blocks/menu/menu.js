@@ -6,125 +6,51 @@ import enquire from 'enquire.js';
 	if (! menu) return;
 
 	const wrapper = menu.querySelector('.menu__wrapper');
+	const viewbox = menu.querySelector('.menu__viewbox');
 
 	driveTabs({
 		container: menu,
 		controls: menu.querySelectorAll('.menu__control'),
-		selects: menu.querySelectorAll('.menu__level_0'),
+		selects: menu.querySelectorAll('[data-level="0"]'),
 		events: 'mouseover',
 		cls: 'showed'
 	});
 
 	enquire.register("screen and (max-width: 1100px", {
 		match: function() {
-		
-			const slide = (offset = 0) => {
-				wrapper.style.setProperty('--slide', `${offset}%`);
-				wrapper.classList.add('sliding');
 
-				wrapper.addEventListener('transitionend', e => {
-					wrapper.classList.remove('sliding')
-				}, { once: true });
-			}
+			// Перейти на уровень внутрь
+			menu.querySelectorAll(".menu__inside, .m-about__head").forEach(item => {
+				const level = item.nextElementSibling.closest('[data-level]');
+				const deep = (+level.dataset.level || 0) + 1;
 
-			// Открытие уровня 0
-			const insideLinks = menu.querySelectorAll(".menu__inside, .h-about__head");
-	
-			insideLinks.forEach(item => {
-				item.addEventListener("click", function (e) {
-					const level0 = item.nextElementSibling.closest('.menu__level_0');
-				
-					// костыль для меню "о компании"
-					if (item.classList.contains('h-about__head')) {
-						if (! e.target.closest('.h-about__icon')) return;
-						e.preventDefault();
-					}
-
-					if (level0) {
-						level0.style.overflowY = "auto";
-						level0.style.overflowX = "hidden";
-						level0.classList.add("active");
-					}
-					
-					slide(-100);
-				});
-			});
-		
-			// Открытие уровня 1
-			const subcategories = menu.querySelectorAll(".menu__level_0 .menu__inside");
-			subcategories.forEach(link => {
-				link.addEventListener("click", function (e) {
+				item.addEventListener("click", e => {
 					if (! e.target.closest('.menu__icon')) return;
 					e.preventDefault();
-					
-					const level0 = link.closest(".menu__level_0");
-					const level1 = link.nextElementSibling.closest('.menu__level_1');
-					
-					if (level0) {
-						level0.style.overflow = "visible";
-					}
-					
-					if (level1) {
-						level1.style.overflowY = "auto";
-						level1.style.overflowX = "hidden";
-						level1.classList.add("active");
-					}
 
-					slide(-200);
+					viewbox.scrollTop = 0;
+					level.classList.add("active");
+					wrapper.classList.add('sliding');
+					wrapper.style.setProperty('--slide', `-${deep}00%`);
+
+					wrapper.addEventListener('transitionend', e => {
+						wrapper.classList.remove('sliding')
+					}, { once: true });
 				});
 			});
-		
-			// Обработчик кнопок "Назад" в уровне 0 (для каждой кнопки)
-			const backLevel0Buttons = menu.querySelectorAll(".menu__level_0 .menu__back");
-			backLevel0Buttons.forEach((backBtn) => {
-				backBtn.addEventListener("click", function (e) {
-					e.stopPropagation();
 
-					const level0 = backBtn.closest(".menu__level_0");
-					const level1 = level0.querySelector(".menu__level_1");
-		
-					if (level0) {
-						level0.style.overflowY = "hidden";
-						level0.style.overflowX = "hidden";
-						level0.classList.remove("active");
-		
-						if (level1) {
-							level1.classList.remove("active");
-							level1.style.overflowY = "hidden";
-							level1.style.overflowX = "hidden";
-						}
-					}
+			// Перейти на уровень назад
+			menu.querySelectorAll(".menu__back").forEach(item => {
+				const level = item.closest('[data-level]');
+				const deep = level.dataset.level;
 
-					slide(0);
-				});
-			});
-		
-			// Обработчик кнопок "Назад" в уровне 1 (для каждой кнопки)
-			const backLevel1Buttons = menu.querySelectorAll(".menu__level_1 .menu__back");
-			backLevel1Buttons.forEach((backBtn) => {
-				backBtn.addEventListener("click", function (e) {
-					e.stopPropagation();
-
-					const level1 = backBtn.closest(".menu__level_1");
-					const level0 = backBtn.closest(".menu__level_0");
-		
-					if (level1) {
-						level1.classList.remove("active");
-						level1.style.overflowY = "hidden";
-						level1.style.overflowX = "hidden";
-					}
-				
-					if (level0) {
-						level0.classList.add("active");
-						
-						level0.style.overflowY = "auto";
-						level0.style.overflowX = "hidden";
-					}
-
-					slide(-100);
+				item.addEventListener('click', e => {
+					level.classList.remove("active");
+					wrapper.style.setProperty('--slide', `-${deep}00%`);
 				});
 			});
 		},
+
 		unmatch: function() {
 			wrapper.removeAttribute('style');
 			wrapper.classList.remove('sliding')

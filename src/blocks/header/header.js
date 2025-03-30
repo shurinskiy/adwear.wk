@@ -1,4 +1,4 @@
-import scrollLock from 'scroll-lock';
+import { disablePageScroll, enablePageScroll } from '@fluejs/noscroll';
 import { driveMenu } from "../../js/libs/driveMenu";
 
 (() => {
@@ -13,11 +13,7 @@ import { driveMenu } from "../../js/libs/driveMenu";
 		omitToClose: '.modal',
 		class: 'opened',
 		open: function() {
-			// const maxw = parseInt(getComputedStyle(this).maxWidth);
-			// const scrollw = scrollLock.getPageScrollBarWidth();
-			// Object.assign(this.style, { maxWidth: maxw + scrollw + 'px' });
-
-			scrollLock.disablePageScroll();
+			disablePageScroll();
 			toggle.classList.add('opened');
 			document.body.classList.add('underlay');
 
@@ -27,8 +23,7 @@ import { driveMenu } from "../../js/libs/driveMenu";
 
 		},
 		close: function() {
-			scrollLock.clearQueueScrollLocks();
-			scrollLock.enablePageScroll();
+			enablePageScroll();
 			this.removeAttribute('style');
 			toggle.classList.remove('opened');
 			document.body.classList.add('underlay_closing');

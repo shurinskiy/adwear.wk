@@ -1,17 +1,14 @@
-import scrollLock from 'scroll-lock';
+import { disablePageScroll, enablePageScroll } from '@fluejs/noscroll';
 import { makeModal } from "../../js/libs/makeModal";
 
 (() => {
 	makeModal({
-		init: function(underlay) {
-			underlay.setAttribute('data-scroll-lock-scrollable', '');
-		},
 		open: function(modal, button) {
 			this.querySelector('.modal__bye')?.addEventListener('click', e => modal.close());
-			scrollLock.disablePageScroll();
+			disablePageScroll();
 		},
 		close: function() {
-			scrollLock.enablePageScroll();
+			enablePageScroll();
 		}
 	});
 

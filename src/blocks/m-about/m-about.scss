@@ -1,6 +1,6 @@
 @use 'lib' as *;
 
-.h-about {
+.m-about {
 	$self: &;
 
 	@include media('>lg') {
@@ -45,11 +45,11 @@
 			top: calc(100% - 15px);
 			z-index: 2;
 			left: 0;
+			flex-flow: column nowrap;
 			border-radius: 12px;
 			padding: 24px;
-			flex-flow: column nowrap;
-			gap: 16px;
 			width: auto;
+			gap: 16px !important;
 			background-size: auto 400px;
 			background-repeat: no-repeat;
 			background-color: var(--cloud);
