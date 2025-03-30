@@ -115,11 +115,19 @@
 		@include media('<=lg') {
 			height: 100%;
 			display: flex;
-			overflow: hidden;
+			overflow-y: auto;
+			overflow-x: hidden;
+			margin-right: -24px;
+			padding-right: 24px;
+			
+			@include media('<=xs') {
+				margin-right: -12px;
+				padding-right: 12px;
+			}
 
-			/* &::-webkit-scrollbar {
-				width: 6px;
-				height: 6px;
+			&::-webkit-scrollbar {
+				width: 5px;
+				height: 5px;
 			}
 
 			&::-webkit-scrollbar-track {
@@ -132,7 +140,7 @@
 
 			&::-webkit-scrollbar-corner {
 				background-color: transparent;
-			} */
+			}
 		}
 	}
 
