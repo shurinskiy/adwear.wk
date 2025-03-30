@@ -40,7 +40,7 @@ import enquire from 'enquire.js';
 		});
 	}
 			
-	enquire.register("screen and (max-width: 960px", {
+	enquire.register("screen and (max-width: 960px)", {
 		match: function() {
 			enableSwiper(slider);
 		},

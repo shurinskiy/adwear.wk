@@ -16,7 +16,7 @@ import enquire from 'enquire.js';
 		cls: 'showed'
 	});
 
-	enquire.register("screen and (max-width: 1100px", {
+	enquire.register("screen and (max-width: 1100px)", {
 		match: function() {
 
 			// Перейти на уровень внутрь

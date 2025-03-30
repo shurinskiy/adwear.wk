@@ -25,7 +25,7 @@ import enquire from 'enquire.js';
 		});
 	}
 			
-	enquire.register("screen and (max-width: 640px", {
+	enquire.register("screen and (max-width: 640px)", {
 		match: function() {
 			enableSwiper(slider);
 		},

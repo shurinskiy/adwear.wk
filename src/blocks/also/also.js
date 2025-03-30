@@ -45,7 +45,7 @@ import { Navigation } from 'swiper/modules';
 		});
 	}
 
-	enquire.register("screen and (max-width: 1100px", {
+	enquire.register("screen and (max-width: 1100px)", {
 		match: function() {
 			enableSwiper(slider);
 		},
