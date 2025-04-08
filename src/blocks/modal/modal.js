@@ -13,6 +13,11 @@ import Inputmask from "inputmask";
 			}).mask(this.querySelectorAll('input[type="tel"]'));
 
 			this.querySelector('.modal__bye')?.addEventListener('click', e => modal.close());
+
+			window.smartCaptcha && window.smartCaptcha.render(this.querySelector('.smart-captcha'), {
+				sitekey: 'ysc1_PJLwu4RqomXe8k70NwYhRFnD8SOwjBXaNRrFsiVo46f48e29',
+				hl: 'ru',
+			});
 		},
 		close: function() {
 			enablePageScroll();
